@@ -1,0 +1,480 @@
+Archive member included because of file (symbol)
+
+/home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(gcc-support.o)
+                              /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/fft/kiss_fft.o (memcpy)
+/home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(helper.o)
+                              /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/fft/fft.o (backlight_ignore_timeout)
+/home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(configfile.o)
+                              /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/fft/fft.o (configfile_save)
+/home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(osd.o)
+                              /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/fft/fft.o (osd_init)
+/home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(xlcd_scroll.o)
+                              /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/fft/fft.o (xlcd_scroll_left)
+/home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/bitmaps/libpluginbitmaps.a(fft_colors.16.o)
+                              /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/fft/fft.o (fft_colors)
+/home/ubuntu/Desktop/RockboxRCC/bu480/lib/libfixedpoint.a(fixedpoint.o)
+                              /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/fft/kiss_fft.o (fp_sincos)
+/home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivsi3.o)
+                              /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/fft/fft.o (__aeabi_uidiv)
+/home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divsi3.o)
+                              /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/fft/kiss_fft.o (__aeabi_idiv)
+/home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_aeabi_ldivmod.o)
+                              /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/fft/kiss_fft.o (__aeabi_ldivmod)
+/home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
+                              /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivsi3.o) (__aeabi_idiv0)
+/home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(bpabi.o)
+                              /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_aeabi_ldivmod.o) (__gnu_ldivmod_helper)
+/home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(unwind-arm.o)
+                              /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(bpabi.o) (__aeabi_unwind_cpp_pr0)
+/home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(libunwind.o)
+                              /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(unwind-arm.o) (restore_core_regs)
+/home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(pr-support.o)
+                              /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(unwind-arm.o) (__gnu_unwind_execute)
+/home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divdi3.o)
+                              /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(bpabi.o) (__divdi3)
+/home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivdi3.o)
+                              /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(bpabi.o) (__udivdi3)
+
+Discarded input sections
+
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtbegin_so.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/fft/const.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/fft/kiss_fft.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/fft/kiss_fftr.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/fft/fft.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/plugin_crt0.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(gcc-support.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(helper.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(configfile.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(osd.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(xlcd_scroll.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/bitmaps/libpluginbitmaps.a(fft_colors.16.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/libfixedpoint.a(fixedpoint.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivsi3.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divsi3.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_aeabi_ldivmod.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(bpabi.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(unwind-arm.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(libunwind.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(pr-support.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divdi3.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivdi3.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtend_so.o
+
+Memory map
+
+ ** file header
+                0x00000000       0x34
+ ** segment headers
+                0x00000034      0x100
+
+.interp         0x00000134       0x13
+ ** fill        0x00000134       0x13
+
+.dynsym         0x00000148      0x890
+ ** dynsym      0x00000148      0x890
+
+.dynstr         0x000009d8      0x8a2
+ ** string table
+                0x000009d8      0x8a2
+
+.hash           0x0000127c      0x438
+ ** hash        0x0000127c      0x438
+
+.rel.dyn        0x000016b4      0x178
+ ** dynamic relocs
+                0x000016b4      0x178
+
+.rel.plt        0x0000182c       0x48
+ ** dynamic relocs
+                0x0000182c       0x48
+
+.plt            0x00001874       0x80
+ ** PLT         0x00001874       0x80
+
+.text           0x000018f4     0x7320
+ .text.exit     0x000018f4       0x10 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtbegin_so.o
+                0x000018f4                __on_dlclose
+ .text          0x00001904       0x14 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtbegin_so.o
+                0x00001904                atexit
+ .text          0x00001918        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/fft/const.o
+ .text          0x00001918     0x1258 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/fft/kiss_fft.o
+                0x00002868                kiss_fft_alloc
+                0x00002a2c                kiss_fft_stride
+                0x00002aa8                kiss_fft
+                0x00002ab0                kiss_fft_cleanup
+                0x00002ad4                kiss_fft_next_fast_size
+ .text          0x00002b70      0x4fc /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/fft/kiss_fftr.o
+                0x00002b70                kiss_fftr_alloc
+                0x00002d28                kiss_fftr
+                0x00002ec4                kiss_fftri
+ .text          0x0000306c     0x1908 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/fft/fft.o
+                0x000038bc                plugin_start
+ .text          0x00004974      0x188 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/plugin_crt0.o
+                0x00004998                plugin__start
+                0x00004a1c                rb_atexit
+                0x00004a54                exit
+                0x00004a80                _exit
+                0x00004a9c                exit_on_usb
+ .text          0x00004afc        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(gcc-support.o)
+ .text.memcpy   0x00004afc       0x2c /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(gcc-support.o)
+                0x00004afc                memcpy
+ .text.memset   0x00004b28       0x2c /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(gcc-support.o)
+                0x00004b28                memset
+ .text.memmove  0x00004b54       0x2c /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(gcc-support.o)
+                0x00004b54                memmove
+ .text.memcmp   0x00004b80       0x2c /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(gcc-support.o)
+                0x00004b80                memcmp
+ .text          0x00004bac        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(helper.o)
+ .text.backlight_force_on
+                0x00004bac       0x30 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(helper.o)
+                0x00004bac                backlight_force_on
+ .text.backlight_ignore_timeout
+                0x00004bdc       0x40 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(helper.o)
+                0x00004bdc                backlight_ignore_timeout
+ .text.backlight_use_settings
+                0x00004c1c       0x34 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(helper.o)
+                0x00004c1c                backlight_use_settings
+ .text          0x00004c50        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(configfile.o)
+ .text.get_cfg_filename
+                0x00004c50       0x3c /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(configfile.o)
+ .text.configfile_save
+                0x00004c8c      0x1e4 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(configfile.o)
+                0x00004c8c                configfile_save
+ .text.configfile_load
+                0x00004e70      0x2c0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(configfile.o)
+                0x00004e70                configfile_load
+ .text.configfile_get_value
+                0x00005130      0x124 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(configfile.o)
+                0x00005130                configfile_get_value
+ .text.configfile_update_entry
+                0x00005254      0x194 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(configfile.o)
+                0x00005254                configfile_update_entry
+ .text          0x000053e8        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(osd.o)
+ .text._osd_lcd_init_buffers
+                0x000053e8      0x10c /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(osd.o)
+ .text._osd_lcd_viewport_set_pos
+                0x000054f4       0x18 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(osd.o)
+ .text._osd_draw_osd_rect
+                0x0000550c       0x48 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(osd.o)
+ .text._osd_draw_osd
+                0x00005554       0x28 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(osd.o)
+ .text._osd_update_viewport
+                0x0000557c       0x24 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(osd.o)
+ .text._osd_update_back_buffer
+                0x000055a0       0x60 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(osd.o)
+ .text._osd_erase_osd
+                0x00005600       0x4c /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(osd.o)
+ .text._osd_update
+                0x0000564c       0x30 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(osd.o)
+ .text._osd_show
+                0x0000567c       0xec /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(osd.o)
+ .text._osd_destroy
+                0x00005768       0x4c /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(osd.o)
+ .text._osd_monitor_timeout
+                0x000057b4       0x5c /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(osd.o)
+ .text.osd_init
+                0x00005810      0x2e0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(osd.o)
+                0x00005810                osd_init
+ .text.osd_destroy
+                0x00005af0       0x18 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(osd.o)
+                0x00005af0                osd_destroy
+ .text.osd_show
+                0x00005b08       0x1c /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(osd.o)
+                0x00005b08                osd_show
+ .text.osd_update
+                0x00005b24       0x18 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(osd.o)
+                0x00005b24                osd_update
+ .text.osd_update_rect
+                0x00005b3c       0xf4 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(osd.o)
+                0x00005b3c                osd_update_rect
+ .text.osd_update_pos
+                0x00005c30      0x1b0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(osd.o)
+                0x00005c30                osd_update_pos
+ .text.osd_monitor_timeout
+                0x00005de0       0x18 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(osd.o)
+                0x00005de0                osd_monitor_timeout
+ .text.osd_set_timeout
+                0x00005df8       0x38 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(osd.o)
+                0x00005df8                osd_set_timeout
+ .text.osd_get_viewport
+                0x00005e30       0x14 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(osd.o)
+                0x00005e30                osd_get_viewport
+ .text.osd_get_max_dims
+                0x00005e44       0x3c /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(osd.o)
+                0x00005e44                osd_get_max_dims
+ .text.osd_enabled
+                0x00005e80       0x1c /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(osd.o)
+                0x00005e80                osd_enabled
+ .text.osd_lcd_update_prepare
+                0x00005e9c       0x38 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(osd.o)
+                0x00005e9c                osd_lcd_update_prepare
+ .text.osd_lcd_update
+                0x00005ed4       0x58 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(osd.o)
+                0x00005ed4                osd_lcd_update
+ .text.osd_lcd_update_rect
+                0x00005f2c       0x78 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(osd.o)
+                0x00005f2c                osd_lcd_update_rect
+ .text          0x00005fa4        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(xlcd_scroll.o)
+ .text.xlcd_scroll_left
+                0x00005fa4       0xe4 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(xlcd_scroll.o)
+                0x00005fa4                xlcd_scroll_left
+ .text.xlcd_scroll_right
+                0x00006088       0xe4 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(xlcd_scroll.o)
+                0x00006088                xlcd_scroll_right
+ .text.xlcd_scroll_up
+                0x0000616c       0xc0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(xlcd_scroll.o)
+                0x0000616c                xlcd_scroll_up
+ .text.xlcd_scroll_down
+                0x0000622c       0xbc /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(xlcd_scroll.o)
+                0x0000622c                xlcd_scroll_down
+ .text          0x000062e8        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/bitmaps/libpluginbitmaps.a(fft_colors.16.o)
+ .text          0x000062e8        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/libfixedpoint.a(fixedpoint.o)
+ .text.fp_sincos
+                0x000062e8       0x9c /home/ubuntu/Desktop/RockboxRCC/bu480/lib/libfixedpoint.a(fixedpoint.o)
+                0x000062e8                fp_sincos
+ .text.fp_sqrt  0x00006384       0x88 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/libfixedpoint.a(fixedpoint.o)
+                0x00006384                fp_sqrt
+ .text.isqrt    0x0000640c       0x38 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/libfixedpoint.a(fixedpoint.o)
+                0x0000640c                isqrt
+ .text.fp14_sin
+                0x00006444       0xbc /home/ubuntu/Desktop/RockboxRCC/bu480/lib/libfixedpoint.a(fixedpoint.o)
+                0x00006444                fp14_sin
+ .text.fp14_cos
+                0x00006500       0xbc /home/ubuntu/Desktop/RockboxRCC/bu480/lib/libfixedpoint.a(fixedpoint.o)
+                0x00006500                fp14_cos
+ .text.fp16_log
+                0x000065bc       0xd4 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/libfixedpoint.a(fixedpoint.o)
+                0x000065bc                fp16_log
+ .text.fp16_exp
+                0x00006690       0xe0 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/libfixedpoint.a(fixedpoint.o)
+                0x00006690                fp16_exp
+ .text.fp_exp10
+                0x00006770      0x2a4 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/libfixedpoint.a(fixedpoint.o)
+                0x00006770                fp_exp10
+ .text.fp_log10
+                0x00006a14       0xfc /home/ubuntu/Desktop/RockboxRCC/bu480/lib/libfixedpoint.a(fixedpoint.o)
+                0x00006a14                fp_log10
+ .text.fp_decibels
+                0x00006b10       0x48 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/libfixedpoint.a(fixedpoint.o)
+                0x00006b10                fp_decibels
+ .text.fp_factor
+                0x00006b58       0x44 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/libfixedpoint.a(fixedpoint.o)
+                0x00006b58                fp_factor
+ .text          0x00006b9c       0xc8 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivsi3.o)
+                0x00006b9c                __udivsi3
+                0x00006b9c                __aeabi_uidiv
+                0x00006c44                __aeabi_uidivmod
+ .text          0x00006c64       0xfc /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divsi3.o)
+                0x00006c64                __divsi3
+                0x00006c64                __aeabi_idiv
+                0x00006d40                __aeabi_idivmod
+ .text          0x00006d60       0x44 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_aeabi_ldivmod.o)
+                0x00006d60                __aeabi_ldivmod
+ .text          0x00006da4       0x10 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
+                0x00006da4                __aeabi_idiv0
+                0x00006da4                __aeabi_ldiv0
+ .text          0x00006db4       0x78 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(bpabi.o)
+                0x00006db4                __gnu_ldivmod_helper
+                0x00006df0                __gnu_uldivmod_helper
+ .text          0x00006e2c      0xf20 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(unwind-arm.o)
+                0x000079dc                __aeabi_unwind_cpp_pr0
+                0x000079e4                __aeabi_unwind_cpp_pr1
+                0x000079ec                __aeabi_unwind_cpp_pr2
+                0x00007270                _Unwind_GetCFA
+                0x00007278                __gnu_Unwind_RaiseException
+                0x0000731c                __gnu_Unwind_ForcedUnwind
+                0x00007338                __gnu_Unwind_Resume
+                0x000073ac                __gnu_Unwind_Resume_or_Rethrow
+                0x000073cc                _Unwind_Complete
+                0x000073d0                _Unwind_DeleteException
+                0x000073f0                _Unwind_VRS_Get
+                0x00007474                _Unwind_VRS_Set
+                0x000074fc                __gnu_Unwind_Backtrace
+                0x000079f4                _Unwind_VRS_Pop
+ .text          0x00007d4c      0x1a8 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(libunwind.o)
+                0x00007d4c                __restore_core_regs
+                0x00007d4c                restore_core_regs
+                0x00007d60                __gnu_Unwind_Restore_VFP
+                0x00007d68                __gnu_Unwind_Save_VFP
+                0x00007d70                __gnu_Unwind_Restore_VFP_D
+                0x00007d78                __gnu_Unwind_Save_VFP_D
+                0x00007d80                __gnu_Unwind_Restore_VFP_D_16_to_31
+                0x00007d88                __gnu_Unwind_Save_VFP_D_16_to_31
+                0x00007d90                __gnu_Unwind_Restore_WMMXD
+                0x00007dd4                __gnu_Unwind_Save_WMMXD
+                0x00007e18                __gnu_Unwind_Restore_WMMXC
+                0x00007e2c                __gnu_Unwind_Save_WMMXC
+                0x00007e40                ___Unwind_RaiseException
+                0x00007e40                _Unwind_RaiseException
+                0x00007e64                ___Unwind_Resume
+                0x00007e64                _Unwind_Resume
+                0x00007e88                ___Unwind_Resume_or_Rethrow
+                0x00007e88                _Unwind_Resume_or_Rethrow
+                0x00007eac                ___Unwind_ForcedUnwind
+                0x00007eac                _Unwind_ForcedUnwind
+                0x00007ed0                ___Unwind_Backtrace
+                0x00007ed0                _Unwind_Backtrace
+ .text          0x00007ef4      0x484 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(pr-support.o)
+                0x00007f80                __gnu_unwind_execute
+                0x000082fc                __gnu_unwind_frame
+                0x0000833c                _Unwind_GetRegionStart
+                0x0000834c                _Unwind_GetLanguageSpecificData
+                0x00008368                _Unwind_GetDataRelBase
+                0x00008370                _Unwind_GetTextRelBase
+ .text          0x00008378      0x498 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divdi3.o)
+                0x00008378                __divdi3
+ .text          0xffffffffffffffff      0x404 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivdi3.o)
+                0x00008810                __udivdi3
+ .text          0x00008c14        0x0 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtend_so.o
+
+.rodata         0x00008c18     0xfd40
+ .rodata        0x00008c18     0xf800 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/fft/const.o
+                0x00008c18                hann_512
+                0x00009018                hann_1024
+                0x00009818                hann_2048
+                0x0000a818                hann_4096
+                0x0000c818                hann_8192
+                0x00010818                hamming_512
+                0x00010c18                hamming_1024
+                0x00011418                hamming_2048
+                0x00012418                hamming_4096
+                0x00014418                hamming_8192
+ .rodata        0x00018418        0x8 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/fft/fft.o
+ ** merge strings
+                0x00018420      0x1fd
+ .rodata        0x00018620      0x200 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/bitmaps/libpluginbitmaps.a(fft_colors.16.o)
+                0x00018620                fft_colors
+ .rodata.atan_table
+                0x00018820       0x80 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/libfixedpoint.a(fixedpoint.o)
+ .rodata.sin_table
+                0x000188a0       0xb8 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/libfixedpoint.a(fixedpoint.o)
+
+.ARM.extab      0x00018958       0x48
+ .ARM.extab     0x00018958        0xc /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
+ .ARM.extab     0x00018964        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(bpabi.o)
+ .ARM.extab     0x00018964        0xc /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(unwind-arm.o)
+ .ARM.extab     0x00018970       0x30 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(pr-support.o)
+ .ARM.extab     0x000189a0        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divdi3.o)
+ .ARM.extab     0x000189a0        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivdi3.o)
+
+.ARM.exidx      0x000189a0      0x128
+ .ARM.exidx     0x000189a0        0x8 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
+ .ARM.exidx     0xffffffffffffffff       0x10 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(bpabi.o)
+ .ARM.exidx     0xffffffffffffffff       0xd8 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(unwind-arm.o)
+ ** ARM cantunwind
+                0x00018a60        0x8
+ .ARM.exidx     0x00018a68       0x48 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(pr-support.o)
+ .ARM.exidx     0x00018ab0        0x8 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divdi3.o)
+ .ARM.exidx     0x00018ab8        0x8 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivdi3.o)
+ ** ARM cantunwind
+                0x00018ac0        0x8
+
+.data.rel.ro.local
+                0x00019e70       0x18
+ .data.rel.ro.local
+                0x00019e70       0x18 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/fft/fft.o
+
+.fini_array     0x00019e88        0x8
+ .fini_array    0x00019e88        0x4 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtbegin_so.o
+ .fini_array    0x00019e8c        0x4 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtend_so.o
+
+.data.rel.ro    0x00019e90       0x38
+ .data.rel.ro   0x00019e90        0x8 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/fft/fft.o
+ .data.rel.ro   0x00019e98       0x18 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/plugin_crt0.o
+                0x00019e98                __header
+ .data.rel.ro   0x00019eb0       0x18 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/bitmaps/libpluginbitmaps.a(fft_colors.16.o)
+                0x00019eb0                bm_fft_colors
+
+.init_array     0x00019ec8        0x4
+ .init_array    0x00019ec8        0x4 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtend_so.o
+
+.dynamic        0x00019ecc       0xe0
+ ** dynamic     0x00019ecc       0xe0
+
+.got            0x00019fac       0x54
+ ** GOT         0x00019fac       0x24
+ ** GOT PLT     0x00019fd0       0x30
+
+.data           0x0001a000       0xb4
+ .data          0x0001a000        0x4 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtbegin_so.o
+                0x0001a000                __dso_handle
+ .data          0x0001a004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/fft/const.o
+ .data          0x0001a004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/fft/kiss_fft.o
+ .data          0x0001a004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/fft/kiss_fftr.o
+ .data          0x0001a004        0x8 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/fft/fft.o
+ .data.rel.local
+                0x0001a00c       0xa4 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/fft/fft.o
+ .data          0x0001a0b0        0x4 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/plugin_crt0.o
+                0x0001a0b0                rb
+ .data          0x0001a0b4        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(gcc-support.o)
+ .data          0x0001a0b4        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(helper.o)
+ .data          0x0001a0b4        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(configfile.o)
+ .data          0x0001a0b4        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(osd.o)
+ .data          0x0001a0b4        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(xlcd_scroll.o)
+ .data          0x0001a0b4        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/bitmaps/libpluginbitmaps.a(fft_colors.16.o)
+ .data          0x0001a0b4        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/libfixedpoint.a(fixedpoint.o)
+ .data          0x0001a0b4        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivsi3.o)
+ .data          0x0001a0b4        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divsi3.o)
+ .data          0x0001a0b4        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_aeabi_ldivmod.o)
+ .data          0x0001a0b4        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
+ .data          0x0001a0b4        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(bpabi.o)
+ .data          0x0001a0b4        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(unwind-arm.o)
+ .data          0x0001a0b4        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(libunwind.o)
+ .data          0x0001a0b4        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(pr-support.o)
+ .data          0x0001a0b4        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divdi3.o)
+ .data          0x0001a0b4        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivdi3.o)
+ .data          0x0001a0b4        0x0 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtend_so.o
+
+.bss            0x0001a0c0     0xf370
+ .bss           0x0001a0c0        0x0 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtbegin_so.o
+ .bss           0x0001a0c0        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/fft/const.o
+ .bss           0x0001a0c0       0x10 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/fft/kiss_fft.o
+ .bss           0x0001a0d0        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/fft/kiss_fftr.o
+ .bss           0x0001a0e0     0xf1e0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/fft/fft.o
+ .bss           0x000292c0      0x104 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/plugin_crt0.o
+ .bss           0x000293c4        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(gcc-support.o)
+ .bss           0x000293c4        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(helper.o)
+ .bss           0x000293c4        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(configfile.o)
+ .bss           0x000293c4        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(osd.o)
+ .bss.native_osd
+                0x000293c4       0x6c /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(osd.o)
+ .bss           0x00029430        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(xlcd_scroll.o)
+ .bss           0x00029430        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/bitmaps/libpluginbitmaps.a(fft_colors.16.o)
+ .bss           0x00029430        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/libfixedpoint.a(fixedpoint.o)
+ .bss           0x00029430        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivsi3.o)
+ .bss           0x00029430        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divsi3.o)
+ .bss           0x00029430        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_aeabi_ldivmod.o)
+ .bss           0x00029430        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
+ .bss           0x00029430        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(bpabi.o)
+ .bss           0x00029430        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(unwind-arm.o)
+ .bss           0x00029430        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(libunwind.o)
+ .bss           0x00029430        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(pr-support.o)
+ .bss           0x00029430        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divdi3.o)
+ .bss           0x00029430        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivdi3.o)
+ .bss           0x00029430        0x0 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtend_so.o

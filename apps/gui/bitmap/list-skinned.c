@@ -216,11 +216,19 @@ bool skinlist_draw(struct screen *display, struct gui_synclist *list)
     {
         int item_offset = list->selected_item - tmp_list_start_item;
         tmp_list_start_item = 0;
+<<<<<<< HEAD
         current_item = list->selected_item = tmp_list_start_item + item_offset;
     }
     if (listcfg[screen]->tile == true)
     {
         int left_shift = 0;
+=======
+        current_item = list->selected_item =   tmp_list_start_item + item_offset;
+    }
+    if (listcfg[screen]->tile == true)
+    {
+        int left_shift=0;
+>>>>>>> refs/remotes/origin/lab-android
         left_shift = tmp_list_start_item % (parent->width / listcfg[screen]->width); 
         if (left_shift != 0)
         {
@@ -303,9 +311,15 @@ bool skinlist_draw(struct screen *display, struct gui_synclist *list)
             }
         }
     }
+<<<<<<< HEAD
     if (listcfg[screen]->tile == true && tmp_list_start_item + display_lines >= list->nb_items)
     {
         list->start_item[screen] = tmp_list_start_item;
+=======
+    if (listcfg[screen]->tile == true && tmp_list_start_item+ display_lines >= list->nb_items)
+    {
+        list->start_item[screen]=tmp_list_start_item;
+>>>>>>> refs/remotes/origin/lab-android
     }
     current_column = -1;
     current_row = -1;

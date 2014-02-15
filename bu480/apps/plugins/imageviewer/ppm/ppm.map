@@ -1,0 +1,203 @@
+Archive member included because of file (symbol)
+
+/home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(bmp_smooth_scale.o)
+                              /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/imageviewer/ppm/ppm.o (smooth_resize_bitmap)
+/home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divsi3.o)
+                              /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/imageviewer/ppm/ppm.o (__aeabi_idiv)
+/home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
+                              /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divsi3.o) (__aeabi_idiv0)
+/home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(unwind-arm.o)
+                              /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o) (__aeabi_unwind_cpp_pr1)
+/home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(libunwind.o)
+                              /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(unwind-arm.o) (restore_core_regs)
+/home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(pr-support.o)
+                              /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(unwind-arm.o) (__gnu_unwind_execute)
+
+Discarded input sections
+
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtbegin_so.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/imageviewer/ppm/ppm.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/imageviewer/ppm/ppm_decoder.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(bmp_smooth_scale.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divsi3.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(unwind-arm.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(libunwind.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(pr-support.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtend_so.o
+
+Memory map
+
+ ** file header
+                0x00000000       0x34
+ ** segment headers
+                0x00000034      0x100
+
+.interp         0x00000134       0x13
+ ** fill        0x00000134       0x13
+
+.dynsym         0x00000148      0x420
+ ** dynsym      0x00000148      0x420
+
+.dynstr         0x00000568      0x4ee
+ ** string table
+                0x00000568      0x4ee
+
+.hash           0x00000a58      0x1a4
+ ** hash        0x00000a58      0x1a4
+
+.rel.dyn        0x00000bfc       0x88
+ ** dynamic relocs
+                0x00000bfc       0x88
+
+.rel.plt        0x00000c84       0x40
+ ** dynamic relocs
+                0x00000c84       0x40
+
+.plt            0x00000cc4       0x74
+ ** PLT         0x00000cc4       0x74
+
+.text           0x00000d38     0x34d8
+ .text.exit     0x00000d38       0x10 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtbegin_so.o
+                0x00000d38                __on_dlclose
+ .text          0x00000d48       0x14 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtbegin_so.o
+                0x00000d48                atexit
+ .text          0x00000d5c      0x580 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/imageviewer/ppm/ppm.o
+ .text          0x000012dc      0x6c4 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/imageviewer/ppm/ppm_decoder.o
+                0x0000159c                read_ppm
+ .text          0x000019a0        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(bmp_smooth_scale.o)
+ .text.smooth_resize_bitmap
+                0x000019a0     0x1218 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(bmp_smooth_scale.o)
+                0x000019a0                smooth_resize_bitmap
+ .text          0x00002bb8       0xfc /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divsi3.o)
+                0x00002bb8                __divsi3
+                0x00002bb8                __aeabi_idiv
+                0x00002c94                __aeabi_idivmod
+ .text          0x00002cb4       0x10 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
+                0x00002cb4                __aeabi_idiv0
+                0x00002cb4                __aeabi_ldiv0
+ .text          0x00002cc4      0xf20 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(unwind-arm.o)
+                0x00003874                __aeabi_unwind_cpp_pr0
+                0x0000387c                __aeabi_unwind_cpp_pr1
+                0x00003884                __aeabi_unwind_cpp_pr2
+                0x00003108                _Unwind_GetCFA
+                0x00003110                __gnu_Unwind_RaiseException
+                0x000031b4                __gnu_Unwind_ForcedUnwind
+                0x000031d0                __gnu_Unwind_Resume
+                0x00003244                __gnu_Unwind_Resume_or_Rethrow
+                0x00003264                _Unwind_Complete
+                0x00003268                _Unwind_DeleteException
+                0x00003288                _Unwind_VRS_Get
+                0x0000330c                _Unwind_VRS_Set
+                0x00003394                __gnu_Unwind_Backtrace
+                0x0000388c                _Unwind_VRS_Pop
+ .text          0x00003be4      0x1a8 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(libunwind.o)
+                0x00003be4                __restore_core_regs
+                0x00003be4                restore_core_regs
+                0x00003bf8                __gnu_Unwind_Restore_VFP
+                0x00003c00                __gnu_Unwind_Save_VFP
+                0x00003c08                __gnu_Unwind_Restore_VFP_D
+                0x00003c10                __gnu_Unwind_Save_VFP_D
+                0x00003c18                __gnu_Unwind_Restore_VFP_D_16_to_31
+                0x00003c20                __gnu_Unwind_Save_VFP_D_16_to_31
+                0x00003c28                __gnu_Unwind_Restore_WMMXD
+                0x00003c6c                __gnu_Unwind_Save_WMMXD
+                0x00003cb0                __gnu_Unwind_Restore_WMMXC
+                0x00003cc4                __gnu_Unwind_Save_WMMXC
+                0x00003cd8                ___Unwind_RaiseException
+                0x00003cd8                _Unwind_RaiseException
+                0x00003cfc                ___Unwind_Resume
+                0x00003cfc                _Unwind_Resume
+                0x00003d20                ___Unwind_Resume_or_Rethrow
+                0x00003d20                _Unwind_Resume_or_Rethrow
+                0x00003d44                ___Unwind_ForcedUnwind
+                0x00003d44                _Unwind_ForcedUnwind
+                0x00003d68                ___Unwind_Backtrace
+                0x00003d68                _Unwind_Backtrace
+ .text          0xffffffffffffffff      0x484 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(pr-support.o)
+                0x00003e18                __gnu_unwind_execute
+                0x00004194                __gnu_unwind_frame
+                0x000041d4                _Unwind_GetRegionStart
+                0x000041e4                _Unwind_GetLanguageSpecificData
+                0x00004200                _Unwind_GetDataRelBase
+                0x00004208                _Unwind_GetTextRelBase
+ .text          0x00004210        0x0 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtend_so.o
+
+.rodata         0x00004210      0x257
+ ** merge strings
+                0x00004210      0x257
+
+.ARM.extab      0x00004468       0x48
+ .ARM.extab     0x00004468        0xc /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
+ .ARM.extab     0x00004474        0xc /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(unwind-arm.o)
+ .ARM.extab     0x00004480       0x30 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(pr-support.o)
+
+.ARM.exidx      0x000044b0      0x110
+ .ARM.exidx     0x000044b0        0x8 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
+ .ARM.exidx     0xffffffffffffffff       0xd8 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(unwind-arm.o)
+ ** ARM cantunwind
+                0x00004568        0x8
+ .ARM.exidx     0x00004570       0x48 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(pr-support.o)
+ ** ARM cantunwind
+                0x000045b8        0x8
+
+.data.rel.ro.local
+                0x00005e94       0x14
+ .data.rel.ro.local
+                0x00005e94       0x14 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/imageviewer/ppm/ppm.o
+                0x00005e94                image_decoder
+
+.fini_array     0x00005ea8        0x8
+ .fini_array    0x00005ea8        0x4 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtbegin_so.o
+ .fini_array    0x00005eac        0x4 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtend_so.o
+
+.data.rel.ro    0x00005eb0       0x1c
+ .data.rel.ro   0x00005eb0       0x1c /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/imageviewer/ppm/ppm.o
+                0x00005eb0                __header
+
+.init_array     0x00005ecc        0x4
+ .init_array    0x00005ecc        0x4 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtend_so.o
+
+.dynamic        0x00005ed0       0xe0
+ ** dynamic     0x00005ed0       0xe0
+
+.got            0x00005fb0       0x50
+ ** GOT         0x00005fb0       0x24
+ ** GOT PLT     0x00005fd4       0x2c
+
+.data           0x00006000        0xc
+ .data          0x00006000        0x4 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtbegin_so.o
+                0x00006000                __dso_handle
+ .data          0x00006004        0x8 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/imageviewer/ppm/ppm.o
+                0x00006008                rb
+                0x00006004                iv
+ .data          0x0000600c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/imageviewer/ppm/ppm_decoder.o
+ .data          0x0000600c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(bmp_smooth_scale.o)
+ .data          0x0000600c        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divsi3.o)
+ .data          0x0000600c        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
+ .data          0x0000600c        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(unwind-arm.o)
+ .data          0x0000600c        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(libunwind.o)
+ .data          0x0000600c        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(pr-support.o)
+ .data          0x0000600c        0x0 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtend_so.o
+
+.bss            0x0000600c       0x64
+ .bss           0x0000600c        0x0 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtbegin_so.o
+ .bss           0x0000600c       0x64 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/imageviewer/ppm/ppm.o
+ .bss           0x00006070        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/imageviewer/ppm/ppm_decoder.o
+ .bss           0x00006070        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(bmp_smooth_scale.o)
+ .bss           0x00006070        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divsi3.o)
+ .bss           0x00006070        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
+ .bss           0x00006070        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(unwind-arm.o)
+ .bss           0x00006070        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(libunwind.o)
+ .bss           0x00006070        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(pr-support.o)
+ .bss           0x00006070        0x0 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtend_so.o

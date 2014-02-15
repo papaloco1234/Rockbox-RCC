@@ -1,0 +1,736 @@
+Archive member included because of file (symbol)
+
+/home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(frame.o)
+                              /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/audio_thread.o (mad_header_init)
+/home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(layer12.o)
+                              /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(frame.o) (mad_layer_I)
+/home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(layer3.o)
+                              /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(frame.o) (mad_layer_III)
+/home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(stream.o)
+                              /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/audio_thread.o (mad_stream_init)
+/home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(synth.o)
+                              /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/audio_thread.o (mad_synth_init)
+/home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(imdct_l_arm.o)
+                              /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(layer3.o) (III_imdct_l)
+/home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(synth_full_arm.o)
+                              /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(synth.o) (synth_full_odd_sbsample)
+/home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(bit.o)
+                              /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(frame.o) (mad_bit_init)
+/home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(huffman.o)
+                              /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(layer3.o) (mad_huff_pair_table)
+/home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(gcc-support.o)
+                              /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(frame.o) (memcpy)
+/home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(helper.o)
+                              /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/mpegplayer.o (backlight_ignore_timeout)
+/home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(configfile.o)
+                              /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/mpeg_settings.o (configfile_save)
+/home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/bitmaps/libpluginbitmaps.a(mpegplayer_status_icons_8x8x1.o)
+                              /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/mpegplayer.o (mpegplayer_status_icons_8x8x1)
+/home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/bitmaps/libpluginbitmaps.a(mpegplayer_status_icons_12x12x1.o)
+                              /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/mpegplayer.o (mpegplayer_status_icons_12x12x1)
+/home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/bitmaps/libpluginbitmaps.a(mpegplayer_status_icons_16x16x1.o)
+                              /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/mpegplayer.o (mpegplayer_status_icons_16x16x1)
+/home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivsi3.o)
+                              /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/libmpeg2/header.o (__aeabi_uidiv)
+/home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divsi3.o)
+                              /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/video_out_rockbox.o (__aeabi_idiv)
+/home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_aeabi_uldivmod.o)
+                              /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/video_thread.o (__aeabi_uldivmod)
+/home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
+                              /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivsi3.o) (__aeabi_idiv0)
+/home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(bpabi.o)
+                              /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_aeabi_uldivmod.o) (__gnu_uldivmod_helper)
+/home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(unwind-arm.o)
+                              /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(bpabi.o) (__aeabi_unwind_cpp_pr0)
+/home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(libunwind.o)
+                              /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(unwind-arm.o) (restore_core_regs)
+/home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(pr-support.o)
+                              /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(unwind-arm.o) (__gnu_unwind_execute)
+/home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divdi3.o)
+                              /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(bpabi.o) (__divdi3)
+/home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivdi3.o)
+                              /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(bpabi.o) (__udivdi3)
+
+Allocating common symbols
+Common symbol       size              file
+
+sbsample            0x2400            /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/audio_thread.o
+settings            0x23c             /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/mpeg_settings.o
+audio_queue         0x118             /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/audio_thread.o
+str_parser          0xc4              /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/mpeg_parser.o
+stream_mgr          0x80              /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/stream_mgr.o
+disk_buf            0x50              /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/disk_buf.o
+mpeg2_scan_alt      0x40              /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/libmpeg2/header.o
+mpeg2_scan_norm     0x40              /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/libmpeg2/header.o
+audio_str           0x34              /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/audio_thread.o
+video_str           0x34              /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/video_thread.o
+
+Discarded input sections
+
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtbegin_so.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/libmpeg2/decode.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/libmpeg2/header.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/libmpeg2/idct.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/libmpeg2/motion_comp.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/libmpeg2/slice.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/libmpeg2/idct_arm.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/libmpeg2/motion_comp_arm_c.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/libmpeg2/motion_comp_arm_s.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/alloc.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/video_out_rockbox.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/video_thread.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/pcm_output.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/audio_thread.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/disk_buf.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/mpeg_settings.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/stream_mgr.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/mpegplayer.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/mpeg_parser.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/mpeg_misc.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/plugin_crt0.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(frame.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(layer12.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(layer3.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(stream.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(synth.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(imdct_l_arm.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(synth_full_arm.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(bit.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(huffman.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(gcc-support.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(helper.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(configfile.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/bitmaps/libpluginbitmaps.a(mpegplayer_status_icons_8x8x1.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/bitmaps/libpluginbitmaps.a(mpegplayer_status_icons_12x12x1.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/bitmaps/libpluginbitmaps.a(mpegplayer_status_icons_16x16x1.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivsi3.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divsi3.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_aeabi_uldivmod.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(bpabi.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(unwind-arm.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(libunwind.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(pr-support.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divdi3.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivdi3.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtend_so.o
+
+Memory map
+
+ ** file header
+                0x00000000       0x34
+ ** segment headers
+                0x00000034      0x100
+
+.interp         0x00000134       0x13
+ ** fill        0x00000134       0x13
+
+.dynsym         0x00000148     0x13d0
+ ** dynsym      0x00000148     0x13d0
+
+.dynstr         0x00001518     0x1506
+ ** string table
+                0x00001518     0x1506
+
+.hash           0x00002a20      0x918
+ ** hash        0x00002a20      0x918
+
+.rel.dyn        0x00003338      0x710
+ ** dynamic relocs
+                0x00003338      0x710
+
+.rel.plt        0x00003a48       0x48
+ ** dynamic relocs
+                0x00003a48       0x48
+
+.plt            0x00003a90       0x80
+ ** PLT         0x00003a90       0x80
+
+.text           0x00003b10    0x26e44
+ .text.exit     0x00003b10       0x10 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtbegin_so.o
+                0x00003b10                __on_dlclose
+ .text          0x00003b20       0x14 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtbegin_so.o
+                0x00003b20                atexit
+ .text          0x00003b34      0xe14 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/libmpeg2/decode.o
+                0x00003c18                mpeg2_parse_header
+                0x00004004                mpeg2_seek_header
+                0x00004170                mpeg2_info
+                0x0000417c                mpeg2_buffer
+                0x00004194                mpeg2_getpos
+                0x000041b0                mpeg2_parse
+                0x00004534                mpeg2_convert
+                0x000045a8                mpeg2_stride
+                0x00004630                mpeg2_set_buf
+                0x00004700                mpeg2_custom_fbuf
+                0x00004710                mpeg2_skip
+                0x0000473c                mpeg2_slice_region
+                0x0000478c                mpeg2_tag_picture
+                0x000047e0                mpeg2_reset
+                0x000048a4                mpeg2_init
+                0x0000493c                mpeg2_close
+ .text          0x00004948     0x21e8 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/libmpeg2/header.o
+                0x00005280                mpeg2_header_state_init
+                0x00005358                mpeg2_reset_info
+                0x00005470                mpeg2_header_sequence
+                0x0000572c                mpeg2_guess_aspect
+                0x000059a4                mpeg2_header_gop
+                0x00005a58                mpeg2_header_gop_finalize
+                0x00005ab0                mpeg2_set_fbuf
+                0x00005b64                mpeg2_header_picture
+                0x00005d90                mpeg2_header_picture_finalize
+                0x00006304                mpeg2_header_extension
+                0x00006364                mpeg2_header_user_data
+                0x000063a4                mpeg2_header_slice_start
+                0x00006608                mpeg2_header_end
+                0x0000672c                mpeg2_header_sequence_finalize
+ .text          0x00006b30       0x88 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/libmpeg2/idct.o
+                0x00006b30                mpeg2_idct_init
+ .text          0x00006bb8        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/libmpeg2/motion_comp.o
+ .text          0x00006bb8     0xc1f4 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/libmpeg2/slice.o
+                0x000102c8                mpeg2_init_fbuf
+                0x00010704                mpeg2_slice
+ .text          0x00012dac      0x5bc /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/libmpeg2/idct_arm.o
+                0x000130d8                mpeg2_idct_copy
+                0x0001318c                mpeg2_idct_add
+ .text          0x00013368     0x16bc /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/libmpeg2/motion_comp_arm_c.o
+                0x00013368                MC_avg_o_16
+                0x00013504                MC_avg_o_8
+                0x000135e0                MC_avg_x_16
+                0x0001383c                MC_avg_x_8
+                0x00013978                MC_put_y_16
+                0x00013b18                MC_put_y_8
+                0x00013bf8                MC_avg_y_16
+                0x00013e58                MC_avg_y_8
+                0x00013f98                MC_put_xy_16
+                0x000142bc                MC_put_xy_8
+                0x00014450                MC_avg_xy_16
+                0x00014834                MC_avg_xy_8
+ .text          0x00014a24      0x6d0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/libmpeg2/motion_comp_arm_s.o
+                0x00014a24                MC_put_o_16
+                0x00014b2c                MC_put_o_8
+                0x00014c04                MC_put_x_16
+                0x00014f14                MC_put_x_8
+ .text          0x000150f4      0x374 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/alloc.o
+                0x000150f4                mpeg_malloc
+                0x00015144                mpeg_malloc_all
+                0x00015184                mpeg_alloc_init
+                0x00015208                mpeg2_malloc
+                0x0001529c                mpeg2_bufalloc
+                0x000152cc                mpeg2_get_buf
+                0x00015318                mpeg2_mem_reset
+                0x00015338                codec_malloc
+                0x000153cc                codec_calloc
+                0x00015464                codec_free
+ .text          0x00015468      0xb1c /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/video_out_rockbox.o
+                0x00015544                vo_draw_frame
+                0x000155f8                vo_rect_clear
+                0x00015610                vo_rect_empty
+                0x00015650                vo_rect_set_ext
+                0x00015670                vo_rects_intersect
+                0x00015718                vo_rect_intersect
+                0x0001580c                vo_rect_union
+                0x00015924                vo_rect_offset
+                0x00015958                stretch_image_plane
+                0x00015a54                vo_draw_frame_thumb
+                0x00015c3c                vo_dimensions
+                0x00015c5c                vo_init
+                0x00015ca0                vo_show
+                0x00015cf4                vo_is_visible
+                0x00015d10                vo_cleanup
+                0x00015d28                vo_set_clip_rect
+                0x00015e14                vo_setup
+                0x00015f30                vo_get_clip_rect
+                0x00015f70                vo_set_post_draw_callback
+ .text          0x00015f84     0x13b4 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/video_thread.o
+                0x00017160                video_thread_init
+                0x00017264                video_thread_exit
+                0x000172d4                video_thread_get_stats
+ .text          0x00017338      0x828 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/pcm_output.o
+                0x00017598                pcm_output_get_buffer
+                0x000175ec                pcm_output_commit_data
+                0x000176a0                pcm_output_empty
+                0x000176c8                pcm_output_flush
+                0x00017784                pcm_output_set_clock
+                0x000177d8                pcm_output_get_clock
+                0x00017854                pcm_output_get_ticks
+                0x000178f0                pcm_output_play_pause
+                0x000179c0                pcm_output_stop
+                0x00017a3c                pcm_output_drain
+                0x00017a88                pcm_output_init
+                0x00017b1c                pcm_output_exit
+ .text          0x00017b60      0xf48 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/audio_thread.o
+                0x00018958                audio_thread_init
+                0x00018a34                audio_thread_exit
+ .text          0x00018aa8     0x1728 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/disk_buf.o
+                0x00018c60                disk_buf_is_data_ready
+                0x00018ccc                dbuf_l2_init
+                0x00018cd8                _disk_buf_getbuffer
+                0x00018dd8                _disk_buf_getbuffer_l2
+                0x00018f2c                disk_buf_read
+                0x00019068                disk_buf_lseek
+                0x0001917c                disk_buf_set_streaming_window
+                0x0001925c                disk_buf_offset2ptr
+                0x000192b0                disk_buf_close
+                0x00019378                disk_buf_open
+                0x00019468                disk_buf_send_msg
+                0x000194b0                disk_buf_prepare_streaming
+                0x0001956c                disk_buf_post_msg
+                0x000195b4                disk_buf_reply_msg
+                0x00019f60                disk_buf_init
+                0x0001a160                disk_buf_exit
+ .text          0x0001a1d0     0x1694 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/mpeg_settings.o
+                0x0001aea0                mpeg_start_menu
+                0x0001b5cc                mpeg_menu
+                0x0001b640                init_settings
+                0x0001b780                save_settings
+ .text          0x0001b864     0x1ad4 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/stream_mgr.o
+                0x0001bb30                str_next_data_not_ready
+                0x0001bbd4                str_data_notify_received
+                0x0001bc04                stream_add_stream
+                0x0001bc74                stream_remove_streams
+                0x0001bcac                move_strl_to_actl
+                0x0001bd94                stream_generate_event
+                0x0001bde4                stream_clear_notify
+                0x0001be04                stream_show_vo
+                0x0001be70                stream_vo_is_visible
+                0x0001bed8                stream_vo_get_size
+                0x0001bf90                stream_vo_set_clip
+                0x0001c01c                stream_vo_get_clip
+                0x0001c0a0                stream_display_thumb
+                0x0001c124                stream_draw_frame
+                0x0001c190                stream_set_callback
+                0x0001c21c                stream_get_resume_time
+                0x0001c274                stream_get_seek_time
+                0x0001c558                stream_on_open
+                0x0001cc28                stream_wait_status
+                0x0001cc78                stream_get_window
+                0x0001cd14                stream_open
+                0x0001cd74                stream_play
+                0x0001cdd4                stream_pause
+                0x0001ce34                stream_resume
+                0x0001ce94                stream_stop
+                0x0001cef4                stream_seek
+                0x0001cf90                stream_close
+                0x0001cff0                stream_init
+                0x0001d2b4                stream_exit
+ .text          0x0001d338     0x29c8 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/mpegplayer.o
+                0x0001ef7c                plugin_start
+ .text          0x0001fd00     0x171c /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/mpeg_parser.o
+                0x0001fe80                str_initialize
+                0x0001feb0                str_end_of_stream
+                0x00020608                mpeg_parser_scan_start_code
+                0x0002071c                mpeg_parser_scan_pes
+                0x00020824                mpeg_parser_scan_scr
+                0x0002093c                mpeg_parser_scan_pts
+                0x00020dc4                parser_prepare_image
+                0x00020f80                parser_seek_time
+                0x00020fd8                parser_prepare_streaming
+                0x00021130                parser_init_stream
+                0x000213fc                parser_close_stream
+                0x0002140c                parser_init
+ .text          0x0002141c      0x414 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/mpeg_misc.o
+                0x0002141c                stream_scan_init
+                0x0002142c                stream_scan_normalize
+                0x00021454                stream_scan_offset
+                0x00021484                ts_to_hms
+                0x000214f0                hms_format
+                0x0002157c                muldiv_uint32
+                0x000215d0                list_is_empty
+                0x000215e0                list_is_member
+                0x00021618                list_remove_item
+                0x0002164c                list_add_item
+                0x00021688                list_clear_all
+                0x000216b0                list_enum_items
+                0x00021700                mpeg_sysevent_clear
+                0x00021718                mpeg_sysevent_set
+                0x00021730                mpeg_sysevent
+                0x00021744                mpeg_sysevent_callback
+                0x0002176c                mpeg_sysevent_handle
+                0x000217a4                mpeg_button_get
+ .text          0x00021830      0x188 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/plugin_crt0.o
+                0x00021854                plugin__start
+                0x000218d8                rb_atexit
+                0x00021910                exit
+                0x0002193c                _exit
+                0x00021958                exit_on_usb
+ .text          0x000219b8      0x830 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(frame.o)
+                0x00021c58                mad_header_init
+                0x00021c88                mad_header_decode
+                0x000220b0                mad_frame_decode
+                0x00022188                mad_frame_mute
+                0x000221c8                mad_frame_init
+ .text          0x000221e8      0xea8 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(layer12.o)
+                0x000222e0                mad_layer_I
+                0x000227ec                mad_layer_II
+ .text          0x00023090     0x2b48 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(layer3.o)
+                0x000253e0                mad_layer_III
+ .text          0x00025bd8      0x3bc /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(stream.o)
+                0x00025bd8                mad_stream_init
+                0x00025c28                mad_stream_buffer
+                0x00025c54                mad_stream_sync
+                0x00025ccc                mad_stream_errorstr
+ .text          0x00025f94     0x1084 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(synth.o)
+                0x00025f94                mad_synth_mute
+                0x00025fa8                mad_synth_init
+                0x00025fdc                mad_synth_frame
+ .text          0x00027018      0x964 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(imdct_l_arm.o)
+                0x00027018                III_imdct_l
+                0x00027018                _III_imdct_l
+ .text          0x0002797c      0x3dc /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(synth_full_arm.o)
+                0x0002797c                synth_full_odd_sbsample
+                0x00027ad4                synth_full_even_sbsample
+                0x00027c2c                III_aliasreduce
+                0x00027d00                III_overlap
+ .text          0x00027d58      0x2a0 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(bit.o)
+                0x00027d58                mad_bit_init
+                0x00027d70                mad_bit_length
+                0x00027d80                mad_bit_nextbyte
+                0x00027d94                mad_bit_skip
+                0x00027da4                mad_bit_read
+                0x00027e50                mad_bit_crc
+ .text          0x00027ff8        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(huffman.o)
+ .text          0x00027ff8        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(gcc-support.o)
+ .text.memcpy   0x00027ff8       0x2c /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(gcc-support.o)
+                0x00027ff8                memcpy
+ .text.memset   0x00028024       0x2c /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(gcc-support.o)
+                0x00028024                memset
+ .text.memmove  0x00028050       0x2c /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(gcc-support.o)
+                0x00028050                memmove
+ .text.memcmp   0x0002807c       0x2c /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(gcc-support.o)
+                0x0002807c                memcmp
+ .text          0x000280a8        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(helper.o)
+ .text.backlight_force_on
+                0x000280a8       0x30 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(helper.o)
+                0x000280a8                backlight_force_on
+ .text.backlight_ignore_timeout
+                0x000280d8       0x40 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(helper.o)
+                0x000280d8                backlight_ignore_timeout
+ .text.backlight_use_settings
+                0x00028118       0x34 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(helper.o)
+                0x00028118                backlight_use_settings
+ .text          0x0002814c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(configfile.o)
+ .text.get_cfg_filename
+                0x0002814c       0x3c /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(configfile.o)
+ .text.configfile_save
+                0x00028188      0x1e4 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(configfile.o)
+                0x00028188                configfile_save
+ .text.configfile_load
+                0x0002836c      0x2c0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(configfile.o)
+                0x0002836c                configfile_load
+ .text.configfile_get_value
+                0x0002862c      0x124 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(configfile.o)
+                0x0002862c                configfile_get_value
+ .text.configfile_update_entry
+                0x00028750      0x194 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(configfile.o)
+                0x00028750                configfile_update_entry
+ .text          0x000288e4        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/bitmaps/libpluginbitmaps.a(mpegplayer_status_icons_8x8x1.o)
+ .text          0x000288e4        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/bitmaps/libpluginbitmaps.a(mpegplayer_status_icons_12x12x1.o)
+ .text          0x000288e4        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/bitmaps/libpluginbitmaps.a(mpegplayer_status_icons_16x16x1.o)
+ .text          0x000288e4       0xc8 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivsi3.o)
+                0x000288e4                __udivsi3
+                0x000288e4                __aeabi_uidiv
+                0x0002898c                __aeabi_uidivmod
+ .text          0x000289ac       0xfc /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divsi3.o)
+                0x000289ac                __divsi3
+                0x000289ac                __aeabi_idiv
+                0x00028a88                __aeabi_idivmod
+ .text          0x00028aa8       0x3c /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_aeabi_uldivmod.o)
+                0x00028aa8                __aeabi_uldivmod
+ .text          0x00028ae4       0x10 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
+                0x00028ae4                __aeabi_idiv0
+                0x00028ae4                __aeabi_ldiv0
+ .text          0x00028af4       0x78 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(bpabi.o)
+                0x00028af4                __gnu_ldivmod_helper
+                0x00028b30                __gnu_uldivmod_helper
+ .text          0x00028b6c      0xf20 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(unwind-arm.o)
+                0x0002971c                __aeabi_unwind_cpp_pr0
+                0x00029724                __aeabi_unwind_cpp_pr1
+                0x0002972c                __aeabi_unwind_cpp_pr2
+                0x00028fb0                _Unwind_GetCFA
+                0x00028fb8                __gnu_Unwind_RaiseException
+                0x0002905c                __gnu_Unwind_ForcedUnwind
+                0x00029078                __gnu_Unwind_Resume
+                0x000290ec                __gnu_Unwind_Resume_or_Rethrow
+                0x0002910c                _Unwind_Complete
+                0x00029110                _Unwind_DeleteException
+                0x00029130                _Unwind_VRS_Get
+                0x000291b4                _Unwind_VRS_Set
+                0x0002923c                __gnu_Unwind_Backtrace
+                0x00029734                _Unwind_VRS_Pop
+ .text          0x00029a8c      0x1a8 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(libunwind.o)
+                0x00029a8c                __restore_core_regs
+                0x00029a8c                restore_core_regs
+                0x00029aa0                __gnu_Unwind_Restore_VFP
+                0x00029aa8                __gnu_Unwind_Save_VFP
+                0x00029ab0                __gnu_Unwind_Restore_VFP_D
+                0x00029ab8                __gnu_Unwind_Save_VFP_D
+                0x00029ac0                __gnu_Unwind_Restore_VFP_D_16_to_31
+                0x00029ac8                __gnu_Unwind_Save_VFP_D_16_to_31
+                0x00029ad0                __gnu_Unwind_Restore_WMMXD
+                0x00029b14                __gnu_Unwind_Save_WMMXD
+                0x00029b58                __gnu_Unwind_Restore_WMMXC
+                0x00029b6c                __gnu_Unwind_Save_WMMXC
+                0x00029b80                ___Unwind_RaiseException
+                0x00029b80                _Unwind_RaiseException
+                0x00029ba4                ___Unwind_Resume
+                0x00029ba4                _Unwind_Resume
+                0x00029bc8                ___Unwind_Resume_or_Rethrow
+                0x00029bc8                _Unwind_Resume_or_Rethrow
+                0x00029bec                ___Unwind_ForcedUnwind
+                0x00029bec                _Unwind_ForcedUnwind
+                0x00029c10                ___Unwind_Backtrace
+                0x00029c10                _Unwind_Backtrace
+ .text          0x00029c34      0x484 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(pr-support.o)
+                0x00029cc0                __gnu_unwind_execute
+                0x0002a03c                __gnu_unwind_frame
+                0x0002a07c                _Unwind_GetRegionStart
+                0x0002a08c                _Unwind_GetLanguageSpecificData
+                0x0002a0a8                _Unwind_GetDataRelBase
+                0x0002a0b0                _Unwind_GetTextRelBase
+ .text          0x0002a0b8      0x498 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divdi3.o)
+                0x0002a0b8                __divdi3
+ .text          0xffffffffffffffff      0x404 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivdi3.o)
+                0x0002a550                __udivdi3
+ .text          0x0002a954        0x0 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtend_so.o
+
+.rodata         0x0002a960     0xba40
+ .rodata        0x0002a960      0x218 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/libmpeg2/header.o
+                0x0002aaf8                default_mpeg2_scan_alt
+                0x0002ab38                default_mpeg2_scan_norm
+ .rodata        0x0002ab78      0xa20 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/libmpeg2/slice.o
+ ** merge strings
+                0x0002b598      0x6ed
+ .rodata        0x0002bc88       0x18 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/mpeg_settings.o
+ .rodata        0x0002bca0       0x40 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/mpeg_parser.o
+ .rodata        0x0002bce0      0x138 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(frame.o)
+ .rodata        0x0002be18      0x334 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(layer12.o)
+ .rodata        0x0002c160     0x8560 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(layer3.o)
+                0x000343e0                root_table
+                0x00034300                imdct_s
+                0x000342c0                window_s
+                0x000343a0                ca
+                0x000343c0                cs
+ .rodata        0x000346c0      0x880 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(synth.o)
+ .rodata        0x00034f40      0x200 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(bit.o)
+ .rodata        0x00035140     0x1120 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(huffman.o)
+ .rodata        0x00036260       0x28 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/bitmaps/libpluginbitmaps.a(mpegplayer_status_icons_8x8x1.o)
+                0x00036260                mpegplayer_status_icons_8x8x1
+ .rodata        0x00036288       0x78 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/bitmaps/libpluginbitmaps.a(mpegplayer_status_icons_12x12x1.o)
+                0x00036288                mpegplayer_status_icons_12x12x1
+ .rodata        0x00036300       0xa0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/bitmaps/libpluginbitmaps.a(mpegplayer_status_icons_16x16x1.o)
+                0x00036300                mpegplayer_status_icons_16x16x1
+
+.ARM.extab      0x000363a0       0x48
+ .ARM.extab     0x000363a0        0xc /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
+ .ARM.extab     0x000363ac        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(bpabi.o)
+ .ARM.extab     0x000363ac        0xc /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(unwind-arm.o)
+ .ARM.extab     0x000363b8       0x30 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(pr-support.o)
+ .ARM.extab     0x000363e8        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divdi3.o)
+ .ARM.extab     0x000363e8        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivdi3.o)
+
+.ARM.exidx      0x000363e8      0x128
+ .ARM.exidx     0x000363e8        0x8 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
+ .ARM.exidx     0xffffffffffffffff       0x10 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(bpabi.o)
+ .ARM.exidx     0xffffffffffffffff       0xd8 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(unwind-arm.o)
+ ** ARM cantunwind
+                0x000364a8        0x8
+ .ARM.exidx     0x000364b0       0x48 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(pr-support.o)
+ .ARM.exidx     0x000364f8        0x8 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divdi3.o)
+ .ARM.exidx     0x00036500        0x8 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivdi3.o)
+ ** ARM cantunwind
+                0x00036508        0x8
+
+.data.rel.ro.local
+                0x00037b1c      0x234
+ .data.rel.ro.local
+                0x00037b1c       0x24 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/libmpeg2/header.o
+ .data.rel.ro.local
+                0x00037b40       0x8c /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/mpeg_settings.o
+ .data.rel.ro.local
+                0x00037bcc       0x10 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/mpegplayer.o
+ .data.rel.ro.local
+                0x00037bdc       0x6c /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(layer3.o)
+ .data.rel.ro.local
+                0x00037c48      0x108 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(huffman.o)
+                0x00037c48                mad_huff_pair_table
+                0x00037d48                mad_huff_quad_table
+
+.fini_array     0x00037d50        0x8
+ .fini_array    0x00037d50        0x4 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtbegin_so.o
+ .fini_array    0x00037d54        0x4 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtend_so.o
+
+.data.rel.ro    0x00037d58      0x10c
+ .data.rel.ro   0x00037d58       0x24 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/libmpeg2/decode.o
+ .data.rel.ro   0x00037d7c       0x40 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/libmpeg2/motion_comp.o
+                0x00037d7c                mpeg2_mc
+ .data.rel.ro   0x00037dbc       0x3c /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/mpeg_settings.o
+ .data.rel.ro   0x00037df8       0x18 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/plugin_crt0.o
+                0x00037df8                __header
+ .data.rel.ro   0x00037e10        0xc /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(frame.o)
+ .data.rel.ro   0x00037e1c       0x18 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/bitmaps/libpluginbitmaps.a(mpegplayer_status_icons_8x8x1.o)
+                0x00037e1c                bm_mpegplayer_status_icons_8x8x1
+ .data.rel.ro   0x00037e34       0x18 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/bitmaps/libpluginbitmaps.a(mpegplayer_status_icons_12x12x1.o)
+                0x00037e34                bm_mpegplayer_status_icons_12x12x1
+ .data.rel.ro   0x00037e4c       0x18 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/bitmaps/libpluginbitmaps.a(mpegplayer_status_icons_16x16x1.o)
+                0x00037e4c                bm_mpegplayer_status_icons_16x16x1
+
+.init_array     0x00037e64        0x4
+ .init_array    0x00037e64        0x4 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtend_so.o
+
+.dynamic        0x00037e68       0xe8
+ ** dynamic     0x00037e68       0xe8
+
+.got            0x00037f50       0xb0
+ ** GOT         0x00037f50       0x80
+ ** GOT PLT     0x00037fd0       0x30
+
+.data           0x00038000      0x180
+ .data          0x00038000        0x4 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtbegin_so.o
+                0x00038000                __dso_handle
+ .data          0x00038004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/libmpeg2/decode.o
+ .data          0x00038004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/libmpeg2/header.o
+ .data          0x00038004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/libmpeg2/idct.o
+ .data          0x00038004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/libmpeg2/motion_comp.o
+ .data          0x00038004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/libmpeg2/slice.o
+ .data          0x00038004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/libmpeg2/idct_arm.o
+ .data          0x00038004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/libmpeg2/motion_comp_arm_c.o
+ .data          0x00038004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/libmpeg2/motion_comp_arm_s.o
+ .data          0x00038004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/alloc.o
+ .data          0x00038004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/video_out_rockbox.o
+ .data          0x00038004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/video_thread.o
+ .data          0x00038004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/pcm_output.o
+ .data          0x00038004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/audio_thread.o
+ .data          0x00038004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/disk_buf.o
+ .data          0x00038004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/mpeg_settings.o
+ .data.rel.local
+                0x00038004       0x58 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/mpeg_settings.o
+ .data.rel      0x0003805c      0x120 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/mpeg_settings.o
+ .data          0x0003817c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/stream_mgr.o
+ .data          0x0003817c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/mpegplayer.o
+ .data          0x0003817c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/mpeg_parser.o
+ .data          0x0003817c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/mpeg_misc.o
+ .data          0x0003817c        0x4 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/plugin_crt0.o
+                0x0003817c                rb
+ .data          0x00038180        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(frame.o)
+ .data          0x00038180        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(layer12.o)
+ .data          0x00038180        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(layer3.o)
+ .data          0x00038180        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(stream.o)
+ .data          0x00038180        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(synth.o)
+ .data          0x00038180        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(imdct_l_arm.o)
+ .data          0x00038180        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(synth_full_arm.o)
+ .data          0x00038180        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(bit.o)
+ .data          0x00038180        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(huffman.o)
+ .data          0x00038180        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(gcc-support.o)
+ .data          0x00038180        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(helper.o)
+ .data          0x00038180        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(configfile.o)
+ .data          0x00038180        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/bitmaps/libpluginbitmaps.a(mpegplayer_status_icons_8x8x1.o)
+ .data          0x00038180        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/bitmaps/libpluginbitmaps.a(mpegplayer_status_icons_12x12x1.o)
+ .data          0x00038180        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/bitmaps/libpluginbitmaps.a(mpegplayer_status_icons_16x16x1.o)
+ .data          0x00038180        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivsi3.o)
+ .data          0x00038180        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divsi3.o)
+ .data          0x00038180        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_aeabi_uldivmod.o)
+ .data          0x00038180        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
+ .data          0x00038180        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(bpabi.o)
+ .data          0x00038180        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(unwind-arm.o)
+ .data          0x00038180        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(libunwind.o)
+ .data          0x00038180        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(pr-support.o)
+ .data          0x00038180        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divdi3.o)
+ .data          0x00038180        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivdi3.o)
+ .data          0x00038180        0x0 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtend_so.o
+
+.bss            0x00038180     0xd87c
+ .bss           0x00038180        0x0 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtbegin_so.o
+ .bss           0x00038180       0x80 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/libmpeg2/decode.o
+ .bss           0x00038200        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/libmpeg2/header.o
+ .bss           0x00038200        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/libmpeg2/idct.o
+ .bss           0x00038200        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/libmpeg2/motion_comp.o
+ .bss           0x00038200        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/libmpeg2/slice.o
+ .bss           0x00038200        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/libmpeg2/idct_arm.o
+ .bss           0x00038200        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/libmpeg2/motion_comp_arm_c.o
+ .bss           0x00038200        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/libmpeg2/motion_comp_arm_s.o
+ .bss           0x00038200       0x1c /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/alloc.o
+ .bss           0x0003821c       0x50 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/video_out_rockbox.o
+ .bss           0x0003826c     0x10f0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/video_thread.o
+ .bss           0x0003935c      0x438 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/pcm_output.o
+ .bss           0x000397a0     0x5260 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/audio_thread.o
+ .bss           0x0003ea00     0x2120 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/disk_buf.o
+ .bss           0x00040b20       0x40 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/mpeg_settings.o
+ .bss           0x00040b60     0x20e8 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/stream_mgr.o
+ .bss           0x00042c48      0x2dc /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/mpegplayer.o
+ .bss           0x00042f24        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/mpeg_parser.o
+ .bss           0x00042f24        0x4 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/mpegplayer/mpeg_misc.o
+ .bss           0x00042f28      0x104 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/plugin_crt0.o
+ .bss           0x0004302c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(frame.o)
+ .bss           0x0004302c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(layer12.o)
+ .bss           0x0004302c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(layer3.o)
+ .bss           0x0004302c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(stream.o)
+ .bss           0x0004302c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(synth.o)
+ .bss           0x0004302c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(imdct_l_arm.o)
+ .bss           0x0004302c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(synth_full_arm.o)
+ .bss           0x0004302c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(bit.o)
+ .bss           0x0004302c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/rbcodec/codecs/libmad-mpeg.a(huffman.o)
+ .bss           0x0004302c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(gcc-support.o)
+ .bss           0x0004302c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(helper.o)
+ .bss           0x0004302c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(configfile.o)
+ .bss           0x0004302c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/bitmaps/libpluginbitmaps.a(mpegplayer_status_icons_8x8x1.o)
+ .bss           0x0004302c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/bitmaps/libpluginbitmaps.a(mpegplayer_status_icons_12x12x1.o)
+ .bss           0x0004302c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/bitmaps/libpluginbitmaps.a(mpegplayer_status_icons_16x16x1.o)
+ .bss           0x0004302c        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivsi3.o)
+ .bss           0x0004302c        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divsi3.o)
+ .bss           0x0004302c        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_aeabi_uldivmod.o)
+ .bss           0x0004302c        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
+ .bss           0x0004302c        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(bpabi.o)
+ .bss           0x0004302c        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(unwind-arm.o)
+ .bss           0x0004302c        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(libunwind.o)
+ .bss           0x0004302c        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(pr-support.o)
+ .bss           0x0004302c        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divdi3.o)
+ .bss           0x0004302c        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivdi3.o)
+ .bss           0x0004302c        0x0 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtend_so.o
+ ** common      0x0004302c     0x29d0

@@ -1,0 +1,100 @@
+
+Allocating common symbols
+Common symbol       size              file
+
+path                0x208             /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/search.o
+resultfile          0x208             /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/search.o
+
+Discarded input sections
+
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtbegin_so.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/search.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/plugin_crt0.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtend_so.o
+
+Memory map
+
+ ** file header
+                0x00000000       0x34
+ ** segment headers
+                0x00000034       0xe0
+
+.interp         0x00000114       0x13
+ ** fill        0x00000114       0x13
+
+.dynsym         0x00000128      0x130
+ ** dynsym      0x00000128      0x130
+
+.dynstr         0x00000258       0xb5
+ ** string table
+                0x00000258       0xb5
+
+.hash           0x00000310       0x98
+ ** hash        0x00000310       0x98
+
+.rel.dyn        0x000003a8       0x30
+ ** dynamic relocs
+                0x000003a8       0x30
+
+.rel.plt        0x000003d8       0x28
+ ** dynamic relocs
+                0x000003d8       0x28
+
+.plt            0x00000400       0x50
+ ** PLT         0x00000400       0x50
+
+.text           0x00000450      0x838
+ .text.exit     0x00000450       0x10 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtbegin_so.o
+                0x00000450                __on_dlclose
+ .text          0x00000460       0x14 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtbegin_so.o
+                0x00000460                atexit
+ .text          0x00000474      0x68c /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/search.o
+                0x00000714                plugin_start
+ .text          0xffffffffffffffff      0x188 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/plugin_crt0.o
+                0x00000b24                plugin__start
+                0x00000ba8                rb_atexit
+                0x00000be0                exit
+                0x00000c0c                _exit
+                0x00000c28                exit_on_usb
+ .text          0x00000c88        0x0 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtend_so.o
+
+.rodata         0x00000c88       0x7d
+ ** merge strings
+                0x00000c88       0x7d
+
+.fini_array     0x00001ed0        0x8
+ .fini_array    0x00001ed0        0x4 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtbegin_so.o
+ .fini_array    0x00001ed4        0x4 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtend_so.o
+
+.data.rel.ro    0x00001ed8       0x18
+ .data.rel.ro   0x00001ed8       0x18 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/plugin_crt0.o
+                0x00001ed8                __header
+
+.init_array     0x00001ef0        0x4
+ .init_array    0x00001ef0        0x4 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtend_so.o
+
+.dynamic        0x00001ef4       0xe0
+ ** dynamic     0x00001ef4       0xe0
+
+.got            0x00001fd4       0x2c
+ ** GOT         0x00001fd4        0xc
+ ** GOT PLT     0x00001fe0       0x20
+
+.data           0x00002000        0x8
+ .data          0x00002000        0x4 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtbegin_so.o
+                0x00002000                __dso_handle
+ .data          0x00002004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/search.o
+ .data          0x00002004        0x4 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/plugin_crt0.o
+                0x00002004                rb
+ .data          0x00002008        0x0 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtend_so.o
+
+.bss            0x00002008     0x4570
+ .bss           0x00002008        0x0 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtbegin_so.o
+ .bss           0x00002008     0x405c /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/search.o
+ .bss           0x00006064      0x104 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/plugin_crt0.o
+ .bss           0x00006168        0x0 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtend_so.o
+ ** common      0x00006168      0x410

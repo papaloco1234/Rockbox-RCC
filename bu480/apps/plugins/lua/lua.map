@@ -1,0 +1,879 @@
+Archive member included because of file (symbol)
+
+/home/ubuntu/Desktop/RockboxRCC/bu480/lib/libtlsf.a(tlsf.o)
+                              /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/rocklib.o (tlsf_malloc)
+/home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(gcc-support.o)
+                              /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lauxlib.o (memcpy)
+/home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(pluginlib_actions.o)
+                              /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/rocklib.o (pluginlib_getaction)
+/home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(helper.o)
+                              /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/rocklib.o (backlight_force_on)
+/home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(strncpy.o)
+                              /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lobject.o (strncpy)
+/home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivsi3.o)
+                              /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lmem.o (__aeabi_uidiv)
+/home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divsi3.o)
+                              /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lcode.o (__aeabi_idiv)
+/home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_arm_addsubdf3.o)
+                              /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lmathlib.o (__aeabi_i2d)
+/home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_arm_muldivdf3.o)
+                              /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lmathlib.o (__aeabi_dmul)
+/home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_arm_fixdfsi.o)
+                              /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lmathlib.o (__aeabi_d2iz)
+/home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
+                              /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivsi3.o) (__aeabi_idiv0)
+/home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(unwind-arm.o)
+                              /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o) (__aeabi_unwind_cpp_pr1)
+/home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(libunwind.o)
+                              /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(unwind-arm.o) (restore_core_regs)
+/home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(pr-support.o)
+                              /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(unwind-arm.o) (__gnu_unwind_execute)
+
+Discarded input sections
+
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtbegin_so.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lauxlib.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lapi.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lbaselib.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lbitlib.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lcode.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/ldebug.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/ldo.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/ldump.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lfunc.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lgc.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/liolib.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/llex.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lmathlib.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lmem.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/loadlib.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lobject.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lopcodes.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/loslib.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lparser.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lstate.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lstring.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lstrlib.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/ltable.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/ltablib.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/ltm.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lundump.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lvm.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lzio.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/rockaux.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/rocklib.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/tlsf_helper.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/fscanf.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/gmtime.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/strcspn.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/strftime.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/strncat.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/strpbrk.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/strtoul.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/strtol.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/strstr.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/rocklua.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/luadir.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/rocklib_aux.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/plugin_crt0.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/libtlsf.a(tlsf.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(gcc-support.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(pluginlib_actions.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(helper.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(strncpy.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivsi3.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divsi3.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_arm_addsubdf3.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_arm_muldivdf3.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_arm_fixdfsi.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(unwind-arm.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(libunwind.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(pr-support.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtend_so.o
+
+Memory map
+
+ ** file header
+                0x00000000       0x34
+ ** segment headers
+                0x00000034      0x100
+
+.interp         0x00000134       0x13
+ ** fill        0x00000134       0x13
+
+.dynsym         0x00000148     0x10e0
+ ** dynsym      0x00000148     0x10e0
+
+.dynstr         0x00001228      0xef9
+ ** string table
+                0x00001228      0xef9
+
+.hash           0x00002124      0x85c
+ ** hash        0x00002124      0x85c
+
+.rel.dyn        0x00002980     0x1620
+ ** dynamic relocs
+                0x00002980     0x1620
+
+.rel.plt        0x00003fa0       0xa0
+ ** dynamic relocs
+                0x00003fa0       0xa0
+
+.plt            0x00004040      0x104
+ ** PLT         0x00004040      0x104
+
+.text           0x00004144    0x207d8
+ .text.exit     0x00004144       0x10 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtbegin_so.o
+                0x00004144                __on_dlclose
+ .text          0x00004154       0x14 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtbegin_so.o
+                0x00004154                atexit
+ .text          0x00004168     0x11f8 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lauxlib.o
+                0x00004340                luaL_where
+                0x000043bc                luaL_error
+                0x00004410                luaL_argerror
+                0x00004518                luaL_typerror
+                0x00004590                luaL_newmetatable
+                0x0000460c                luaL_checkudata
+                0x00004694                luaL_checkstack
+                0x000046c8                luaL_checktype
+                0x000046f8                luaL_checkany
+                0x0000472c                luaL_checklstring
+                0x0000475c                luaL_optlstring
+                0x000047e4                luaL_checkoption
+                0x0000489c                luaL_checknumber
+                0x000048e0                luaL_optnumber
+                0x00004914                luaL_checkinteger
+                0x00004958                luaL_optinteger
+                0x0000498c                luaL_checkboolean
+                0x000049d0                luaL_optboolean
+                0x00004a04                luaL_getmetafield
+                0x00004a70                luaL_callmeta
+                0x00004ae0                luaL_findtable
+                0x00004c3c                luaI_openlib
+                0x00004dc4                luaL_register
+                0x00004dd4                luaL_prepbuffer
+                0x00004df8                luaL_addlstring
+                0x00004e4c                luaL_addstring
+                0x00004e94                luaL_pushresult
+                0x00004eb8                luaL_addvalue
+                0x00004f54                luaL_buffinit
+                0x00004f6c                luaL_gsub
+                0x00005028                luaL_ref
+                0x00005100                luaL_unref
+                0x00005178                luaL_loadfile
+                0x000052ac                luaL_loadbuffer
+                0x000052d8                luaL_loadstring
+                0x00005324                luaL_newstate
+ .text          0x00005360     0x192c /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lapi.o
+                0x000055c8                luaA_pushobject
+                0x000055ec                lua_checkstack
+                0x00005678                lua_xmove
+                0x000056d4                lua_setlevel
+                0x000056e0                lua_atpanic
+                0x000056f0                lua_newthread
+                0x00005738                lua_gettop
+                0x0000574c                lua_settop
+                0x000057ac                lua_remove
+                0x0000580c                lua_insert
+                0x0000586c                lua_replace
+                0x0000598c                lua_pushvalue
+                0x000059bc                lua_type
+                0x000059e0                lua_typename
+                0x00005a0c                lua_iscfunction
+                0x00005a3c                lua_isnumber
+                0x00005a74                lua_isstring
+                0x00005a90                lua_isuserdata
+                0x00005ab0                lua_rawequal
+                0x00005b18                lua_equal
+                0x00005ba4                lua_lessthan
+                0x00005c10                lua_tonumber
+                0x00005c4c                lua_tointeger
+                0x00005c88                lua_toboolean
+                0x00005cc4                lua_tolstring
+                0x00005d58                lua_objlen
+                0x00005de4                lua_tocfunction
+                0x00005e20                lua_touserdata
+                0x00005e58                lua_tothread
+                0x00005e74                lua_topointer
+                0x00005ee4                lua_pushnil
+                0x00005f00                lua_pushnumber
+                0x00005f20                lua_pushinteger
+                0x00005f40                lua_pushlstring
+                0x00005f98                lua_pushstring
+                0x00005fec                lua_pushvfstring
+                0x00006028                lua_pushfstring
+                0x00006074                lua_pushcclosure
+                0x0000612c                lua_pushboolean
+                0x00006154                lua_pushlightuserdata
+                0x00006174                lua_pushthread
+                0x000061a8                lua_gettable
+                0x000061d0                lua_getfield
+                0x00006254                lua_rawget
+                0x00006288                lua_rawgeti
+                0x000062c8                lua_createtable
+                0x00006320                lua_getmetatable
+                0x0000639c                lua_getfenv
+                0x00006434                lua_settable
+                0x00006468                lua_setfield
+                0x000064f0                lua_rawset
+                0x0000656c                lua_rawseti
+                0x000065ec                lua_setmetatable
+                0x000066b4                lua_setfenv
+                0x00006774                lua_call
+                0x000067b4                lua_pcall
+                0x00006848                lua_cpcall
+                0x00006888                lua_load
+                0x000068dc                lua_dump
+                0x00006934                lua_status
+                0x0000693c                lua_gc
+                0x00006a30                lua_error
+                0x00006a40                lua_next
+                0x00006a78                lua_concat
+                0x00006b18                lua_getallocf
+                0x00006b34                lua_setallocf
+                0x00006b48                lua_newuserdata
+                0x00006ba8                lua_getupvalue
+                0x00006bfc                lua_setupvalue
+ .text          0x00006c8c     0x1460 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lbaselib.o
+                0x00007f34                luaopen_base
+ .text          0x000080ec      0x2b8 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lbitlib.o
+                0x00008354                luaopen_bit
+ .text          0x000083a4     0x1894 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lcode.o
+                0x000088b0                luaK_getlabel
+                0x000088c0                luaK_concat
+                0x00008914                luaK_patchtohere
+                0x00008930                luaK_patchlist
+                0x00008960                luaK_checkstack
+                0x000089a8                luaK_reserveregs
+                0x000089c8                luaK_stringK
+                0x000089f0                luaK_numberK
+                0x00008a18                luaK_setreturns
+                0x00008abc                luaK_setoneret
+                0x00008b24                luaK_fixline
+                0x00008b3c                luaK_codeABC
+                0x00008b60                luaK_nil
+                0x00008c18                luaK_ret
+                0x00008c44                luaK_codeABx
+                0x00008c60                luaK_jump
+                0x00008cac                luaK_dischargevars
+                0x00009008                luaK_exp2nextreg
+                0x00009048                luaK_exp2anyreg
+                0x000090b4                luaK_exp2val
+                0x000090d8                luaK_exp2RK
+                0x000091cc                luaK_indexed
+                0x000093fc                luaK_posfix
+                0x00009628                luaK_self
+                0x0000978c                luaK_goiftrue
+                0x00009838                luaK_infix
+                0x0000996c                luaK_prefix
+                0x00009ae0                luaK_storevar
+                0x00009bb0                luaK_setlist
+ .text          0x00009c38     0x15a0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/ldebug.o
+                0x00009df4                lua_sethook
+                0x00009e2c                lua_gethook
+                0x00009e34                lua_gethookmask
+                0x00009e3c                lua_gethookcount
+                0x00009e44                lua_getstack
+                0x00009eec                lua_getlocal
+                0x00009f34                lua_setlocal
+                0x00009f90                luaG_checkopenop
+                0x0000a958                lua_getinfo
+                0x0000ae94                luaG_checkcode
+                0x0000aeb0                luaG_errormsg
+                0x0000af54                luaG_runerror
+                0x0000b024                luaG_typeerror
+                0x0000b100                luaG_concaterror
+                0x0000b128                luaG_aritherror
+                0x0000b174                luaG_ordererror
+ .text          0x0000b1d8      0xeb8 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/ldo.o
+                0x0000b1d8                luaD_seterrorobj
+                0x0000b26c                luaD_rawrunprotected
+                0x0000b2d0                luaD_reallocstack
+                0x0000b3ec                luaD_reallocCI
+                0x0000b4d4                luaD_throw
+                0x0000b5d8                luaD_growstack
+                0x0000b77c                luaD_callhook
+                0x0000b858                luaD_poscall
+                0x0000b9a4                luaD_precall
+                0x0000bdc0                luaD_call
+                0x0000be68                lua_resume
+                0x0000bf48                lua_yield
+                0x0000bf90                luaD_pcall
+                0x0000c024                luaD_protectedparser
+ .text          0x0000c090      0x3e4 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/ldump.o
+                0x0000c414                luaU_dump
+ .text          0x0000c474      0x484 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lfunc.o
+                0x0000c474                luaF_newCclosure
+                0x0000c4c4                luaF_newLclosure
+                0x0000c53c                luaF_newupval
+                0x0000c580                luaF_findupval
+                0x0000c638                luaF_freeupval
+                0x0000c674                luaF_close
+                0x0000c708                luaF_newproto
+                0x0000c78c                luaF_freeproto
+                0x0000c840                luaF_freeclosure
+                0x0000c868                luaF_getlocalname
+ .text          0x0000c8f8     0x12b0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lgc.o
+                0x0000d428                luaC_separateudata
+                0x0000d8dc                luaC_callGCTM
+                0x0000d910                luaC_freeall
+                0x0000d96c                luaC_step
+                0x0000da0c                luaC_fullgc
+                0x0000dab4                luaC_barrierf
+                0x0000daf0                luaC_barrierback
+                0x0000db10                luaC_link
+                0x0000db34                luaC_linkupval
+ .text          0x0000dba8      0xf04 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/liolib.o
+                0x0000ea18                luaopen_io
+ .text          0x0000eaac     0x13c8 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/llex.o
+                0x0000ead8                luaX_init
+                0x0000eb50                luaX_token2str
+                0x0000ebc8                luaX_lexerror
+                0x0000effc                luaX_syntaxerror
+                0x0000f0d0                luaX_newstring
+                0x0000fd6c                luaX_setinput
+                0x0000fe0c                luaX_next
+                0x0000fe5c                luaX_lookahead
+ .text          0x0000fe74      0x388 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lmathlib.o
+                0x000101d4                luaopen_math
+ .text          0x000101fc      0x118 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lmem.o
+                0x000101fc                luaM_toobig
+                0x00010218                luaM_realloc_
+                0x00010278                luaM_growaux_
+ .text          0x00010314      0xb0c /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/loadlib.o
+                0x00010c60                luaopen_package
+ .text          0x00010e20      0x6f4 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lobject.o
+                0x00010ea4                luaO_int2fb
+                0x00010ee0                luaO_fb2int
+                0x00010efc                luaO_log2
+                0x00010f38                luaO_rawequalObj
+                0x00010fd4                luaO_str2d
+                0x00011078                luaO_pushvfstring
+                0x0001133c                luaO_pushfstring
+                0x00011368                luaO_chunkid
+ .text          0x00011514        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lopcodes.o
+ .text          0x00011514      0x688 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/loslib.o
+                0x00011b74                luaopen_os
+ .text          0x00011b9c     0x2a5c /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lparser.o
+                0x00014534                luaY_parser
+ .text          0x000145f8      0x4f0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lstate.o
+                0x00014804                luaE_newthread
+                0x000148c8                luaE_freethread
+                0x00014904                lua_newstate
+                0x00014a6c                lua_close
+ .text          0x00014ae8      0x300 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lstring.o
+                0x00014ae8                luaS_resize
+                0x00014bcc                luaS_newlstr
+                0x00014d70                luaS_newudata
+ .text          0x00014de8     0x1fb4 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lstrlib.o
+                0x00016cf4                luaopen_string
+ .text          0x00016d9c      0xdd4 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/ltable.o
+                0x00017040                luaH_next
+                0x00017248                luaH_new
+                0x000172d0                luaH_free
+                0x00017338                luaH_getnum
+                0x000173d0                luaH_getstr
+                0x00017420                luaH_get
+                0x000174b4                luaH_setnum
+                0x00017998                luaH_set
+                0x00017680                luaH_resizearray
+                0x00017a04                luaH_setstr
+                0x00017a5c                luaH_getn
+ .text          0x00017b70      0x9f0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/ltablib.o
+                0x00018538                luaopen_table
+ .text          0x00018560      0x12c /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/ltm.o
+                0x00018560                luaT_init
+                0x000185e8                luaT_gettm
+                0x0001861c                luaT_gettmbyobj
+ .text          0x0001868c      0x72c /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lundump.o
+                0x00018ca4                luaU_header
+                0x00018cf4                luaU_undump
+ .text          0x00018db8     0x2054 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lvm.o
+                0x000190f0                luaV_tonumber
+                0x00019288                luaV_tostring
+                0x00019320                luaV_gettable
+                0x00019440                luaV_settable
+                0x00019614                luaV_lessthan
+                0x000196a4                luaV_equalval
+                0x00019804                luaV_concat
+                0x00019a50                luaV_execute
+ .text          0x0001ae0c      0x198 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lzio.o
+                0x0001ae0c                luaZ_fill
+                0x0001ae6c                luaZ_lookahead
+                0x0001aeb0                luaZ_init
+                0x0001aecc                luaZ_read
+                0x0001af4c                luaZ_openspace
+ .text          0x0001afa4      0x188 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/rockaux.o
+                0x0001afa4                strerror
+                0x0001afac                rb_pow
+                0x0001b020                strcoll
+                0x0001b04c                get_current_path
+ .text          0x0001b12c     0x18f0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/rocklib.o
+                0x0001c610                luaopen_rock
+ .text          0x0001ca1c       0xb8 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/tlsf_helper.o
+                0x0001ca1c                get_new_area
+ .text          0x0001cad4      0x620 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/fscanf.o
+                0x0001cd00                sim_fscanf
+ .text          0x0001d0f4      0x26c /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/gmtime.o
+                0x0001d0f4                gmtime
+ .text          0x0001d360       0xc4 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/strcspn.o
+                0x0001d360                strcspn
+ .text          0x0001d424      0x634 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/strftime.o
+                0x0001d45c                strftime
+ .text          0x0001da58      0x15c /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/strncat.o
+                0x0001da58                strncat
+ .text          0x0001dbb4       0xac /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/strpbrk.o
+                0x0001dbb4                strpbrk
+ .text          0x0001dc60      0x1d4 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/strtoul.o
+                0x0001dc60                strtoul
+ .text          0x0001de34       0xd8 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/strtol.o
+                0x0001de34                strtol
+ .text          0x0001df0c       0xd8 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/strstr.o
+                0x0001df0c                strstr
+ .text          0x0001dfe4      0x4d0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/rocklua.o
+                0x0001e320                plugin_start
+ .text          0x0001e4b4      0x3c4 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/luadir.o
+                0x0001e764                luaopen_luadir
+ .text          0x0001e878     0x299c /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/rocklib_aux.o
+ .text          0x00021214      0x188 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/plugin_crt0.o
+                0x00021238                plugin__start
+                0x000212bc                rb_atexit
+                0x000212f4                exit
+                0x00021320                _exit
+                0x0002133c                exit_on_usb
+ .text          0x0002139c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/libtlsf.a(tlsf.o)
+ .text.get_new_area
+                0x0002139c        0x8 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/libtlsf.a(tlsf.o)
+ .text.get_used_size
+                0x000213a4        0x8 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/libtlsf.a(tlsf.o)
+                0x000213a4                get_used_size
+ .text.get_max_size
+                0x000213ac        0x8 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/libtlsf.a(tlsf.o)
+                0x000213ac                get_max_size
+ .text.destroy_memory_pool
+                0x000213b4        0xc /home/ubuntu/Desktop/RockboxRCC/bu480/lib/libtlsf.a(tlsf.o)
+                0x000213b4                destroy_memory_pool
+ .text.free_ex  0x000213c0      0x364 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/libtlsf.a(tlsf.o)
+                0x000213c0                free_ex
+ .text.init_memory_pool
+                0x00021724      0x128 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/libtlsf.a(tlsf.o)
+                0x00021724                init_memory_pool
+ .text.add_new_area
+                0x0002184c      0x198 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/libtlsf.a(tlsf.o)
+                0x0002184c                add_new_area
+ .text.malloc_ex
+                0x000219e4      0x5c8 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/libtlsf.a(tlsf.o)
+                0x000219e4                malloc_ex
+ .text.tlsf_malloc
+                0x00021fac       0x6c /home/ubuntu/Desktop/RockboxRCC/bu480/lib/libtlsf.a(tlsf.o)
+                0x00021fac                tlsf_malloc
+ .text.tlsf_free
+                0x00022018       0x1c /home/ubuntu/Desktop/RockboxRCC/bu480/lib/libtlsf.a(tlsf.o)
+                0x00022018                tlsf_free
+ .text.realloc_ex
+                0x00022034      0x588 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/libtlsf.a(tlsf.o)
+                0x00022034                realloc_ex
+ .text.tlsf_realloc
+                0x000225bc       0x30 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/libtlsf.a(tlsf.o)
+                0x000225bc                tlsf_realloc
+ .text.calloc_ex
+                0x000225ec       0x54 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/libtlsf.a(tlsf.o)
+                0x000225ec                calloc_ex
+ .text.tlsf_calloc
+                0x00022640       0x1c /home/ubuntu/Desktop/RockboxRCC/bu480/lib/libtlsf.a(tlsf.o)
+                0x00022640                tlsf_calloc
+ .text          0x0002265c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(gcc-support.o)
+ .text.memcpy   0x0002265c       0x2c /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(gcc-support.o)
+                0x0002265c                memcpy
+ .text.memset   0x00022688       0x2c /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(gcc-support.o)
+                0x00022688                memset
+ .text.memmove  0x000226b4       0x2c /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(gcc-support.o)
+                0x000226b4                memmove
+ .text.memcmp   0x000226e0       0x2c /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(gcc-support.o)
+                0x000226e0                memcmp
+ .text          0x0002270c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(pluginlib_actions.o)
+ .text.get_context_map
+                0x0002270c       0x5c /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(pluginlib_actions.o)
+ .text.pluginlib_getaction
+                0x00022768       0x78 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(pluginlib_actions.o)
+                0x00022768                pluginlib_getaction
+ .text          0x000227e0        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(helper.o)
+ .text.backlight_force_on
+                0x000227e0       0x30 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(helper.o)
+                0x000227e0                backlight_force_on
+ .text.backlight_ignore_timeout
+                0x00022810       0x40 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(helper.o)
+                0x00022810                backlight_ignore_timeout
+ .text.backlight_use_settings
+                0x00022850       0x34 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(helper.o)
+                0x00022850                backlight_use_settings
+ .text          0x00022884        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(strncpy.o)
+ .text.strncpy  0x00022884       0xf4 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(strncpy.o)
+                0x00022884                strncpy
+ .text          0x00022978       0xc8 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivsi3.o)
+                0x00022978                __udivsi3
+                0x00022978                __aeabi_uidiv
+                0x00022a20                __aeabi_uidivmod
+ .text          0x00022a40       0xfc /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divsi3.o)
+                0x00022a40                __divsi3
+                0x00022a40                __aeabi_idiv
+                0x00022b1c                __aeabi_idivmod
+ .text          0x00022b3c      0x3b8 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_arm_addsubdf3.o)
+                0x00022b3c                __aeabi_drsub
+                0x00022b44                __subdf3
+                0x00022b44                __aeabi_dsub
+                0x00022b48                __adddf3
+                0x00022b48                __aeabi_dadd
+                0x00022df4                __floatunsidf
+                0x00022df4                __aeabi_ui2d
+                0x00022e18                __floatsidf
+                0x00022e18                __aeabi_i2d
+                0x00022e40                __extendsfdf2
+                0x00022e40                __aeabi_f2d
+                0x00022e80                __floatundidf
+                0x00022e80                __aeabi_ul2d
+                0x00022e94                __floatdidf
+                0x00022e94                __aeabi_l2d
+ .text          0x00022ef4      0x470 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_arm_muldivdf3.o)
+                0x00022ef4                __muldf3
+                0x00022ef4                __aeabi_dmul
+                0x00023160                __divdf3
+                0x00023160                __aeabi_ddiv
+ .text          0x00023364       0x5c /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_arm_fixdfsi.o)
+                0x00023364                __fixdfsi
+                0x00023364                __aeabi_d2iz
+ .text          0x000233c0       0x10 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
+                0x000233c0                __aeabi_idiv0
+                0x000233c0                __aeabi_ldiv0
+ .text          0x000233d0      0xf20 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(unwind-arm.o)
+                0x00023f80                __aeabi_unwind_cpp_pr0
+                0x00023f88                __aeabi_unwind_cpp_pr1
+                0x00023f90                __aeabi_unwind_cpp_pr2
+                0x00023814                _Unwind_GetCFA
+                0x0002381c                __gnu_Unwind_RaiseException
+                0x000238c0                __gnu_Unwind_ForcedUnwind
+                0x000238dc                __gnu_Unwind_Resume
+                0x00023950                __gnu_Unwind_Resume_or_Rethrow
+                0x00023970                _Unwind_Complete
+                0x00023974                _Unwind_DeleteException
+                0x00023994                _Unwind_VRS_Get
+                0x00023a18                _Unwind_VRS_Set
+                0x00023aa0                __gnu_Unwind_Backtrace
+                0x00023f98                _Unwind_VRS_Pop
+ .text          0x000242f0      0x1a8 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(libunwind.o)
+                0x000242f0                __restore_core_regs
+                0x000242f0                restore_core_regs
+                0x00024304                __gnu_Unwind_Restore_VFP
+                0x0002430c                __gnu_Unwind_Save_VFP
+                0x00024314                __gnu_Unwind_Restore_VFP_D
+                0x0002431c                __gnu_Unwind_Save_VFP_D
+                0x00024324                __gnu_Unwind_Restore_VFP_D_16_to_31
+                0x0002432c                __gnu_Unwind_Save_VFP_D_16_to_31
+                0x00024334                __gnu_Unwind_Restore_WMMXD
+                0x00024378                __gnu_Unwind_Save_WMMXD
+                0x000243bc                __gnu_Unwind_Restore_WMMXC
+                0x000243d0                __gnu_Unwind_Save_WMMXC
+                0x000243e4                ___Unwind_RaiseException
+                0x000243e4                _Unwind_RaiseException
+                0x00024408                ___Unwind_Resume
+                0x00024408                _Unwind_Resume
+                0x0002442c                ___Unwind_Resume_or_Rethrow
+                0x0002442c                _Unwind_Resume_or_Rethrow
+                0x00024450                ___Unwind_ForcedUnwind
+                0x00024450                _Unwind_ForcedUnwind
+                0x00024474                ___Unwind_Backtrace
+                0x00024474                _Unwind_Backtrace
+ .text          0xffffffffffffffff      0x484 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(pr-support.o)
+                0x00024524                __gnu_unwind_execute
+                0x000248a0                __gnu_unwind_frame
+                0x000248e0                _Unwind_GetRegionStart
+                0x000248f0                _Unwind_GetLanguageSpecificData
+                0x0002490c                _Unwind_GetDataRelBase
+                0x00024914                _Unwind_GetTextRelBase
+ .text          0x0002491c        0x0 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtend_so.o
+
+.rodata         0x00024920     0x3344
+ ** merge strings
+                0x00024920     0x2b89
+ .rodata        0x000274b0       0x90 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lapi.o
+                0x000274b0                lua_ident
+ .rodata        0x00027540       0x1c /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lbaselib.o
+ .rodata        0x0002755c        0xc /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/liolib.o
+ .rodata        0x00027568        0x4 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/loadlib.o
+ .rodata        0x0002756c      0x108 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lobject.o
+                0x0002766c                luaO_nilobject_
+ .rodata        0x00027674       0x28 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lopcodes.o
+                0x00027674                luaP_opmodes
+ .rodata        0x0002769c       0x20 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lparser.o
+ .rodata        0x000276bc       0x14 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/ltable.o
+ .rodata        0x000276d0       0x1c /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/gmtime.o
+                0x000276d0                __spm
+ .rodata        0x000276ec       0xa0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/strftime.o
+ .rodata        0x0002778c      0x400 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/libtlsf.a(tlsf.o)
+ .rodata.pla_main_ctx
+                0x00027b8c       0xd8 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(pluginlib_actions.o)
+                0x00027b8c                pla_main_ctx
+
+.ARM.extab      0x00027c64       0x48
+ .ARM.extab     0x00027c64        0xc /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
+ .ARM.extab     0x00027c70        0xc /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(unwind-arm.o)
+ .ARM.extab     0x00027c7c       0x30 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(pr-support.o)
+
+.ARM.exidx      0x00027cac      0x110
+ .ARM.exidx     0x00027cac        0x8 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
+ .ARM.exidx     0xffffffffffffffff       0xd8 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(unwind-arm.o)
+ ** ARM cantunwind
+                0x00027d64        0x8
+ .ARM.exidx     0x00027d6c       0x48 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(pr-support.o)
+ ** ARM cantunwind
+                0x00027db4        0x8
+
+.data.rel.ro.local
+                0x0002930c      0xb10
+ .data.rel.ro.local
+                0x0002930c      0x128 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lbaselib.o
+ .data.rel.ro.local
+                0x00029434       0x40 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lbitlib.o
+ .data.rel.ro.local
+                0x00029474       0xa0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/liolib.o
+ .data.rel.ro.local
+                0x00029514       0x80 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/llex.o
+                0x00029514                luaX_tokens
+ .data.rel.ro.local
+                0x00029594       0x58 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lmathlib.o
+ .data.rel.ro.local
+                0x000295ec       0x34 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/loadlib.o
+ .data.rel.ro.local
+                0x00029620       0x9c /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lopcodes.o
+                0x00029620                luaP_opnames
+ .data.rel.ro.local
+                0x000296bc       0x30 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/loslib.o
+ .data.rel.ro.local
+                0x000296ec       0x80 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lstrlib.o
+ .data.rel.ro.local
+                0x0002976c       0x50 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/ltablib.o
+ .data.rel.ro.local
+                0x000297bc       0x70 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/ltm.o
+                0x00029800                luaT_typenames
+ .data.rel.ro.local
+                0x0002982c      0x128 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/rocklib.o
+ .data.rel.ro.local
+                0x00029954       0x30 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/strftime.o
+ .data.rel.ro.local
+                0x00029984       0x20 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/luadir.o
+ .data.rel.ro.local
+                0x000299a4      0x478 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/rocklib_aux.o
+                0x000299a4                rocklib_aux
+
+.fini_array     0x00029e1c        0x8
+ .fini_array    0x00029e1c        0x4 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtbegin_so.o
+ .fini_array    0x00029e20        0x4 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtend_so.o
+
+.data.rel.ro    0x00029e24       0x70
+ .data.rel.ro   0x00029e24       0x58 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/rocklua.o
+ .data.rel.ro   0x00029e7c       0x18 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/plugin_crt0.o
+                0x00029e7c                __header
+
+.init_array     0x00029e94        0x4
+ .init_array    0x00029e94        0x4 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtend_so.o
+
+.dynamic        0x00029e98       0xe0
+ ** dynamic     0x00029e98       0xe0
+
+.got            0x00029f78       0x88
+ ** GOT         0x00029f78       0x2c
+ ** GOT PLT     0x00029fa4       0x5c
+
+.data           0x0002a000        0xc
+ .data          0x0002a000        0x4 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtbegin_so.o
+                0x0002a000                __dso_handle
+ .data          0x0002a004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lauxlib.o
+ .data          0x0002a004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lapi.o
+ .data          0x0002a004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lbaselib.o
+ .data          0x0002a004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lbitlib.o
+ .data          0x0002a004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lcode.o
+ .data          0x0002a004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/ldebug.o
+ .data          0x0002a004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/ldo.o
+ .data          0x0002a004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/ldump.o
+ .data          0x0002a004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lfunc.o
+ .data          0x0002a004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lgc.o
+ .data          0x0002a004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/liolib.o
+ .data          0x0002a004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/llex.o
+ .data          0x0002a004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lmathlib.o
+ .data          0x0002a004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lmem.o
+ .data          0x0002a004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/loadlib.o
+ .data          0x0002a004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lobject.o
+ .data          0x0002a004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lopcodes.o
+ .data          0x0002a004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/loslib.o
+ .data          0x0002a004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lparser.o
+ .data          0x0002a004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lstate.o
+ .data          0x0002a004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lstring.o
+ .data          0x0002a004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lstrlib.o
+ .data          0x0002a004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/ltable.o
+ .data          0x0002a004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/ltablib.o
+ .data          0x0002a004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/ltm.o
+ .data          0x0002a004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lundump.o
+ .data          0x0002a004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lvm.o
+ .data          0x0002a004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lzio.o
+ .data          0x0002a004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/rockaux.o
+ .data          0x0002a004        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/rocklib.o
+ .data.rel      0x0002a004        0x4 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/rocklib.o
+ .data          0x0002a008        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/tlsf_helper.o
+ .data          0x0002a008        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/fscanf.o
+ .data          0x0002a008        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/gmtime.o
+ .data          0x0002a008        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/strcspn.o
+ .data          0x0002a008        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/strftime.o
+ .data          0x0002a008        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/strncat.o
+ .data          0x0002a008        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/strpbrk.o
+ .data          0x0002a008        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/strtoul.o
+ .data          0x0002a008        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/strtol.o
+ .data          0x0002a008        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/strstr.o
+ .data          0x0002a008        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/rocklua.o
+ .data          0x0002a008        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/luadir.o
+ .data          0x0002a008        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/rocklib_aux.o
+ .data          0x0002a008        0x4 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/plugin_crt0.o
+                0x0002a008                rb
+ .data          0x0002a00c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/libtlsf.a(tlsf.o)
+ .data          0x0002a00c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(gcc-support.o)
+ .data          0x0002a00c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(pluginlib_actions.o)
+ .data          0x0002a00c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(helper.o)
+ .data          0x0002a00c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(strncpy.o)
+ .data          0x0002a00c        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivsi3.o)
+ .data          0x0002a00c        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divsi3.o)
+ .data          0x0002a00c        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_arm_addsubdf3.o)
+ .data          0x0002a00c        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_arm_muldivdf3.o)
+ .data          0x0002a00c        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_arm_fixdfsi.o)
+ .data          0x0002a00c        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
+ .data          0x0002a00c        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(unwind-arm.o)
+ .data          0x0002a00c        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(libunwind.o)
+ .data          0x0002a00c        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(pr-support.o)
+ .data          0x0002a00c        0x0 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtend_so.o
+
+.bss            0x0002a00c      0x350
+ .bss           0x0002a00c        0x0 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtbegin_so.o
+ .bss           0x0002a00c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lauxlib.o
+ .bss           0x0002a00c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lapi.o
+ .bss           0x0002a00c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lbaselib.o
+ .bss           0x0002a00c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lbitlib.o
+ .bss           0x0002a00c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lcode.o
+ .bss           0x0002a00c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/ldebug.o
+ .bss           0x0002a00c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/ldo.o
+ .bss           0x0002a00c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/ldump.o
+ .bss           0x0002a00c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lfunc.o
+ .bss           0x0002a00c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lgc.o
+ .bss           0x0002a00c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/liolib.o
+ .bss           0x0002a00c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/llex.o
+ .bss           0x0002a00c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lmathlib.o
+ .bss           0x0002a00c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lmem.o
+ .bss           0x0002a00c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/loadlib.o
+ .bss           0x0002a00c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lobject.o
+ .bss           0x0002a00c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lopcodes.o
+ .bss           0x0002a00c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/loslib.o
+ .bss           0x0002a00c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lparser.o
+ .bss           0x0002a00c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lstate.o
+ .bss           0x0002a00c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lstring.o
+ .bss           0x0002a00c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lstrlib.o
+ .bss           0x0002a00c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/ltable.o
+ .bss           0x0002a00c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/ltablib.o
+ .bss           0x0002a00c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/ltm.o
+ .bss           0x0002a00c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lundump.o
+ .bss           0x0002a00c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lvm.o
+ .bss           0x0002a00c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/lzio.o
+ .bss           0x0002a00c      0x208 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/rockaux.o
+ .bss           0x0002a214        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/rocklib.o
+ .bss           0x0002a214        0x8 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/tlsf_helper.o
+ .bss           0x0002a21c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/fscanf.o
+ .bss           0x0002a21c       0x2c /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/gmtime.o
+ .bss           0x0002a248        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/strcspn.o
+ .bss           0x0002a248        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/strftime.o
+ .bss           0x0002a248        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/strncat.o
+ .bss           0x0002a248        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/strpbrk.o
+ .bss           0x0002a248        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/strtoul.o
+ .bss           0x0002a248        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/strtol.o
+ .bss           0x0002a248        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/strstr.o
+ .bss           0x0002a248        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/rocklua.o
+ .bss           0x0002a248        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/luadir.o
+ .bss           0x0002a248        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/lua/rocklib_aux.o
+ .bss           0x0002a248      0x104 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/plugin_crt0.o
+ .bss           0x0002a34c        0x4 /home/ubuntu/Desktop/RockboxRCC/bu480/lib/libtlsf.a(tlsf.o)
+ .bss           0x0002a350        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(gcc-support.o)
+ .bss           0x0002a350        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(pluginlib_actions.o)
+ .bss.last_context
+                0x0002a350        0x4 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(pluginlib_actions.o)
+ .bss.plugin_context_order
+                0x0002a354        0x4 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(pluginlib_actions.o)
+ .bss.plugin_context_count
+                0x0002a358        0x4 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(pluginlib_actions.o)
+ .bss           0x0002a35c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(helper.o)
+ .bss           0x0002a35c        0x0 /home/ubuntu/Desktop/RockboxRCC/bu480/apps/plugins/libplugin.a(strncpy.o)
+ .bss           0x0002a35c        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivsi3.o)
+ .bss           0x0002a35c        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divsi3.o)
+ .bss           0x0002a35c        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_arm_addsubdf3.o)
+ .bss           0x0002a35c        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_arm_muldivdf3.o)
+ .bss           0x0002a35c        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_arm_fixdfsi.o)
+ .bss           0x0002a35c        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
+ .bss           0x0002a35c        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(unwind-arm.o)
+ .bss           0x0002a35c        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(libunwind.o)
+ .bss           0x0002a35c        0x0 /home/ubuntu/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(pr-support.o)
+ .bss           0x0002a35c        0x0 /home/ubuntu/android-ndk-r9c/platforms/android-19/arch-arm/usr/lib/crtend_so.o
