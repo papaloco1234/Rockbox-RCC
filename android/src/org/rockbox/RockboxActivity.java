@@ -266,7 +266,7 @@ public class RockboxActivity extends Activity
         File txtFile =new File(folder+"/plain.sbs" );
         if (!txtFile.exists())
         {
-            return 3; //error!, the theme is missing
+            txtFile.createNewFile();
         }
         //read from old file and copy to new
         fos = new FileOutputStream(txtFile);
