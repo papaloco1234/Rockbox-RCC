@@ -42,6 +42,20 @@ import com.umeng.analytics.MobclickAgent;
 import com.umeng.fb.NotificationType;
 import com.umeng.fb.UMFeedbackService;
 
+import android.os.Environment;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.ByteArrayOutputStream;
+
 public class RockboxActivity extends Activity 
 {
     private RockboxApp RockboxAppSetting = RockboxApp.getInstance();
@@ -129,7 +143,9 @@ public class RockboxActivity extends Activity
         menu.add(0, 0, 0, R.string.rockbox_simulatebutton);
         menu.add(0, 1, 0, R.string.rockbox_preference);
         menu.add(0, 2, 0, R.string.rockbox_about);
-        menu.add(0, 3, 0, R.string.rockbox_exit);        
+        menu.add(0, 4, 0, "Save EQ Preset");
+        menu.add(0, 5, 0, "tinyCoverMaker"); 
+        menu.add(0, 3, 0, R.string.rockbox_exit);       
         return true;
     }
 
@@ -138,6 +154,36 @@ public class RockboxActivity extends Activity
     {
         switch (item.getItemId())
         {
+            case 5:
+               final String[] ResultString = {"task completed.","no default Music folder.","cannot access default Music folder.","missing sbs file"};
+                             
+               int result=tinyCoverMaker();   
+               
+               new AlertDialog.Builder(this)
+                                .setTitle("tinyCoverMaker")
+            	                .setMessage(ResultString[result])
+            	                .setPositiveButton(R.string.OK, null)
+            	                .show(); 
+               break; 
+            case 4:
+                 try {
+                RockboxFramebuffer.buttonHandler(85, true); //press
+                Thread.sleep(100);
+                RockboxFramebuffer.buttonHandler(85, false); //release
+                Thread.sleep(300);
+                new AlertDialog.Builder(this)
+                                .setTitle("Save EQ Preset")
+            	                .setMessage("Save EQ OK")
+            	                .setPositiveButton(R.string.OK, null)
+            	                .show(); 
+                saveEQ(); 
+                
+                RockboxFramebuffer.buttonHandler(85, true); //press
+                Thread.sleep(100);
+                RockboxFramebuffer.buttonHandler(85, false); //release
+
+                } catch (InterruptedException e) {}
+                break;
             case 3:
 		        MobclickAgent.onKillProcess(this);
 		        RockboxNativeInterface.powerOff();
@@ -174,6 +220,141 @@ public class RockboxActivity extends Activity
          }
         return true;
      }
+
+    private void saveEQ()
+    {
+    try {
+        FileOutputStream fos = new FileOutputStream(new File(Environment.getExternalStorageDirectory(), "rockbox/eqs/eq_backup.cfg"));
+        FileInputStream fis = new FileInputStream(new File(Environment.getExternalStorageDirectory(), "rockbox/config.cfg"));
+        DataInputStream in = new DataInputStream(fis);
+        BufferedReader br =
+          new BufferedReader(new InputStreamReader(in));
+        String strLine;
+        while ((strLine = br.readLine()) != null) {
+            if (strLine.startsWith("eq") || strLine.startsWith("compressor") 
+                ||strLine.startsWith("replaygain"))
+            {
+                fos.write((strLine + "\n").toString().getBytes());
+            }
+        }
+        in.close();
+        fos.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private int tinyCoverMaker()
+    {
+        File cover = null;
+        FileOutputStream fos; 
+        BufferedReader br;
+        DataInputStream in;
+        FileInputStream fis;
+        String strLine=null,strLine2=null;
+    try{
+        //step 0, everything will be store in folder call CoverMaker in /rockbox
+        File folder = new File(Environment.getExternalStorageDirectory() + "/rockbox/CoverMaker");
+        if (!folder.exists()) 
+            folder.mkdir();
+
+        String path = Environment.getExternalStorageDirectory().toString() +"/rockbox/wps/plain";
+        File src =new File(path+".sbs" );
+        fis = new FileInputStream(src);
+        in = new DataInputStream(fis);
+        br = new BufferedReader(new InputStreamReader(in));
+        File txtFile =new File(folder+"/plain.sbs" );
+        if (!txtFile.exists())
+        {
+            return 3; //error!, the theme is missing
+        }
+        //read from old file and copy to new
+        fos = new FileOutputStream(txtFile);
+        while ((strLine = br.readLine()) != null)
+        {
+            fos.write((strLine +"\n").toString().getBytes());
+            if ( strLine.startsWith("%Vl(a,8,8,96,96,-)") || strLine.startsWith("%Vl(a,16,16,96,96,-)"))
+                break;
+        }  
+        in.close();
+        fos.close();
+
+        //step1. read default music folder 
+        fis = new FileInputStream(new File(Environment.getExternalStorageDirectory(), "rockbox/config.cfg"));
+        in = new DataInputStream(fis);
+        br = new BufferedReader(new InputStreamReader(in));
+        
+        while ((strLine = br.readLine()) != null) {
+            if ( strLine.startsWith("start directory: ") )
+            {
+                strLine2 = strLine.split(": ")[1];
+            }
+        }
+        in.close();
+        if (strLine2 == null)
+            return 1; //error 1, no dafault music folder
+        String defaultMusicFolder = strLine2;
+        //step 2. get music folder list
+        File storageDir = new File(defaultMusicFolder); 
+        
+        if(storageDir.isDirectory())
+        {
+            File file[] = storageDir.listFiles();
+            int counter=0; 
+            for (File f : file) 
+            {
+                //ok let's find the cover art pic. 
+                if (f.isDirectory()) 
+                {  
+                    String tname1 =  f.getAbsolutePath().toString().split(defaultMusicFolder)[1] +".jpg";
+                    String tname2 =  f.getAbsolutePath().toString().split(defaultMusicFolder)[1] +".bmp";
+                    String[] names = { "cover.jpg","cover.bmp",tname1,tname2 };
+                    for (int i=0;i<4;i++)
+                    {
+                        cover = new File(f.getAbsolutePath().toString() +"/"+names[i]); 
+                        if (cover.exists() == true)
+                            break;       
+                    }
+                    //if cover exist, decode the file to BMP and save into /CoverMaker
+                    if (cover.exists() == true)
+                    {
+                        Bitmap coverBmp = BitmapFactory.decodeFile(cover.getAbsolutePath());
+                        Bitmap sCover =  coverBmp.createScaledBitmap(coverBmp,90,90,true);
+
+                        //too bad android cannot save Real BMP file, so we do PNG here
+                        File file2 = new File(folder, tname2.split(".bmp")[0] + ".png");
+                        FileOutputStream fOut = new FileOutputStream(file2);
+                        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+                        sCover.compress(Bitmap.CompressFormat.PNG, 100, bytes);
+                        fOut.write(bytes.toByteArray());
+                        fOut.close();
+                        // also, make the script into txt file
+                        //e.g %?if(%ss(0,18,%LT), =,SWING HOLIC VOL.07)<%x(c1,SWING HOLIC VOL.07.bmp,0,0)|>
+
+    		         fos = new FileOutputStream(txtFile,true);
+                         String script ="%?if(%ss(0,"+ (tname2.length()-4) +",%LT), =,"+tname2.split(".bmp")[0]
+                                             +")<%x(c"+counter+","+tname2+",0,0)|>"; 
+    	                 fos.write((script + "\n").toString().getBytes()); 
+    	                 fos.close();
+                         counter++;
+                    }
+                    else
+                    {
+                        break; 
+                    }   
+                }
+            }     
+        }
+        else
+           return 2; //error 2, cannot access storageDir!
+
+    }catch (Exception e) {
+            e.printStackTrace();
+        }finally{
+          return 0;
+        }
+         
+    }
 
     private void setServiceActivity(boolean set)
     {
