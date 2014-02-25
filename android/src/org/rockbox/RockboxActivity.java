@@ -55,6 +55,7 @@ import android.graphics.BitmapFactory;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.ByteArrayOutputStream;
+import android.content.DialogInterface;
 
 public class RockboxActivity extends Activity 
 {
@@ -155,16 +156,32 @@ public class RockboxActivity extends Activity
         switch (item.getItemId())
         {
             case 5:
-               final String[] ResultString = {"task completed.","no default Music folder.","cannot access default Music folder.",
-                                              "missing sbs file","error, directory name should not contain round breaket."};
-                             
-               int result=tinyCoverMaker();   
-               
-               new AlertDialog.Builder(this)
-                                .setTitle("tinyCoverMaker")
-            	                .setMessage(ResultString[result])
-            	                .setPositiveButton(R.string.OK, null)
-            	                .show(); 
+              
+                final CharSequence[] items = {" 64x64 "," 96x96 "};    
+                new AlertDialog.Builder(this)
+                         .setTitle("Select icon size")
+                         .setSingleChoiceItems(items, -1, new DialogInterface.OnClickListener() {
+                              public void onClick(DialogInterface dialog, int item) {
+                              int iconSize,result;
+                    
+                              switch(item)
+                              {
+                                  case 0:
+                                      iconSize=64;
+                                      result=this.tinyCoverMaker(iconSize);
+                                      this.popMessage(result);
+                                  break;
+                                  case 1:
+                                      iconSize=96;
+                                      result=this.tinyCoverMaker(iconSize);
+                                      this.popMessage(result);
+                                  break;
+                        
+                               }
+                               dialog.dismiss();    
+                              }
+                          }) 
+                         .show();  
                break; 
             case 4:
                  try {
@@ -222,6 +239,16 @@ public class RockboxActivity extends Activity
         return true;
      }
 
+    public void popMessage(int result)
+    {
+          final String[] ResultString = {"task completed.","no default Music folder.","cannot access default Music folder.",
+                                              "missing sbs file","error, directory name should not contain round breaket."}; 
+         new AlertDialog.Builder(this)
+                                .setTitle("tinyCoverMaker")
+            	                .setMessage(ResultString[result])
+            	                .setPositiveButton(R.string.OK, null)
+            	                .show();
+    }
     private void saveEQ()
     {
     try {
@@ -245,7 +272,8 @@ public class RockboxActivity extends Activity
         }
     }
 
-    private int tinyCoverMaker()
+    
+    private int tinyCoverMaker(int iconSize)
     {
         File cover = null;
         FileOutputStream fos; 
@@ -320,7 +348,7 @@ public class RockboxActivity extends Activity
                         if (cover.exists() == true)
                         {
                             Bitmap coverBmp = BitmapFactory.decodeFile(cover.getAbsolutePath());
-                            BitmapEx bmpEx = new BitmapEx(coverBmp.createScaledBitmap(coverBmp,96,96,true));
+                            BitmapEx bmpEx = new BitmapEx(coverBmp.createScaledBitmap(coverBmp,iconSize,iconSize,true));
                             File file2 = new File(path, tname2); 
  			    bmpEx.saveAsBMP(new FileOutputStream(file2));
                             //make the script into txt file
