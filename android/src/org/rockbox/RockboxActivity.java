@@ -168,13 +168,13 @@ public class RockboxActivity extends Activity
                               {
                                   case 0:
                                       iconSize=64;
-                                      result=this.tinyCoverMaker(iconSize);
-                                      this.popMessage(result);
+                                      result=tinyCoverMaker(iconSize);
+                                      popMessage(result);
                                   break;
                                   case 1:
                                       iconSize=96;
-                                      result=this.tinyCoverMaker(iconSize);
-                                      this.popMessage(result);
+                                      result=tinyCoverMaker(iconSize);
+                                      popMessage(result);
                                   break;
                         
                                }
@@ -273,6 +273,7 @@ public class RockboxActivity extends Activity
     }
 
     
+    
     private int tinyCoverMaker(int iconSize)
     {
         File cover = null;
@@ -304,25 +305,13 @@ public class RockboxActivity extends Activity
             in.close();
             fos.close();
 
-            //step1. read default music folder 
-            fis = new FileInputStream(new File(Environment.getExternalStorageDirectory(), "rockbox/config.cfg"));
-            in = new DataInputStream(fis);
-            br = new BufferedReader(new InputStreamReader(in));
-        
-            while ((strLine = br.readLine()) != null) 
-            {
-                if ( strLine.startsWith("start directory: ") )
-                {
-                    strLine2 = strLine.split(": ")[1];
-                }
-            }
-            in.close();
-            if (strLine2 == null)
-                return 1; //error 1, no dafault music folder
-            String defaultMusicFolder = strLine2;
-            //step 2. get music folder list
-            File storageDir = new File(defaultMusicFolder); 
-        
+
+            // Google introduce new restrict "MUSIC" reference folder because Android 4.4.2 
+            // block user from access external SD card's absolute path directlly
+            File storageDir =new File (Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MUSIC),"");
+            if (!storageDir.exists())
+                storageDir.mkdirs();
+  
             if(storageDir.isDirectory())
             {
                 File file[] = storageDir.listFiles();
@@ -332,24 +321,33 @@ public class RockboxActivity extends Activity
                     //ok let's find the cover art pic. 
                     if (f.isDirectory()) 
                     {  
-                     
-                        String tname1 =  f.getAbsolutePath().toString().split(defaultMusicFolder)[1] +".jpg";
-                        String tname2 =  f.getAbsolutePath().toString().split(defaultMusicFolder)[1] +".bmp";
-                        String[] names = { "cover.jpg","cover.bmp",tname1,tname2 };
+                        String coverName=null;
+                        String tname1 =  f.getName().toString()+".jpg";
+                        String tname2 =  f.getName().toString()+".bmp";
+                        String[] names = { "cover.jpg","cover.bmp",tname1,tname2,"folder.jpg","folder.bmp" };
                         if (tname1.contains("(") || tname1.contains(")") )
                             return 4; //error, directory name should not contain round breaket. eg ( or )
-                        for (int i=0;i<4;i++)
+ 
+                        for (int i=0;i<6;i++)
                         {
-                            cover = new File(f.getAbsolutePath().toString() +"/"+names[i]); 
+                            cover = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MUSIC),"/"+f.getName().toString()+"/"+ names[i]); 
+                            
+                            coverName = names[i]; 
                             if (cover.exists() == true)
-                                break;       
+                            {  
+                                break;
+                            }        
                         }
                         //if cover exist, decode the file to BMP and save
                         if (cover.exists() == true)
                         {
-                            Bitmap coverBmp = BitmapFactory.decodeFile(cover.getAbsolutePath());
+                                
+                            Bitmap coverBmp = BitmapFactory.decodeFile(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MUSIC)+"/"
+                                                                        +f.getName().toString()+"/"+ coverName);
                             BitmapEx bmpEx = new BitmapEx(coverBmp.createScaledBitmap(coverBmp,iconSize,iconSize,true));
-                            File file2 = new File(path, tname2); 
+                            
+                            File file2 = new File(path +"/"+ tname2); 
+                           
  			    bmpEx.saveAsBMP(new FileOutputStream(file2));
                             //make the script into txt file
                             //e.g %?if(%ss(0,18,%LT), =,SWING HOLIC VOL.07)<%x(c1,SWING HOLIC VOL.07.bmp,0,0)|>
@@ -360,10 +358,7 @@ public class RockboxActivity extends Activity
     	                    fos.close();
                             counter++;
                         }
-                        else
-                        {
-                            break; 
-                        }   
+                        
                     }
                 }
                 //lets overwrite the old sbs file here
