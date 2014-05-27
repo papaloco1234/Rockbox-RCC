@@ -13532,40 +13532,6 @@
   </voice>
 </phrase>
 <phrase>
-  id: LANG_LIMITER
-  desc: in sound settings
-  user: core
-  <source>
-    *: none
-    swcodec: "LIMITER"
-  </source>
-  <dest>
-    *: none
-    swcodec: "LIMITER"
-  </dest>
-  <voice>
-    *: none
-    swcodec: "LIMITER"
-  </voice>
-</phrase>
-<phrase>
-  id: LANG_COMPRESSOR_LIMITER
-  desc: in sound settings
-  user: core
-  <source>
-    *: none
-    swcodec: "COMPRESSOR+LIMITER"
-  </source>
-  <dest>
-    *: none
-    swcodec: "COMPRESSOR+LIMITER"
-  </dest>
-  <voice>
-    *: none
-    swcodec: "COMPRESSOR+LIMITER"
-  </voice>
-</phrase>
-<phrase>
   id: LANG_RDOSE
   desc: in sound settings
   user: core

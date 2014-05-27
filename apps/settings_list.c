@@ -490,28 +490,8 @@ static void compressor_set(int val)
 
 static void compressor_switch(int val)
 {
-    int select = global_settings.compressor_switch;
     (void)val;   
-    switch(select) /*after change settings better restart RB */
-    {
-         case 1: 
-              dsp_set_limiter(0);
-              dsp_compressor_switch(1);  
-              break;
-         case 2:
-              dsp_compressor_switch(0);  
-              dsp_set_limiter(1);                 
-              break;  
-         case 3:  
-              dsp_set_limiter(1);
-              dsp_compressor_switch(1);   
-              break;  
-         case 0:
-         default: 
-              dsp_compressor_switch(0);
-              dsp_set_limiter(0);    
-              break;  
-    }
+    dsp_compressor_switch(global_settings.compressor_switch);   
 }
 
 static void surround_set_factor(int val)
@@ -2309,13 +2289,14 @@ const struct settings_list settings[] = {
     OFFON_SETTING(F_SOUNDSETTING, dithering_enabled, LANG_DITHERING, false,
                   "dithering enabled", dsp_dither_enable),
     /* surround */
-    INT_SETTING_NOWRAP(F_SOUNDSETTING, surround_enabled,
-                       LANG_SURROUND, 0,
-                       "surround enabled", UNIT_PERCENT, 0, 100,
-                       20, NULL, NULL, dsp_surround_enable),
+    TABLE_SETTING(F_SOUNDSETTING, surround_enabled,
+                  LANG_SURROUND, 0, "surround enabled", "off",
+                  UNIT_MS, formatter_unit_0_is_off, getlang_unit_0_is_off,
+                  dsp_surround_enable, 6,
+                  0,1,2,5,8,10), 
 
     INT_SETTING_NOWRAP(F_SOUNDSETTING, surround_balance,
-                       LANG_BALANCE, 0,
+                       LANG_BALANCE, 35,
                        "surround banlance", UNIT_PERCENT, 0, 99,
                        1, NULL, NULL, dsp_surround_set_balance),
 
@@ -2346,8 +2327,8 @@ const struct settings_list settings[] = {
     /* compressor */
     CHOICE_SETTING(F_SOUNDSETTING|F_NO_WRAP, compressor_switch,
                    LANG_COMPRESSOR, 2, "compressor switch",
-                   "off,compressor,limiter,compressor+limiter", compressor_switch, 4,
-                   ID2P(LANG_OFF), ID2P(LANG_COMPRESSOR),ID2P(LANG_LIMITER),ID2P(LANG_COMPRESSOR_LIMITER)), 
+                   "off,on", compressor_switch, 2,
+                   ID2P(LANG_OFF), ID2P(LANG_ON)), 
     INT_SETTING_NOWRAP(F_SOUNDSETTING, compressor_settings.threshold,
                        LANG_COMPRESSOR_THRESHOLD, 0,
                        "compressor threshold", UNIT_DB, 0, -24,
