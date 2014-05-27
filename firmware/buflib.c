@@ -294,6 +294,10 @@ move_block(struct buflib_context* ctx, union buflib_data* block, int shift)
 static bool
 buflib_compact(struct buflib_context *ctx)
 {
+#if (CONFIG_PLATFORM & PLATFORM_ANDROID)
+    ctx->compact = true;
+    return false;
+#endif
     BDEBUGF("%s(): Compacting!\n", __func__);
     union buflib_data *block,
                       *hole = NULL;
@@ -379,6 +383,10 @@ buflib_compact(struct buflib_context *ctx)
 static bool
 buflib_compact_and_shrink(struct buflib_context *ctx, unsigned shrink_hints)
 {
+#if (CONFIG_PLATFORM & PLATFORM_ANDROID)
+/*can be relly slow...*/
+    return false;
+#endif    
     bool result = false;
     /* if something compacted before already there will be no further gain */
     if (!ctx->compact)
