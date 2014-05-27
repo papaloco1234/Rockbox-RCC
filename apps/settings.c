@@ -1049,6 +1049,8 @@ void settings_apply(bool read_disk)
     }
 
     dsp_dither_enable(global_settings.dithering_enabled);
+    dsp_surround_set_balance(global_settings.surround_balance);
+    dsp_surround_set_cutoff(global_settings.surround_fx1, global_settings.surround_fx2);
     dsp_surround_enable(global_settings.surround_enabled);
     dsp_aatube_enable(global_settings.aatube_enabled);
 #ifdef HAVE_PITCHCONTROL
@@ -1057,7 +1059,7 @@ void settings_apply(bool read_disk)
     dsp_compressor_switch(global_settings.compressor_switch);
     dsp_set_compressor(&global_settings.compressor_settings);
 #endif
-
+    dsp_rdose_enable(global_settings.rdose);
 #ifdef HAVE_SPDIF_POWER
     spdif_power_enable(global_settings.spdif_enable);
 #endif

@@ -514,7 +514,11 @@ static void compressor_switch(int val)
     }
 }
 
-
+static void surround_set_factor(int val)
+{
+    (void)val;
+    dsp_surround_set_cutoff(global_settings.surround_fx1, global_settings.surround_fx2);
+}
 static const char* db_format(char* buffer, size_t buffer_size, int value,
                       const char* unit)
 {
@@ -2308,14 +2312,31 @@ const struct settings_list settings[] = {
     INT_SETTING_NOWRAP(F_SOUNDSETTING, surround_enabled,
                        LANG_SURROUND, 0,
                        "surround enabled", UNIT_PERCENT, 0, 100,
-                       20, NULL, NULL, dsp_surround_enable),	
-		
+                       20, NULL, NULL, dsp_surround_enable),
+
+    INT_SETTING_NOWRAP(F_SOUNDSETTING, surround_balance,
+                       LANG_BALANCE, 0,
+                       "surround banlance", UNIT_PERCENT, 0, 99,
+                       1, NULL, NULL, dsp_surround_set_balance),
+
+    INT_SETTING_NOWRAP(F_SOUNDSETTING, surround_fx1,
+                       LANG_SURROUND_FX1, 3200,
+                       "surround_fx1", UNIT_HERTZ, 600, 8000,
+                       200, NULL, NULL, surround_set_factor),
+    INT_SETTING_NOWRAP(F_SOUNDSETTING, surround_fx2,
+                       LANG_SURROUND_FX2, 320,
+                       "surround_fx2", UNIT_HERTZ, 40, 400,
+                       40, NULL, NULL, surround_set_factor),		
     /* aa-tube */
     INT_SETTING_NOWRAP(F_SOUNDSETTING, aatube_enabled,
                        LANG_ANTIALIAS_WARM, 0,
                        "aatube enabled", UNIT_PERCENT, 0, 100,
                        1, NULL, NULL, dsp_aatube_enable),	
-		
+    /* rDose */
+    CHOICE_SETTING(F_SOUNDSETTING|F_NO_WRAP, rdose,
+                   LANG_RDOSE, 0, "rdose enabled",
+                   "off,weak,moderate,strong", dsp_rdose_enable, 4,
+                   ID2P(LANG_OFF), ID2P(LANG_WEAK),ID2P(LANG_MODERATE),ID2P(LANG_STRONG)), 		
 #ifdef HAVE_PITCHCONTROL
     /* timestretch */
     OFFON_SETTING(F_SOUNDSETTING, timestretch_enabled, LANG_TIMESTRETCH, false,
