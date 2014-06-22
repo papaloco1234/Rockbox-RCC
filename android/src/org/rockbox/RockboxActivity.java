@@ -130,8 +130,8 @@ public class RockboxActivity extends Activity
         menu.clear();
         menu.add(0, 0, 0, R.string.rockbox_simulatebutton);
         menu.add(0, 1, 0, R.string.rockbox_preference);
-        menu.add(0, 4, 0, "Save EQ Preset");
-        menu.add(0, 5, 0, "tinyCoverMaker");
+        menu.add(0, 4, 0, R.string.rockbox_save_eq);
+        menu.add(0, 5, 0, R.string.rockbox_tinycovermaker);
         menu.add(0, 2, 0, R.string.rockbox_about);
         menu.add(0, 3, 0, R.string.rockbox_exit);        
         return true;
@@ -148,11 +148,10 @@ public class RockboxActivity extends Activity
                 final CharSequence[] items = {" 64x64 "," 96x96 ","128x128"};
 
                 new AlertDialog.Builder(this)
-                         .setTitle("Select icon size")
+                         .setTitle(R.string.rockbox_select_icon_size)
                          .setSingleChoiceItems(items, -1, new DialogInterface.OnClickListener() {
                               public void onClick(DialogInterface dialog, int item) {
                               int iconSize,result;
-                    
                               switch(item)
                               {
                                   case 0:
@@ -164,27 +163,27 @@ public class RockboxActivity extends Activity
                                   case 2:
                                       tcm.setIconSize(128);
                                   break;
-                               }
-                               Thread thr1 = new Thread(tcm);
-                               thr1.start();
-                               try { 
-                                   thr1.join();
-                               } catch (InterruptedException e) {}
-                               popMessage(tcm.getResult());  
-                               dialog.dismiss();    
+                              }
+                              Thread thr1 = new Thread(tcm);
+                              thr1.start();
+                              try { 
+                                  thr1.join();
+                              } catch (InterruptedException e) {}
+                              popMessage(tcm.getResult());  
+                              dialog.dismiss();    
                               }
                           }) 
                          .show();  
-               break; 
+                break; 
             case 4:
-                 try {
+                try {
                 RockboxFramebuffer.buttonHandler(85, true); //press
                 Thread.sleep(100);
                 RockboxFramebuffer.buttonHandler(85, false); //release
                 Thread.sleep(300);
                 new AlertDialog.Builder(this)
-                                .setTitle("Save EQ Preset")
-            	                .setMessage("Save EQ OK")
+                                .setTitle(R.string.rockbox_save_eq)
+            	                .setMessage(R.string.rockbox_save_eq_ok)
             	                .setPositiveButton(R.string.OK, null)
             	                .show(); 
                 tcm.saveEQ(); 
@@ -234,10 +233,14 @@ public class RockboxActivity extends Activity
 
     private void popMessage(int result)
     {
-          final String[] ResultString = {"task completed.","no default Music folder.","cannot access default Music folder.",
-                                              "missing sbs file","error, directory name should not contain round breaket."}; 
+          final String[] ResultString = {  getResources().getString(R.string.rockbox_tinycovermaker_result_1),
+                                           getResources().getString(R.string.rockbox_tinycovermaker_result_2),
+                                           getResources().getString(R.string.rockbox_tinycovermaker_result_3),
+                                           getResources().getString(R.string.rockbox_tinycovermaker_result_4),
+                                           getResources().getString(R.string.rockbox_tinycovermaker_result_5)
+                                        }; 
           new AlertDialog.Builder(this)
-                                .setTitle("tinyCoverMaker")
+                                .setTitle(R.string.rockbox_tinycovermaker)
             	                .setMessage(ResultString[result])
             	                .setPositiveButton(R.string.OK, null)
                                 .show();
