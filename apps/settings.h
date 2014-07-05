@@ -266,6 +266,7 @@ struct system_status
 {
     int resume_index;  /* index in playlist (-1 for no active resume) */
     uint32_t resume_crc32; /* crc32 of the name of the file */
+    uint32_t resume_elapsed; /* elapsed time in last file */
     uint32_t resume_offset; /* byte offset in mp3 file */
     int runtime;       /* current runtime since last charge */
     int topruntime;    /* top known runtime */
@@ -282,6 +283,7 @@ struct system_status
 #ifdef HAVE_LCD_BITMAP
     int font_id[NB_SCREENS]; /* font id of the settings font for each screen */
 #endif
+
 };
 
 struct user_settings
@@ -292,6 +294,7 @@ struct user_settings
     int balance;    /* stereo balance:          0-100 0=left  50=bal 100=right        */
     int bass;       /* bass boost/cut in decibels                                     */
     int treble;     /* treble boost/cut in decibels                                   */
+    int tone_gain;  /* bass/treble boost gain in decibels */
     int channel_config; /* Stereo, Mono, Custom, Mono left, Mono right, Karaoke, Swap */
     int stereo_width; /* 0-255% */
 
@@ -352,6 +355,8 @@ struct user_settings
     int  keyclick;          /* keyclick volume */
     int  keyclick_repeats;  /* keyclick on repeats */
     bool dithering_enabled;
+    int surround_enabled;
+    int aatube_enabled;
 #ifdef HAVE_PITCHCONTROL
     bool timestretch_enabled;
 #endif
@@ -538,14 +543,15 @@ struct user_settings
 #ifdef HAVE_LCD_BITMAP
     int scrollbar;    /* SCROLLBAR_* enum values */
     int scrollbar_width;
-#endif
 
 #ifdef HAVE_TOUCHSCREEN
     int list_line_padding;
-    bool list_separator_enabled;
+#endif
+#if LCD_DEPTH > 1
+    int list_separator_height; /* -1=auto (== 1 currently), 0=disabled, X=height in pixels */
     int list_separator_color;
 #endif
-
+#endif
     /* goto current song when exiting WPS */
     bool browse_current; /* 1=goto current song,
                             0=goto previous location */
@@ -838,6 +844,13 @@ struct user_settings
     int play_frequency; /* core audio output frequency selection */
 #endif
     int volume_limit; /* maximum volume limit */
+
+    int compressor_switch;
+
+    int rdose;
+    int surround_balance;
+    int surround_fx1;
+    int surround_fx2;
 };
 
 /** global variables **/

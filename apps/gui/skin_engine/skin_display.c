@@ -97,6 +97,73 @@ void skin_update(enum skinnable_screens skin, enum screen_type screen,
 
 #ifdef HAVE_LCD_BITMAP
 
+
+#ifdef AB_REPEAT_ENABLE
+
+#define DIRECTION_RIGHT 1
+#define DIRECTION_LEFT -1
+
+static int ab_calc_mark_x_pos(int mark, int capacity, 
+        int offset, int size)
+{
+    return offset + ( (size * mark) / capacity );
+}
+
+static void ab_draw_vertical_line_mark(struct screen * screen,
+                                              int x, int y, int h)
+{
+    screen->set_drawmode(DRMODE_COMPLEMENT);
+    screen->vline(x, y, y+h-1);
+}
+
+static void ab_draw_arrow_mark(struct screen * screen,
+                                      int x, int y, int h, int direction)
+{
+    /* draw lines in decreasing size until a height of zero is reached */
+    screen->set_drawmode(DRMODE_SOLID|DRMODE_INVERSEVID);
+    while( h > 0 )
+    {
+        screen->vline(x, y, y+h-1);
+        h -= 2;
+        y++;
+        x += direction;
+        screen->set_drawmode(DRMODE_COMPLEMENT);
+    }
+}
+
+void ab_draw_markers(struct screen * screen, int capacity, 
+                     int x, int y, int w, int h)
+{
+    bool a_set, b_set;
+    unsigned int a, b;
+    int xa, xb;
+
+    a_set = ab_get_A_marker(&a);
+    b_set = ab_get_B_marker(&b);
+    xa = ab_calc_mark_x_pos(a, capacity, x, w);
+    xb = ab_calc_mark_x_pos(b, capacity, x, w);
+    /* if both markers are set, determine if they're far enough apart
+    to draw arrows */
+    if ( a_set && b_set )
+    {
+        int arrow_width = (h+1) / 2;
+        if ( (xb-xa) < (arrow_width*2) )
+        {
+            ab_draw_vertical_line_mark(screen, xa, y, h);
+            ab_draw_vertical_line_mark(screen, xb, y, h);
+            return;
+        }
+    }
+
+    if (a_set)
+        ab_draw_arrow_mark(screen, xa, y, h, DIRECTION_RIGHT);
+
+    if (b_set)
+        ab_draw_arrow_mark(screen, xb, y, h, DIRECTION_LEFT);
+}
+
+#endif
+
 void draw_progressbar(struct gui_wps *gwps, int line, struct progressbar *pb)
 {
     struct screen *display = gwps->display;
@@ -537,15 +604,15 @@ void write_line(struct screen *display, struct align_pos *format_align,
         center_xpos = (viewport_width-center_width)/2;
         right_xpos = viewport_width-right_width;
 #endif
-        /* print aligned strings */
-        if (left_width != 0)
-            display->put_line(0, line, linedes, "$t", format_align->left);
+        /* print aligned strings. print whole line at once so that %Vs works
+         * across the full viewport width */
+        char *left   = format_align->left   ?: "";
+        char *center = format_align->center ?: "";
+        char *right  = format_align->right  ?: "";
 
-        if (center_width != 0)
-            display->put_line(center_xpos, line, linedes, "$t", format_align->center);
-
-        if (right_width != 0)
-            display->put_line(right_xpos, line, linedes, "$t", format_align->right);
+        display->put_line(0, line, linedes, "$t$*s$t$*s$t", left,
+                center_xpos - left_width, center,
+                right_xpos - (center_xpos + center_width), right);
     }
 }
 

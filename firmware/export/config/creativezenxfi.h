@@ -52,9 +52,6 @@
 /* define this if the target has volume keys which can be used in the lists */
 #define HAVE_VOLUME_IN_LIST
 
-/* define this if you have LCD enable function */
-#define HAVE_LCD_ENABLE
-
 /* Define this if your LCD can be put to sleep. HAVE_LCD_ENABLE
    should be defined as well.
 #define HAVE_LCD_SLEEP
@@ -77,8 +74,14 @@
 
 #endif /* !BOOTLOADER */
 
+/* define this if you have LCD enable function */
+#define HAVE_LCD_ENABLE
+
 /* define this if you have an i.MX23 codec */
 #define HAVE_IMX233_CODEC
+
+/* Define this if you have a speaker */
+#define HAVE_SPEAKER
 
 #define CONFIG_TUNER TEA5760
 
@@ -97,10 +100,10 @@
 /* LCD dimensions */
 #define LCD_WIDTH  320
 #define LCD_HEIGHT 240
-#define LCD_DEPTH  16   /* 65536 colours */
-#define LCD_PIXELFORMAT RGB565 /* rgb565 */
-/* framebuffer uses 24-bit/pix */
-#define IMX233_FRAMEBUFFER_SIZE (LCD_WIDTH * LCD_HEIGHT * 3)
+/* sqrt(320^2 + 240^2) / 2.5 = 160.0 */
+#define LCD_DPI 160
+#define LCD_DEPTH  24   /* 16M colours */
+#define LCD_PIXELFORMAT RGB888 /* rgb888 */
 
 /* Define this if you have a software controlled poweroff */
 #define HAVE_SW_POWEROFF
@@ -191,7 +194,7 @@
 #define HAVE_BOOTLOADER_USB_MODE
 
 /* Define this if you have adjustable CPU frequency */
-//#define HAVE_ADJUSTABLE_CPU_FREQ
+#define HAVE_ADJUSTABLE_CPU_FREQ
 
 #define BOOTFILE_EXT    "creative"
 #define BOOTFILE        "rockbox." BOOTFILE_EXT

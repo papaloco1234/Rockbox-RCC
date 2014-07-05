@@ -154,7 +154,7 @@
 /*  for settings which use the set_int() setting screen.
     unit is the UNIT_ define to display/talk.
     the first one saves a string to the config file,
-    the second one saves the variable value to the config file */    
+    the second one saves the variable value to the config file */
 #define INT_SETTING_W_CFGVALS(flags, var, lang_id, default, name, cfg_vals, \
                     unit, min, max, step, formatter, get_talk_id, cb)       \
             {flags|F_INT_SETTING|F_T_INT, &global_settings.var,             \
@@ -215,7 +215,8 @@ static const char graphic_numeric[] = "graphic,numeric";
 #elif LCD_HEIGHT <= 80
   #define DEFAULT_FONT_HEIGHT 11
   #define DEFAULT_FONTNAME "11-Sazanami-Mincho"
-#elif (LCD_HEIGHT == 96) && (LCD_WIDTH == 96)   /* sandisk sansa clip zip */
+/* sandisk sansa clip zip and samsung yh-820 */
+#elif (LCD_HEIGHT == 96) && ((LCD_WIDTH == 96) || (LCD_WIDTH == 128))
   #define DEFAULT_FONT_HEIGHT 8
   #define DEFAULT_FONTNAME "08-Rockfont"
 #elif LCD_HEIGHT <= 220
@@ -324,8 +325,7 @@ static const char graphic_numeric[] = "graphic,numeric";
 #define DEFAULT_TAGCACHE_SCAN_PATHS "/"
 #endif
 
-#ifdef HAVE_TOUCHSCREEN
-
+#if LCD_DEPTH > 1
 static const char* list_pad_formatter(char *buffer, size_t buffer_size,
                                     int val, const char *unit)
 {
@@ -348,8 +348,8 @@ static int32_t list_pad_getlang(int value, int unit)
         default: return TALK_ID(value, unit);
     }
 }
+#endif
 
-#endif /* HAVE_TOUCHSCREEN */
 static const char* formatter_unit_0_is_off(char *buffer, size_t buffer_size,
                                     int val, const char *unit)
 {
@@ -455,12 +455,28 @@ static void space80_set(int val)
                           global_settings.space80_mix);
 }
 
+static void replaygain_set(int val)
+{
+    (void)val;
+    dsp_replaygain_set_settings(&global_settings.replaygain_settings);
+}
 static void compressor_set(int val)
 {
     (void)val;
     dsp_set_compressor(&global_settings.compressor_settings);
 }
 
+static void compressor_switch(int val)
+{
+    (void)val;
+    dsp_compressor_switch(global_settings.compressor_switch);
+}
+
+static void surround_set_factor(int val)
+{
+    (void)val;
+    dsp_surround_set_cutoff(global_settings.surround_fx1, global_settings.surround_fx2);
+}
 static const char* db_format(char* buffer, size_t buffer_size, int value,
                       const char* unit)
 {
@@ -482,96 +498,96 @@ static int32_t get_precut_talkid(int value, int unit)
 }
 
 struct eq_band_setting eq_defaults[EQ_NUM_BANDS] = {
-    { 20, 4.3, 0 },
-    { 30, 4.3, 0 },
+    { 20, 43, 0 },
+    { 30, 43, 0 },
 #if EQ_NUM_BANDS > 3
-    { 40, 4.3, 0 },
+    { 40, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 4
-    { 50, 4.3, 0 },
+    { 50, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 5
-    { 60, 4.3, 0 },
+    { 60, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 6
-    { 70, 4.3, 0 },
+    { 80, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 7
-    { 90, 4.3, 0 },
+    { 100, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 8
-    { 110, 4.3, 0 },
+    { 130, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 9
-    { 140, 4.3, 0 },
+    { 160, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 10
-    { 180, 4.3, 0 },
+    { 200, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 11
-    { 230, 4.3, 0 },
+    { 250, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 12
-    { 290, 4.3, 0 },
+    { 320, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 13
-    { 360, 4.3, 0 },
+    { 400, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 14
-    { 450, 4.3, 0 },
+    { 500, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 15
-    { 570, 4.3, 0 },
+    { 630, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 16
-    { 720, 4.3, 0 },
+    { 800, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 17
-    { 910, 4.3, 0 },
+    { 1000, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 18
-    { 1140, 4.3, 0 },
+    { 1250, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 19
-    { 1440, 4.3, 0 },
+    { 1600, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 20
-    { 1810, 4.3, 0 },
+    { 2000, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 21
-    { 2280, 4.3, 0 },
+    { 2500, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 22
-    { 2880, 4.3, 0 },
+    { 3150, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 23
-    { 3620, 4.3, 0 },
+    { 4000, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 24
-    { 4560, 4.3, 0 },
+    { 5000, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 25
-    { 5750, 4.3, 0 },
+    { 6300, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 26
-    { 7250, 4.3, 0 },
+    { 8000, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 27
-    { 9130, 4.3, 0 },
+    { 10000, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 28
-    { 11500, 4.3, 0 },
+    { 12500, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 29
-    { 14490, 4.3, 0 },
+    { 16000, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 30
-    { 18260, 4.3, 0 },
+    { 18260, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 31
-    { 19420, 4.3, 0 },
+    { 19420, 43, 0 },
 #endif
-    { 19810, 4.3, 0 },
+    { 20000, 43, 0 },
 };
 
 static void eq_load_from_cfg(void *setting, char *value)
@@ -657,7 +673,7 @@ static void qs_load_from_cfg(void* var, char*value)
 static char* qs_write_to_cfg(void* setting, char*buf, int buf_len)
 {
     int index = *(int*)setting;
-    if (index < 0 || index >= nb_settings - 1)
+    if (index < 0 || index >= nb_settings)
     {
         strlcpy(buf, "-", buf_len);
         return buf;
@@ -789,6 +805,9 @@ const struct settings_list settings[] = {
 #ifdef AUDIOHW_HAVE_TREBLE
     SOUND_SETTING(F_NO_WRAP,treble, LANG_TREBLE, "treble", SOUND_TREBLE),
 #endif
+#ifdef AUDIOHW_HAVE_TONE_GAIN
+    SOUND_SETTING(F_NO_WRAP,tone_gain, LANG_TONE_GAIN, "tone gain", SOUND_TONE_GAIN),
+#endif
 /* Hardware EQ tone controls */
 #ifdef AUDIOHW_HAVE_EQ
 /* Band gain is generic */
@@ -908,6 +927,7 @@ const struct settings_list settings[] = {
     OFFON_SETTING(0, playlist_shuffle, LANG_SHUFFLE, false, "shuffle", NULL),
     SYSTEM_SETTING(NVRAM(4), resume_index, -1),
     SYSTEM_SETTING(NVRAM(4), resume_crc32, -1),
+    SYSTEM_SETTING(NVRAM(4), resume_elapsed, -1),
     SYSTEM_SETTING(NVRAM(4), resume_offset, -1),
     CHOICE_SETTING(0, repeat_mode, LANG_REPEAT, REPEAT_OFF, "repeat",
                    "off,all,one,shuffle"
@@ -941,7 +961,7 @@ const struct settings_list settings[] = {
                   MAX_CONTRAST_SETTING, 1, NULL, NULL }}}},
 #endif
 #ifdef HAVE_BACKLIGHT
-    TABLE_SETTING(F_ALLOW_ARBITRARY_VALS, backlight_timeout, LANG_BACKLIGHT, 
+    TABLE_SETTING(F_ALLOW_ARBITRARY_VALS, backlight_timeout, LANG_BACKLIGHT,
                     DEFAULT_BACKLIGHT_TIMEOUT,
                   "backlight timeout", off_on, UNIT_SEC, backlight_formatter,
                   backlight_getlang, backlight_set_timeout, 20,
@@ -999,10 +1019,16 @@ const struct settings_list settings[] = {
                   -1, "list padding", "auto,off", UNIT_PIXEL, list_pad_formatter,
                   list_pad_getlang, NULL, 16,
                   -1,0,2,4,6,8,10,12,16,20,24,28,32,38,44,50),
-    OFFON_SETTING(F_THEMESETTING, list_separator_enabled, LANG_LIST_SEPARATOR,
-                   true, "list separator", NULL),
+#endif
+#if LCD_DEPTH > 1
+    TABLE_SETTING(F_ALLOW_ARBITRARY_VALS, list_separator_height, LANG_LIST_SEPARATOR,
+                  0, "list separator height", "auto,off", UNIT_PIXEL,
+                  list_pad_formatter, list_pad_getlang, NULL, 15,
+                  -1,0,1,2,3,4,5,7,9,11,13,16,20,25,30),
+#ifdef HAVE_LCD_COLOR
     {F_T_INT|F_RGB|F_THEMESETTING ,&global_settings.list_separator_color,-1,
         INT(DEFAULT_THEME_SEPARATOR),"list separator color",NULL,UNUSED},
+#endif
 #endif
 #if CONFIG_KEYPAD == RECORDER_PAD
     OFFON_SETTING(F_THEMESETTING,buttonbar, LANG_BUTTON_BAR ,true,"buttonbar", NULL),
@@ -1028,7 +1054,7 @@ const struct settings_list settings[] = {
                   0,1,2,3,4,5,6,7,8,9,10,15,30,45,60),
     SYSTEM_SETTING(NVRAM(4), runtime, 0),
     SYSTEM_SETTING(NVRAM(4), topruntime, 0),
-    INT_SETTING(F_BANFROMQS, max_files_in_playlist, 
+    INT_SETTING(F_BANFROMQS, max_files_in_playlist,
                 LANG_MAX_FILES_IN_PLAYLIST,
 #if MEMORYSIZE > 1
                   10000,
@@ -1422,7 +1448,7 @@ const struct settings_list settings[] = {
                    ID2P(LANG_TIME), ID2P(LANG_FILESIZE)),
     {F_T_INT|F_RECSETTING, &global_settings.rec_source, LANG_RECORDING_SOURCE,
         INT(0), "rec source",
-        &HAVE_MIC_REC_(",mic") 
+        &HAVE_MIC_REC_(",mic")
         HAVE_LINE_REC_(",line")
         HAVE_SPDIF_REC_(",spdif")
         HAVE_FMRADIO_REC_(",fmradio")[1],
@@ -1498,17 +1524,17 @@ const struct settings_list settings[] = {
     INT_SETTING(F_RECSETTING, rec_stop_thres_linear, LANG_RECORD_STOP_THRESHOLD, 10,
         "trigger stop threshold linear", UNIT_PERCENT, 0, 100, 1, NULL, NULL, NULL),
     TABLE_SETTING(F_RECSETTING, rec_start_duration, LANG_MIN_DURATION, 0,
-        "trigger start duration", 
+        "trigger start duration",
         "0s,1s,2s,5s,10s,15s,20s,25s,30s,1min,2min,5min,10min",
         UNIT_SEC, NULL, NULL, NULL, 13,
         0,1,2,5,10,15,20,25,30,60,120,300,600),
     TABLE_SETTING(F_RECSETTING, rec_stop_postrec, LANG_MIN_DURATION, 0,
-        "trigger stop duration", 
+        "trigger stop duration",
         "0s,1s,2s,5s,10s,15s,20s,25s,30s,1min,2min,5min,10min",
         UNIT_SEC, NULL, NULL, NULL, 13,
         0,1,2,5,10,15,20,25,30,60,120,300,600),
     TABLE_SETTING(F_RECSETTING, rec_stop_gap, LANG_RECORD_STOP_GAP, 1,
-        "trigger min gap", 
+        "trigger min gap",
         "0s,1s,2s,5s,10s,15s,20s,25s,30s,1min,2min,5min,10min",
         UNIT_SEC, NULL, NULL, NULL, 13,
         0,1,2,5,10,15,20,25,30,60,120,300,600),
@@ -1540,7 +1566,7 @@ const struct settings_list settings[] = {
                  LANG_SET_BOOL_YES, LANG_SET_BOOL_NO, NULL),
 
 #ifdef HAVE_TAGCACHE
-#if CONFIG_CODEC == SWCODEC 
+#if CONFIG_CODEC == SWCODEC
     BOOL_SETTING(0, autoresume_enable, LANG_AUTORESUME, false,
                  "autoresume enable", off_on,
                  LANG_SET_BOOL_YES, LANG_SET_BOOL_NO, NULL),
@@ -1553,7 +1579,7 @@ const struct settings_list settings[] = {
                    ID2P(LANG_AUTORESUME_CUSTOM)),
     TEXT_SETTING(0, autoresume_paths, "autoresume next track paths",
                  "/podcast:/podcasts", NULL, NULL),
-#endif                  
+#endif
 
     OFFON_SETTING(0, runtimedb, LANG_RUNTIMEDB_ACTIVE, false,
                   "gather runtime data", NULL),
@@ -1568,10 +1594,10 @@ const struct settings_list settings[] = {
                    "track,album,track shuffle,off", NULL, 4, ID2P(LANG_TRACK_GAIN),
                    ID2P(LANG_ALBUM_GAIN), ID2P(LANG_SHUFFLE_GAIN), ID2P(LANG_OFF)),
     OFFON_SETTING(F_SOUNDSETTING, replaygain_settings.noclip,
-                  LANG_REPLAYGAIN_NOCLIP, false, "replaygain noclip", NULL),
+                  LANG_REPLAYGAIN_NOCLIP, true, "replaygain noclip", NULL),
     INT_SETTING_NOWRAP(F_SOUNDSETTING, replaygain_settings.preamp,
                        LANG_REPLAYGAIN_PREAMP, 0, "replaygain preamp",
-                       UNIT_DB, -120, 120, 5, db_format, get_dec_talkid, NULL),
+                       UNIT_DB, -120, 120, 5, db_format, get_dec_talkid, replaygain_set),
 
     CHOICE_SETTING(0, beep, LANG_BEEP, 0, "beep", "off,weak,moderate,strong",
                    NULL, 4, ID2P(LANG_OFF), ID2P(LANG_WEAK),
@@ -1607,9 +1633,10 @@ const struct settings_list settings[] = {
 
     /* crossfeed */
     CHOICE_SETTING(F_SOUNDSETTING, crossfeed, LANG_CROSSFEED, 0,"crossfeed",
-                   "off,meier,custom", dsp_set_crossfeed_type, 3,
+                   "off,meier,custom,lnx(1280Hz),lnx(640Hz),lnx(320Hz),lnx(160Hz),lnx(80Hz)", dsp_set_crossfeed_type, 8,
                    ID2P(LANG_OFF), ID2P(LANG_CROSSFEED_MEIER),
-                   ID2P(LANG_CROSSFEED_CUSTOM)),
+                   ID2P(LANG_CROSSFEED_CUSTOM),ID2P(LANG_CROSSFEED_LNX),ID2P(LANG_CROSSFEED_LNX2),ID2P(LANG_CROSSFEED_LNX3),
+                      ID2P(LANG_CROSSFEED_LNX4),ID2P(LANG_CROSSFEED_LNX5)),
     INT_SETTING_NOWRAP(F_SOUNDSETTING, crossfeed_direct_gain,
                        LANG_CROSSFEED_DIRECT_GAIN, -15,
                        "crossfeed direct gain", UNIT_DB, -60, 0, 5,
@@ -2243,7 +2270,36 @@ const struct settings_list settings[] = {
     /* dithering */
     OFFON_SETTING(F_SOUNDSETTING, dithering_enabled, LANG_DITHERING, false,
                   "dithering enabled", dsp_dither_enable),
+    /* surround */
+    TABLE_SETTING(F_SOUNDSETTING, surround_enabled,
+                  LANG_SURROUND, 0, "surround enabled", "off",
+                  UNIT_MS, formatter_unit_0_is_off, getlang_unit_0_is_off,
+                  dsp_surround_enable, 6,
+                  0,1,2,5,8,10),
 
+    INT_SETTING_NOWRAP(F_SOUNDSETTING, surround_balance,
+                       LANG_BALANCE, 35,
+                       "surround balance", UNIT_PERCENT, 0, 99,
+                       1, NULL, NULL, dsp_surround_set_balance),
+
+    INT_SETTING_NOWRAP(F_SOUNDSETTING, surround_fx1,
+                       LANG_SURROUND_FX1, 3200,
+                       "surround_fx1", UNIT_HERTZ, 600, 8000,
+                       200, NULL, NULL, surround_set_factor),
+    INT_SETTING_NOWRAP(F_SOUNDSETTING, surround_fx2,
+                       LANG_SURROUND_FX2, 320,
+                       "surround_fx2", UNIT_HERTZ, 40, 400,
+                       40, NULL, NULL, surround_set_factor),
+    /* aa-tube */
+    CHOICE_SETTING(F_SOUNDSETTING|F_NO_WRAP, aatube_enabled,
+                       LANG_ANTIALIAS_WARM, 0,"aatube enabled",
+                       "off,weak,moderate,strong", dsp_aatube_enable, 4,
+                       ID2P(LANG_OFF), ID2P(LANG_WEAK),ID2P(LANG_MODERATE),ID2P(LANG_STRONG)),
+    /* rDose */
+    CHOICE_SETTING(F_SOUNDSETTING|F_NO_WRAP, rdose,
+                   LANG_RDOSE, 0, "rdose enabled",
+                   "off,weak,moderate,strong", dsp_rdose_enable, 4,
+                   ID2P(LANG_OFF), ID2P(LANG_WEAK),ID2P(LANG_MODERATE),ID2P(LANG_STRONG)),
 #ifdef HAVE_PITCHCONTROL
     /* timestretch */
     OFFON_SETTING(F_SOUNDSETTING, timestretch_enabled, LANG_TIMESTRETCH, false,
@@ -2251,6 +2307,10 @@ const struct settings_list settings[] = {
 #endif
 
     /* compressor */
+    CHOICE_SETTING(F_SOUNDSETTING|F_NO_WRAP, compressor_switch,
+                   LANG_COMPRESSOR, 0, "compressor switch",
+                   "off,on", compressor_switch, 2,
+                   ID2P(LANG_OFF), ID2P(LANG_ON)),
     INT_SETTING_NOWRAP(F_SOUNDSETTING, compressor_settings.threshold,
                        LANG_COMPRESSOR_THRESHOLD, 0,
                        "compressor threshold", UNIT_DB, 0, -24,
@@ -2269,11 +2329,11 @@ const struct settings_list settings[] = {
     CHOICE_SETTING(F_SOUNDSETTING|F_NO_WRAP, compressor_settings.knee,
                    LANG_COMPRESSOR_KNEE, 1, "compressor knee",
                    "hard knee,soft knee", compressor_set, 2,
-                   ID2P(LANG_COMPRESSOR_HARD_KNEE), ID2P(LANG_COMPRESSOR_SOFT_KNEE)), 
+                   ID2P(LANG_COMPRESSOR_HARD_KNEE), ID2P(LANG_COMPRESSOR_SOFT_KNEE)),
     INT_SETTING_NOWRAP(F_SOUNDSETTING, compressor_settings.attack_time,
                        LANG_COMPRESSOR_ATTACK, 5,
                        "compressor attack time", UNIT_MS, 0, 30,
-                       5, NULL, NULL, compressor_set),                  
+                       5, NULL, NULL, compressor_set),
     INT_SETTING_NOWRAP(F_SOUNDSETTING, compressor_settings.release_time,
                        LANG_COMPRESSOR_RELEASE, 500,
                        "compressor release time", UNIT_MS, 100, 1000,
@@ -2461,38 +2521,38 @@ const struct settings_list settings[] = {
                   UNIT_SEC, formatter_unit_0_is_skip_track,
                   getlang_unit_0_is_skip_track, NULL,
                   19, -1,0,1,2,3,5,7,10,15,20,30,45,60,90,120,180,300,600,900),
-    CHOICE_SETTING(0, start_in_screen, LANG_START_SCREEN, 1, 
+    CHOICE_SETTING(0, start_in_screen, LANG_START_SCREEN, 1,
                    "start in screen", "previous,root,files,"
-#ifdef HAVE_TAGCACHE 
+#ifdef HAVE_TAGCACHE
 #define START_DB_COUNT 1
                    "db,"
-#else 
+#else
 #define START_DB_COUNT 0
 #endif
                    "wps,menu,"
 #ifdef HAVE_RECORDING
 #define START_REC_COUNT 1
                    "recording,"
-#else 
+#else
 #define START_REC_COUNT 0
 #endif
 #if CONFIG_TUNER
 #define START_TUNER_COUNT 1
                    "radio,"
-#else 
+#else
 #define START_TUNER_COUNT 0
 #endif
                    "bookmarks"
 #ifdef HAVE_PICTUREFLOW_INTEGRATION
 #define START_PF_COUNT 1
                    ",pictureflow"
-#else 
+#else
 #define START_PF_COUNT 0
 #endif
                    , NULL,
     (6 + START_DB_COUNT + START_REC_COUNT + START_TUNER_COUNT + START_PF_COUNT),
                    ID2P(LANG_PREVIOUS_SCREEN), ID2P(LANG_MAIN_MENU),
-                   ID2P(LANG_DIR_BROWSER), 
+                   ID2P(LANG_DIR_BROWSER),
 #ifdef HAVE_TAGCACHE
                    ID2P(LANG_TAGCACHE),
 #endif
@@ -2553,7 +2613,7 @@ const struct settings_list settings[] = {
                 2, "list_accel_start_delay", UNIT_SEC, 0, 10, 1,
                 formatter_unit_0_is_off, getlang_unit_0_is_off, NULL),
     INT_SETTING(0, list_accel_wait, LANG_LISTACCEL_ACCEL_SPEED,
-                3, "list_accel_wait", UNIT_SEC, 1, 10, 1, 
+                3, "list_accel_wait", UNIT_SEC, 1, 10, 1,
                 scanaccel_formatter, getlang_unit_0_is_off, NULL),
 #endif /* HAVE_WHEEL_ACCELERATION */
 #if CONFIG_CODEC == SWCODEC
@@ -2628,7 +2688,7 @@ const struct settings_list settings[] = {
     CHOICE_SETTING(0, touch_mode, LANG_TOUCHSCREEN_MODE, DEFAULT_TOUCHSCREEN_MODE,
                    "touchscreen mode", "point,grid", NULL, 2,
                    ID2P(LANG_TOUCHSCREEN_POINT), ID2P(LANG_TOUCHSCREEN_GRID)),
-    CUSTOM_SETTING(0, ts_calibration_data, -1, 
+    CUSTOM_SETTING(0, ts_calibration_data, -1,
                     &default_calibration_parameters, "touchscreen calibration",
                     tsc_load_from_cfg, tsc_write_to_cfg,
                     tsc_is_changed, tsc_set_default),
@@ -2685,21 +2745,21 @@ const struct settings_list settings[] = {
     TABLE_SETTING(F_ALLOW_ARBITRARY_VALS, hotkey_wps,
         LANG_HOTKEY_WPS, HOTKEY_VIEW_PLAYLIST, "hotkey wps",
         "off,view playlist,show track info,pitchscreen,open with,delete"
-#ifdef HAVE_PICTUREFLOW_INTEGRATION        
+#ifdef HAVE_PICTUREFLOW_INTEGRATION
         ",pictureflow"
 #endif
-        ,UNIT_INT, hotkey_formatter, hotkey_getlang, NULL, 
-#ifdef HAVE_PICTUREFLOW_INTEGRATION        
-        7, 
+        ,UNIT_INT, hotkey_formatter, hotkey_getlang, NULL,
+#ifdef HAVE_PICTUREFLOW_INTEGRATION
+        7,
 #else
         6,
 #endif
         HOTKEY_OFF,
         HOTKEY_VIEW_PLAYLIST, HOTKEY_SHOW_TRACK_INFO, HOTKEY_PITCHSCREEN,
         HOTKEY_OPEN_WITH, HOTKEY_DELETE
-#ifdef HAVE_PICTUREFLOW_INTEGRATION        
+#ifdef HAVE_PICTUREFLOW_INTEGRATION
         , HOTKEY_PICTUREFLOW
-#endif        
+#endif
         ),
     TABLE_SETTING(F_ALLOW_ARBITRARY_VALS, hotkey_tree,
         LANG_HOTKEY_FILE_BROWSER, HOTKEY_OFF, "hotkey tree",

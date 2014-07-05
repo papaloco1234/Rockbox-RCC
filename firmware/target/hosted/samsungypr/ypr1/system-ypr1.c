@@ -21,9 +21,11 @@
 #include <stdlib.h>
 #include <string.h>
 #include <inttypes.h>
+#include <unistd.h>
 #include "system.h"
 #include "panic.h"
 #include "debug.h"
+#include "hostfs.h"
 
 #include "gpio-ypr.h"
 #include "pmu-ypr1.h"
@@ -64,4 +66,17 @@ void system_reboot(void)
 void system_exception_wait(void)
 {
     system_reboot();
+}
+
+int hostfs_init()
+{
+    /* stub */
+    return 0;
+}
+
+int hostfs_flush(void)
+{
+    sync();
+
+    return 0;
 }

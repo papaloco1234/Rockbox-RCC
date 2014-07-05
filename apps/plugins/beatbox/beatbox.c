@@ -99,7 +99,8 @@
 #define BTN_UP           BUTTON_UP
 #define BTN_DOWN         BUTTON_DOWN
 
-#elif CONFIG_KEYPAD == SAMSUNG_YH_PAD
+#elif (CONFIG_KEYPAD == SAMSUNG_YH820_PAD) || \
+      (CONFIG_KEYPAD == SAMSUNG_YH920_PAD)
 #define BTN_QUIT         BUTTON_PLAY
 #define BTN_RIGHT        BUTTON_RIGHT
 #define BTN_UP           BUTTON_UP
@@ -108,6 +109,12 @@
 #elif CONFIG_KEYPAD == PBELL_VIBE500_PAD
 #define BTN_QUIT         BUTTON_REC
 #define BTN_RIGHT        BUTTON_NEXT
+#define BTN_UP           BUTTON_UP
+#define BTN_DOWN         BUTTON_DOWN
+
+#elif CONFIG_KEYPAD == CREATIVE_ZENXFI3_PAD
+#define BTN_QUIT         BUTTON_PLAY
+#define BTN_RIGHT        BUTTON_MENU
 #define BTN_UP           BUTTON_UP
 #define BTN_DOWN         BUTTON_DOWN
 

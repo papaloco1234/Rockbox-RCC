@@ -53,11 +53,11 @@
 #define LCD_HEIGHT 240
 #endif
 
-#define LCD_DEPTH  16
+#define LCD_DEPTH  24
 /* Calculated value, important for touch sensor */
 #define LCD_DPI    180
 /* Check that but should not matter */
-#define LCD_PIXELFORMAT RGB565
+#define LCD_PIXELFORMAT RGB888
 
 /* Capacitive touchscreen */
 #define HAVE_TOUCHSCREEN
@@ -150,3 +150,7 @@
 
 /* This mount point resides in the rootfs, binded to /mnt/media0/.rockbox */
 #define BOOTDIR "/.rockbox"
+
+/* No special storage */
+#define CONFIG_STORAGE STORAGE_HOSTFS
+#define HAVE_STORAGE_FLUSH

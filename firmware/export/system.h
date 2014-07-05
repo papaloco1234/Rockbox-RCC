@@ -24,7 +24,6 @@
 
 #include <stdbool.h>
 #include <stdint.h>
-
 #include "cpu.h"
 #include "gcc_extensions.h" /* for LIKELY/UNLIKELY */
 
@@ -86,6 +85,10 @@ int get_cpu_boost_counter(void);
 
 #define BAUDRATE 9600
 
+/* wrap-safe macros for tick comparison */
+#define TIME_AFTER(a,b)         ((long)(b) - (long)(a) < 0)
+#define TIME_BEFORE(a,b)        TIME_AFTER(b,a)
+
 #ifndef NULL
 #define NULL ((void*)0)
 #endif
@@ -111,7 +114,7 @@ int get_cpu_boost_counter(void);
 #define ALIGN_UP_P2(n, p2)   ALIGN_DOWN_P2((n) + P2_M1(p2),p2)
 
 /* align up or down to nearest integer multiple of a */
-#define ALIGN_DOWN(n, a)     ((typeof(n))((typeof(a))(n)/(a)*(a)))
+#define ALIGN_DOWN(n, a)     ((typeof(n))((uintptr_t)(n)/(a)*(a)))
 #define ALIGN_UP(n, a)       ALIGN_DOWN((n)+((a)-1),a)
 
 /* align start and end of buffer to nearest integer multiple of a */

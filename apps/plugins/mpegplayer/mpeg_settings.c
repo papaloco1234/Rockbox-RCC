@@ -160,6 +160,14 @@ struct mpeg_settings settings;
 #define MPEG_START_TIME_RIGHT2      BUTTON_MENU
 #define MPEG_START_TIME_EXIT        BUTTON_BACK
 
+#elif (CONFIG_KEYPAD == CREATIVE_ZENXFI3_PAD)
+#define MPEG_START_TIME_SELECT      (BUTTON_PLAY|BUTTON_REL)
+#define MPEG_START_TIME_LEFT        BUTTON_BACK
+#define MPEG_START_TIME_RIGHT       BUTTON_MENU
+#define MPEG_START_TIME_UP          BUTTON_UP
+#define MPEG_START_TIME_DOWN        BUTTON_DOWN
+#define MPEG_START_TIME_EXIT        (BUTTON_PLAY|BUTTON_REPEAT)
+
 #elif CONFIG_KEYPAD == PHILIPS_HDD1630_PAD
 #define MPEG_START_TIME_SELECT      BUTTON_SELECT
 #define MPEG_START_TIME_LEFT        BUTTON_LEFT
@@ -196,7 +204,8 @@ struct mpeg_settings settings;
 #elif CONFIG_KEYPAD == ONDAVX777_PAD
 #define MPEG_START_TIME_EXIT        BUTTON_POWER
 
-#elif CONFIG_KEYPAD == SAMSUNG_YH_PAD
+#elif (CONFIG_KEYPAD == SAMSUNG_YH820_PAD) || \
+      (CONFIG_KEYPAD == SAMSUNG_YH920_PAD)
 #define MPEG_START_TIME_SELECT      BUTTON_PLAY
 #define MPEG_START_TIME_LEFT        BUTTON_LEFT
 #define MPEG_START_TIME_RIGHT       BUTTON_RIGHT
@@ -266,6 +275,14 @@ struct mpeg_settings settings;
 
 #elif (CONFIG_KEYPAD == ANDROID_PAD)
 #define MPEG_START_TIME_EXIT  BUTTON_BACK
+
+#elif CONFIG_KEYPAD == SONY_NWZ_PAD
+#define MPEG_START_TIME_SELECT      BUTTON_PLAY
+#define MPEG_START_TIME_LEFT        BUTTON_LEFT
+#define MPEG_START_TIME_RIGHT       BUTTON_RIGHT
+#define MPEG_START_TIME_UP          BUTTON_UP
+#define MPEG_START_TIME_DOWN        BUTTON_DOWN
+#define MPEG_START_TIME_EXIT        BUTTON_BACK
 
 #else
 #error No keymap defined!
@@ -687,8 +704,9 @@ static uint32_t increment_time(uint32_t val, int32_t amount, uint32_t range)
 }
 
 #if defined(HAVE_LCD_ENABLE) || defined(HAVE_LCD_SLEEP)
-static void get_start_time_lcd_enable_hook(void *param)
+static void get_start_time_lcd_enable_hook(unsigned short id, void *param)
 {
+    (void)id;
     (void)param;
     rb->queue_post(rb->button_queue, LCD_ENABLE_EVENT_0, 0);
 }
@@ -708,7 +726,7 @@ static int get_start_time(uint32_t duration)
     mylcd_update();
 
 #if defined(HAVE_LCD_ENABLE) || defined(HAVE_LCD_SLEEP)
-    rb->add_event(LCD_EVENT_ACTIVATION, false, get_start_time_lcd_enable_hook);
+    rb->add_event(LCD_EVENT_ACTIVATION, get_start_time_lcd_enable_hook);
 #endif
 
     draw_slider(0, 100, &rc_bound);

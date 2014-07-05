@@ -29,7 +29,6 @@ usb.c
 #if defined(ROCKBOX_HAS_LOGF) || defined(ROCKBOX_HAS_LOGDISKF)
 logf.c
 #endif /* ROCKBOX_HAS_LOGF */
-kernel.c
 #if (CONFIG_PLATFORM & PLATFORM_NATIVE)
 load_code.c
 #ifdef RB_PROFILE
@@ -41,7 +40,6 @@ common/rb-loader.c
 #if !defined(BOOTLOADER) || defined(CPU_SH)
 rolo.c
 #endif /* !defined(BOOTLOADER) || defined(CPU_SH) */
-thread.c
 timer.c
 debug.c
 #endif /* PLATFORM_NATIVE */
@@ -63,7 +61,6 @@ target/hosted/sdl/system-sdl.c
 #ifdef HAVE_SDL_THREADS
 target/hosted/sdl/thread-sdl.c
 #else
-thread.c
 #endif
 target/hosted/sdl/timer-sdl.c
 #ifdef HAVE_TOUCHSCREEN
@@ -78,7 +75,6 @@ target/hosted/sdl/app/button-application.c
 target/hosted/kernel-unix.c
 target/hosted/filesystem-unix.c
 target/hosted/lc-unix.c
-thread.c
 drivers/lcd-memframe.c
 target/hosted/samsungypr/lcd-ypr.c
 target/hosted/samsungypr/gpio-ypr.c
@@ -222,6 +218,8 @@ drivers/lcd-16bit-vert.c
 #else
 drivers/lcd-16bit.c
 #endif
+#elif LCD_DEPTH == 24
+drivers/lcd-24bit.c
 #endif /* LCD_DEPTH */
 common/diacritic.c
 #endif /* HAVE_LCD_BITMAP */
@@ -561,6 +559,7 @@ target/arm/imx233/adc-imx233.c
 target/arm/imx233/lradc-imx233.c
 target/arm/imx233/pwm-imx233.c
 target/arm/imx233/rtc-imx233.c
+target/arm/imx233/button-imx233.c
 #if IMX233_SUBTARGET >= 3700
 target/arm/imx233/dcp-imx233.c
 #endif
@@ -1190,6 +1189,7 @@ target/arm/imx233/fmradio-imx233.c
 #endif
 target/arm/imx233/creative-zen/backlight-zen.c
 # if defined(CREATIVE_ZEN) || defined(CREATIVE_ZENXFI)
+drivers/lcd-memframe.c
 target/arm/imx233/creative-zen/lcd-zen.c
 # elif defined(CREATIVE_ZENMOZAIC)
 target/arm/imx233/creative-zen/lcd-zenmozaic.c
@@ -1202,7 +1202,6 @@ target/arm/imx233/creative-zen/button-zen.c
 target/arm/imx233/creative-zen/debug-zen.c
 target/arm/imx233/creative-zen/power-zen.c
 target/arm/imx233/creative-zen/powermgmt-zen.c
-target/arm/imx233/button-lradc-imx233.c
 #endif
 
 #ifdef CREATIVE_ZENXFI2
@@ -1229,7 +1228,6 @@ target/arm/imx233/creative-zenxfi3/powermgmt-zenxfi3.c
 #endif
 
 #if defined(SONY_NWZE360) || defined(SONY_NWZE370)
-target/arm/imx233/button-lradc-imx233.c
 #ifndef BOOTLOADER
 target/arm/imx233/fmradio-imx233.c
 #endif
@@ -1710,6 +1708,7 @@ target/arm/samsung/yh920/backlight-yh920.c
 target/arm/samsung/yh920/lcd-yh920.c
 target/arm/samsung/yh920/lcd-as-yh920.S
 target/arm/samsung/yh920/powermgmt-yh920.c
+target/arm/samsung/fmradio-yh92x.c
 #endif /* SAMSUNG_YH920 */
 
 #ifdef SAMSUNG_YH925
@@ -1814,11 +1813,29 @@ target/hosted/android/telephony-android.c
 target/hosted/android/app/button-application.c
 #endif
 drivers/audio/android.c
-thread.c
 #endif
 
 #endif /* defined(SIMULATOR) */
 
 #if defined(HAVE_TOUCHPAD) && !defined(HAS_BUTTON_HOLD)
 drivers/touchpad.c
+#endif
+
+/* firmware/kernel section */
+#ifdef HAVE_CORELOCK_OBJECT
+kernel/corelock.c
+#endif
+kernel/mutex.c
+kernel/queue.c
+#ifdef HAVE_SEMAPHORE_OBJECTS
+kernel/semaphore.c
+#endif
+#if defined(HAVE_SDL_THREADS)
+target/hosted/sdl/thread-sdl.c
+#else
+kernel/thread.c
+#endif
+kernel/tick.c
+#ifdef INCLUDE_TIMEOUT_API
+kernel/timeout.c
 #endif

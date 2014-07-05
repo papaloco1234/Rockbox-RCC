@@ -330,6 +330,7 @@ static int get_tag(int *tag)
         {"playcount", tag_playcount},
         {"rating", tag_rating},
         {"lastplayed", tag_lastplayed},
+        {"lastelapsed", tag_lastelapsed},
         {"lastoffset", tag_lastoffset},
         {"commitid", tag_commitid},
         {"entryage", tag_virt_entryage},
@@ -803,10 +804,11 @@ static int nat_compare(const void *p1, const void *p2)
     return strnatcasecmp(e1->name, e2->name);
 }
 
-static void tagtree_buffer_event(void *data)
+static void tagtree_buffer_event(unsigned short id, void *ev_data)
 {
+    (void)id;
     struct tagcache_search tcs;
-    struct mp3entry *id3 = ((struct track_event *)data)->id3;
+    struct mp3entry *id3 = ((struct track_event *)ev_data)->id3;
 
     bool runtimedb = global_settings.runtimedb;
     bool autoresume = global_settings.autoresume_enable;
@@ -841,8 +843,16 @@ static void tagtree_buffer_event(void *data)
  #if CONFIG_CODEC == SWCODEC
     if (autoresume)
     {
-        /* Load current file resume offset if not already defined (by
+        /* Load current file resume info if not already defined (by
            another resume mechanism) */
+        if (id3->elapsed == 0)
+        {
+            id3->elapsed = tagcache_get_numeric(&tcs, tag_lastelapsed);
+
+            logf("tagtree_buffer_event: Set elapsed for %s to %lX\n",
+                 str_or_empty(id3->title), id3->elapsed);
+        }
+
         if (id3->offset == 0)
         {
             id3->offset = tagcache_get_numeric(&tcs, tag_lastoffset);
@@ -859,9 +869,10 @@ static void tagtree_buffer_event(void *data)
     tagcache_search_finish(&tcs);
 }
 
-static void tagtree_track_finish_event(void *data)
+static void tagtree_track_finish_event(unsigned short id, void *ev_data)
 {
-    struct track_event *te = (struct track_event *)data;
+    (void)id;
+    struct track_event *te = (struct track_event *)ev_data;
     struct mp3entry *id3 = te->id3;
 
     long tagcache_idx = id3->tagcache_idx;
@@ -940,12 +951,13 @@ static void tagtree_track_finish_event(void *data)
 #if CONFIG_CODEC == SWCODEC
     if (autoresume)
     {
+        unsigned long elapsed = auto_skip ? 0 : id3->elapsed;
         unsigned long offset = auto_skip ? 0 : id3->offset;
-
+        tagcache_update_numeric(tagcache_idx, tag_lastelapsed, elapsed);
         tagcache_update_numeric(tagcache_idx, tag_lastoffset, offset);
 
-        logf("tagtree_track_finish_event: Save offset for %s: %lX",
-             str_or_empty(id3->title), offset);
+        logf("tagtree_track_finish_event: Save resume for %s: %lX %lX",
+             str_or_empty(id3->title), elapsed, offset);
     }
 #endif
 }
@@ -1173,8 +1185,8 @@ void tagtree_init(void)
     if (rootmenu < 0)
         rootmenu = 0;
 
-    add_event(PLAYBACK_EVENT_TRACK_BUFFER, false, tagtree_buffer_event);
-    add_event(PLAYBACK_EVENT_TRACK_FINISH, false, tagtree_track_finish_event);
+    add_event(PLAYBACK_EVENT_TRACK_BUFFER, tagtree_buffer_event);
+    add_event(PLAYBACK_EVENT_TRACK_FINISH, tagtree_track_finish_event);
 
     core_shrink(tagtree_handle, core_get_data(tagtree_handle), tagtree_buf_used);
 }
@@ -2034,7 +2046,7 @@ static int tagtree_play_folder(struct tree_context* c)
         c->selected_item = 0;
     gui_synclist_select_item(&tree_lists, c->selected_item);
 
-    playlist_start(c->selected_item,0);
+    playlist_start(c->selected_item, 0, 0);
     playlist_get_current()->num_inserted_tracks = 0; /* make warn on playlist erase work */
     return 0;
 }

@@ -541,7 +541,10 @@ static int start_shuffled_play(void)
         }
     }
     rb->splash(HZ, "Done");
-    rb->playlist_start(0,0);
+    /* the core needs the audio buffer back in order to start playback. */
+    list = NULL;
+    rb->plugin_release_audio_buffer();
+    rb->playlist_start(0, 0, 0);
     return 1;
 }
 

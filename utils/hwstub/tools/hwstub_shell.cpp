@@ -44,6 +44,7 @@ struct hwstub_version_desc_t g_hwdev_ver;
 struct hwstub_layout_desc_t g_hwdev_layout;
 struct hwstub_target_desc_t g_hwdev_target;
 struct hwstub_stmp_desc_t g_hwdev_stmp;
+struct hwstub_pp_desc_t g_hwdev_pp;
 lua_State *g_lua;
 
 /**
@@ -278,6 +279,8 @@ bool my_lua_import_hwstub()
     lua_setfield(g_lua, -2, "UNK");
     lua_pushinteger(g_lua, HWSTUB_TARGET_STMP);
     lua_setfield(g_lua, -2, "STMP");
+    lua_pushinteger(g_lua, HWSTUB_TARGET_PP);
+    lua_setfield(g_lua, -2, "PP");
     lua_pushinteger(g_lua, HWSTUB_TARGET_RK27);
     lua_setfield(g_lua, -2, "RK27");
     lua_setfield(g_lua, -2, "target");
@@ -292,6 +295,15 @@ bool my_lua_import_hwstub()
         lua_pushinteger(g_lua, g_hwdev_stmp.bPackage);
         lua_setfield(g_lua, -2, "package");
         lua_setfield(g_lua, -2, "stmp");
+    }
+    else if(g_hwdev_target.dID == HWSTUB_TARGET_PP)
+    {
+        lua_newtable(g_lua); // pp
+        lua_pushinteger(g_lua, g_hwdev_pp.wChipID);
+        lua_setfield(g_lua, -2, "chipid");
+        lua_pushlstring(g_lua, (const char *)g_hwdev_pp.bRevision, 2);
+        lua_setfield(g_lua, -2, "rev");
+        lua_setfield(g_lua, -2, "pp");
     }
 
     lua_pushlightuserdata(g_lua, (void *)&hw_read8);
@@ -670,15 +682,22 @@ void usage(void)
     printf("\n");
     printf("usage: hwstub_tool [options] <soc desc files>\n");
     printf("options:\n");
-    printf("  --help/-?\tDisplay this help\n");
-    printf("  --quiet/-q\tQuiet non-command messages\n");
-    printf("  -i <init>\tSet lua init file (default is init.lua)\n");
+    printf("  --help/-?   Display this help\n");
+    printf("  --quiet/-q  Quiet non-command messages\n");
+    printf("  -i <init>   Set lua init file (default is init.lua)\n");
+    printf("  -e <cmd>    Execute <cmd> at startup\n");
+    printf("  -f <file>   Execute <file> at startup\n");
+    printf("Relative order of -e and -f commands are preserved.\n");
+    printf("They are executed after init file.\n");
     exit(1);
 }
+
+enum exec_type { exec_cmd, exec_file };
 
 int main(int argc, char **argv)
 {
     const char *lua_init = "init.lua";
+    std::vector< std::pair< exec_type, std::string > > startup_cmds;
     // parse command line
     while(1)
     {
@@ -689,7 +708,7 @@ int main(int argc, char **argv)
             {0, 0, 0, 0}
         };
 
-        int c = getopt_long(argc, argv, "?qi:", long_options, NULL);
+        int c = getopt_long(argc, argv, "?qi:e:f:", long_options, NULL);
         if(c == -1)
             break;
         switch(c)
@@ -705,6 +724,12 @@ int main(int argc, char **argv)
             case 'i':
                 lua_init = optarg;
                 break;
+            case 'e':
+                startup_cmds.push_back(std::make_pair(exec_cmd, std::string(optarg)));
+                break;
+            case 'f':
+                startup_cmds.push_back(std::make_pair(exec_file, std::string(optarg)));
+                break;
             default:
                 abort();
         }
@@ -713,11 +738,14 @@ int main(int argc, char **argv)
     // load register descriptions
     std::vector< soc_t > socs;
     for(int i = optind; i < argc; i++)
-        if(!soc_desc_parse_xml(argv[i], socs))
+    {
+        socs.push_back(soc_t());
+        if(!soc_desc_parse_xml(argv[i], socs[socs.size() - 1]))
         {
             printf("Cannot load description '%s'\n", argv[i]);
             return 2;
         }
+    }
 
     // create usb context
     libusb_context *ctx;
@@ -791,6 +819,17 @@ int main(int argc, char **argv)
             goto Lerr;
         }
     }
+
+    // get PP specific information
+    if(g_hwdev_target.dID == HWSTUB_TARGET_PP)
+    {
+        ret = hwstub_get_desc(g_hwdev, HWSTUB_DT_PP, &g_hwdev_pp, sizeof(g_hwdev_pp));
+        if(ret != sizeof(g_hwdev_pp))
+        {
+            printf("Cannot get pp: %d\n", ret);
+            goto Lerr;
+        }
+    }
     /** Init lua */
 
     // create lua state
@@ -816,6 +855,20 @@ int main(int argc, char **argv)
     /** start interactive mode */
     if(!g_quiet)
         printf("Starting interactive lua session. Type 'help()' to get some help\n");
+
+    /** run startup commands */
+    for(size_t i = 0; i < startup_cmds.size(); i++)
+    {
+        bool ret = false;
+        if(!g_quiet)
+            printf("Running '%s'...\n", startup_cmds[i].second.c_str());
+        if(startup_cmds[i].first == exec_file)
+            ret = luaL_dofile(g_lua, startup_cmds[i].second.c_str());
+        else if(startup_cmds[i].first == exec_cmd)
+            ret = luaL_dostring(g_lua, startup_cmds[i].second.c_str());
+        if(ret)
+            printf("error: %s\n", lua_tostring(g_lua, -1));
+    }
 
     // use readline to provide some history and completion
     rl_bind_key('\t', rl_complete);

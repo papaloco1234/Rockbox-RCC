@@ -35,6 +35,8 @@
 /* LCD dimensions */
 #define LCD_WIDTH  128
 #define LCD_HEIGHT 160
+/* sqrt(128^2 + 160^2) / 1.7 = 120.5 */
+#define LCD_DPI 121
 #define LCD_DEPTH  16   /* 65536 colours */
 #define LCD_PIXELFORMAT RGB565 /* rgb565 */
 
@@ -91,6 +93,9 @@
 #define PLUGIN_BUFFER_SIZE 0x80000
 
 #define AB_REPEAT_ENABLE
+
+/* Define this if you can detect headphones */
+#define HAVE_HEADPHONE_DETECTION
 
 /* Define this for LCD backlight available */
 #define HAVE_BACKLIGHT

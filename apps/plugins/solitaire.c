@@ -373,6 +373,26 @@
 #   define HK_CUR2STACK    "PLAY.."
 #   define HK_REM2STACK    "PLAY+RIGHT"
 
+#elif (CONFIG_KEYPAD == CREATIVE_ZENXFI3_PAD)
+#   define SOL_QUIT          BUTTON_POWER
+#   define SOL_UP            BUTTON_UP
+#   define SOL_DOWN          BUTTON_DOWN
+#   define SOL_LEFT          BUTTON_BACK
+#   define SOL_RIGHT         BUTTON_MENU
+#   define SOL_MOVE          (BUTTON_PLAY|BUTTON_REL)
+#   define SOL_DRAW          (BUTTON_PLAY|BUTTON_REPEAT)
+#   define SOL_REM2CUR       BUTTON_VOL_DOWN
+#   define SOL_CUR2STACK_PRE (BUTTON_VOL_UP | BUTTON_REPEAT)
+#   define SOL_CUR2STACK     BUTTON_VOL_UP
+#   define SOL_REM2STACK     (BUTTON_VOL_DOWN|BUTTON_REPEAT)
+#   define SOL_REM2STACK_PRE BUTTON_VOL_DOWN
+
+#   define HK_MOVE           "SHORT PLAY"
+#   define HK_DRAW           "LONG PLAY"
+#   define HK_REM2CUR        "VOLUME-"
+#   define HK_CUR2STACK      "VOLUME+"
+#   define HK_REM2STACK      "LONG VOLUME-"
+
 #elif CONFIG_KEYPAD == PHILIPS_HDD1630_PAD
 #   define SOL_QUIT         BUTTON_POWER
 #   define SOL_UP           BUTTON_UP
@@ -432,7 +452,8 @@
 CONFIG_KEYPAD == MROBE500_PAD
 #   define SOL_QUIT          BUTTON_POWER
 
-#elif (CONFIG_KEYPAD == SAMSUNG_YH_PAD)
+#elif (CONFIG_KEYPAD == SAMSUNG_YH820_PAD) || \
+      (CONFIG_KEYPAD == SAMSUNG_YH920_PAD)
 #   define SOL_QUIT          BUTTON_REC
 #   define SOL_UP            BUTTON_UP
 #   define SOL_DOWN          BUTTON_DOWN
@@ -595,6 +616,23 @@ CONFIG_KEYPAD == MROBE500_PAD
 #   define HK_REM2CUR      "SELECT"
 #   define HK_CUR2STACK    "POWER + LEFT"
 #   define HK_REM2STACK    "POWER + RIGHT"
+
+#elif (CONFIG_KEYPAD == SONY_NWZ_PAD)
+#define SOL_QUIT      BUTTON_BACK
+#define SOL_UP        BUTTON_UP
+#define SOL_DOWN      BUTTON_DOWN
+#define SOL_LEFT      BUTTON_LEFT
+#define SOL_RIGHT     BUTTON_RIGHT
+#define SOL_MOVE      BUTTON_PLAY
+#define SOL_DRAW      (BUTTON_POWER|BUTTON_UP)
+#define SOL_REM2CUR   (BUTTON_POWER|BUTTON_DOWN)
+#define SOL_CUR2STACK (BUTTON_POWER|BUTTON_LEFT)
+#define SOL_REM2STACK (BUTTON_POWER|BUTTON_RIGHT)
+#define HK_MOVE       "Play"
+#define HK_DRAW       "Option+Up"
+#define HK_REM2CUR    "Option+Down"
+#define HK_CUR2STACK  "Option+Left"
+#define HK_REM2STACK  "Option+Right"
 
 #else
 #error No keymap defined!

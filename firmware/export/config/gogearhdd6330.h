@@ -51,6 +51,8 @@
 /* LCD dimensions */
 #define LCD_WIDTH  220
 #define LCD_HEIGHT 176
+/* sqrt(220^2 + 176^2) / 2.0 = 140.9 */
+#define LCD_DPI 141
 #define LCD_DEPTH  16   /* 65536 colours */
 #define LCD_PIXELFORMAT RGB565SWAPPED /* rgb565 byte-swapped */
 
@@ -106,7 +108,7 @@
 /* WM8731 has no tone controls, so we use the software ones */
 #define HAVE_SW_TONE_CONTROLS
 
-/* TODO: #define AB_REPEAT_ENABLE */
+#define AB_REPEAT_ENABLE
 
 /* FM Tuner */
 #define CONFIG_TUNER      TEA5767
@@ -119,7 +121,9 @@
 /* Define this for LCD backlight available */
 #define HAVE_BACKLIGHT
 #define HAVE_BACKLIGHT_BRIGHTNESS
-/* #define CONFIG_BACKLIGHT_FADING     BACKLIGHT_FADING_SW_SETTING */
+
+/* Which backlight fading type? */
+#define CONFIG_BACKLIGHT_FADING BACKLIGHT_FADING_SW_SETTING
 
 /* Main LCD backlight brightness range and defaults */
 #define MIN_BRIGHTNESS_SETTING      1

@@ -5,6 +5,36 @@
 #include "backend.h"
 
 /**
+ * SocFile
+ */
+SocFile::SocFile()
+    :m_valid(false)
+{
+}
+
+SocFile::SocFile(const QString& filename)
+    :m_filename(filename)
+{
+    m_valid = soc_desc_parse_xml(filename.toStdString(), m_soc);
+    soc_desc_normalize(m_soc);
+}
+
+bool SocFile::IsValid()
+{
+    return m_valid;
+}
+
+SocRef SocFile::GetSocRef()
+{
+    return SocRef(this);
+}
+
+QString SocFile::GetFilename()
+{
+    return m_filename;
+}
+
+/**
  * Backend
  */
 
@@ -12,33 +42,31 @@ Backend::Backend()
 {
 }
 
-QStringList Backend::GetSocNameList()
+
+QList< SocFileRef > Backend::GetSocFileList()
 {
-    QStringList sl;
-    foreach(const soc_t& soc, m_socs)
-        sl.append(QString(soc.name.c_str()));
-    return sl;
+    QList< SocFileRef > list;
+    for(std::list< SocFile >::iterator it = m_socs.begin(); it != m_socs.end(); ++it)
+        list.append(SocFileRef(&(*it)));
+    return list;
 }
 
-bool Backend::GetSocByName(const QString& name, SocRef& s)
+QList< SocRef > Backend::GetSocList()
 {
-    for(std::list< soc_t >::iterator it = m_socs.begin(); it != m_socs.end(); ++it)
-        if(it->name == name.toStdString())
-        {
-            s = SocRef(&(*it));
-            return true;
-        }
-    return false;
+    QList< SocRef > list;
+    for(std::list< SocFile >::iterator it = m_socs.begin(); it != m_socs.end(); ++it)
+        list.append(it->GetSocRef());
+    return list;
 }
 
 bool Backend::LoadSocDesc(const QString& filename)
 {
-    std::vector< soc_t > new_socs;
-    bool ret = soc_desc_parse_xml(filename.toStdString(), new_socs);
-    for(size_t i = 0; i < new_socs.size(); i++)
-        m_socs.push_back(new_socs[i]);
+    SocFile f(filename);
+    if(!f.IsValid())
+        return false;
+    m_socs.push_back(f);
     emit OnSocListChanged();
-    return ret;
+    return true;
 }
 
 IoBackend *Backend::CreateFileIoBackend(const QString& filename)
@@ -62,9 +90,10 @@ IoBackend *Backend::CreateHWStubIoBackend(HWStubDevice *dev)
  * FileIoBackend
  */
 
-FileIoBackend::FileIoBackend(const QString& filename)
+FileIoBackend::FileIoBackend(const QString& filename, const QString& soc_name)
 {
     m_filename = filename;
+    m_soc = soc_name;
     Reload();
 }
 
@@ -135,7 +164,7 @@ bool FileIoBackend::Commit()
     while(it.hasNext())
     {
         it.next();
-        out << it.key() << " = " << it.value() << "\n";
+        out << it.key() << " = " << hex << showbase << it.value() << "\n";
     }
     out.flush();
     return file.flush();
@@ -146,6 +175,16 @@ bool FileIoBackend::Commit()
  * HWStubDevice
  */
 HWStubDevice::HWStubDevice(struct libusb_device *dev)
+{
+    Init(dev);
+}
+
+HWStubDevice::HWStubDevice(const HWStubDevice *dev)
+{
+    Init(dev->m_dev);
+}
+
+void HWStubDevice::Init(struct libusb_device *dev)
 {
     libusb_ref_device(dev);
     m_dev = dev;
@@ -193,6 +232,12 @@ bool HWStubDevice::Probe()
     {
         ret = hwstub_get_desc(m_hwdev, HWSTUB_DT_STMP, &m_hwdev_stmp, sizeof(m_hwdev_stmp));
         if(ret != sizeof(m_hwdev_stmp))
+            goto Lerr;
+    }
+    else if(m_hwdev_target.dID == HWSTUB_TARGET_PP)
+    {
+        ret = hwstub_get_desc(m_hwdev, HWSTUB_DT_PP, &m_hwdev_pp, sizeof(m_hwdev_pp));
+        if(ret != sizeof(m_hwdev_pp))
             goto Lerr;
     }
     Close();
@@ -272,6 +317,14 @@ HWStubIoBackend::HWStubIoBackend(HWStubDevice *dev)
     }
     else if(target.dID == HWSTUB_TARGET_RK27)
         m_soc = "rk27x";
+    else if(target.dID == HWSTUB_TARGET_PP)
+    {
+        struct hwstub_pp_desc_t pp = m_dev->GetPPInfo();
+        if(pp.wChipID == 0x6110 )
+            m_soc = "pp6110";
+        else
+            m_soc = QString("pp%1").arg(pp.wChipID, 4, 16, QChar('0'));
+    }
     else
         m_soc = target.bName;
 }
@@ -283,7 +336,7 @@ QString HWStubIoBackend::GetSocName()
 
 HWStubIoBackend::~HWStubIoBackend()
 {
-    m_dev->Close();
+    delete m_dev;
 }
 
 bool HWStubIoBackend::ReadRegister(soc_addr_t addr, soc_word_t& value)
@@ -321,7 +374,7 @@ HWStubBackendHelper::HWStubBackendHelper()
     if(m_hotplug)
     {
         m_hotplug = LIBUSB_SUCCESS == libusb_hotplug_register_callback(
-            NULL, LIBUSB_HOTPLUG_EVENT_DEVICE_ARRIVED | LIBUSB_HOTPLUG_EVENT_DEVICE_LEFT,
+            NULL,   (libusb_hotplug_event)(LIBUSB_HOTPLUG_EVENT_DEVICE_ARRIVED | LIBUSB_HOTPLUG_EVENT_DEVICE_LEFT),
             LIBUSB_HOTPLUG_ENUMERATE, HWSTUB_USB_VID, HWSTUB_USB_PID, HWSTUB_CLASS,
             &HWStubBackendHelper::HotPlugCallback, reinterpret_cast< void* >(this), &m_hotplug_handle);
     }
@@ -364,6 +417,7 @@ void HWStubBackendHelper::OnHotPlug(bool arrived, struct libusb_device *dev)
 int HWStubBackendHelper::HotPlugCallback(struct libusb_context *ctx, struct libusb_device *dev,
     libusb_hotplug_event event, void *user_data)
 {
+    Q_UNUSED(ctx);
     HWStubBackendHelper *helper = reinterpret_cast< HWStubBackendHelper* >(user_data);
     switch(event)
     {
@@ -486,4 +540,32 @@ bool BackendHelper::ReadRegisterField(const QString& dev, const QString& reg,
         return false;
     v = (v & field_ref.GetField().bitmask()) >> field_ref.GetField().first_bit;
     return true;
+}
+
+bool BackendHelper::DumpAllRegisters(const QString& filename)
+{
+    FileIoBackend b(filename, QString::fromStdString(m_soc.GetSoc().name));
+    BackendHelper bh(&b, m_soc);
+    for(size_t i = 0; i < m_soc.GetSoc().dev.size(); i++)
+    {
+        const soc_dev_t& dev = m_soc.GetSoc().dev[i];
+        for(size_t j = 0; j < dev.addr.size(); j++)
+        {
+            QString devname = QString::fromStdString(dev.addr[j].name);
+            for(size_t k = 0; k < dev.reg.size(); k++)
+            {
+                const soc_reg_t& reg = dev.reg[k];
+                for(size_t l = 0; l < reg.addr.size(); l++)
+                {
+                    QString regname = QString::fromStdString(reg.addr[l].name);
+                    soc_word_t val;
+                    if(!ReadRegister(devname, regname, val))
+                        return false;
+                    if(!bh.WriteRegister(devname, regname, val))
+                        return false;
+                }
+            }
+        }
+    }
+    return b.Commit();
 }

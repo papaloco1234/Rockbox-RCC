@@ -89,6 +89,7 @@
 #define HAVE_SW_TONE_CONTROLS
 
 #define CONFIG_KEYPAD CREATIVE_ZENXFI3_PAD
+#define HAVE_HEADPHONE_DETECTION
 
 /* Define this to enable morse code input */
 #define HAVE_MORSE_INPUT
@@ -96,9 +97,14 @@
 /* Define this if you do software codec */
 #define CONFIG_CODEC SWCODEC
 
+/* Define this if you have a speaker */
+#define HAVE_SPEAKER
+
 /* LCD dimensions */
 #define LCD_WIDTH  176
 #define LCD_HEIGHT 220
+/* sqrt(176^2 + 220^2) / 2.0 = 140.9 */
+#define LCD_DPI 141
 #define LCD_DEPTH  16   /* 65536 colours */
 #define LCD_PIXELFORMAT RGB565 /* rgb565 */
 

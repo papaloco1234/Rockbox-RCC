@@ -46,17 +46,14 @@
 /* LCD dimensions */
 #define LCD_WIDTH  240
 #define LCD_HEIGHT 320
+/* sqrt(240^2 + 320^2) / 2.4 = 166.7 */
+#define LCD_DPI 167
 #define LCD_DEPTH  16   /* 65536 colours */
 #define LCD_PIXELFORMAT RGB565 /* rgb565 */
 
 #ifndef BOOTLOADER
 /* define this if you have LCD enable function */
-/* #define HAVE_LCD_ENABLE */
-
-/* Define this if your LCD can be put to sleep. HAVE_LCD_ENABLE
-   should be defined as well. */
-/* #define HAVE_LCD_SLEEP */
-/* #define HAVE_LCD_SLEEP_SETTING */
+#define HAVE_LCD_ENABLE
 #endif
 
 /* define this if you can flip your LCD */
@@ -64,8 +61,6 @@
 
 /* define this if you can invert the colours on your LCD */
 #define HAVE_LCD_INVERT
-
-/* #define IRAM_LCDFRAMEBUFFER IDATA_ATTR *//* put the lcd frame buffer in IRAM */
 
 /* The only difference is that the power/hold is on the left instead of right on Fuze */
 #define CONFIG_KEYPAD SANSA_FUZE_PAD
@@ -79,7 +74,8 @@
 /* Define this if you do software codec */
 #define CONFIG_CODEC SWCODEC
 /* There is no hardware tone control */
-#define HAVE_SW_TONE_CONTROLS
+/* #define HAVE_SW_TONE_CONTROLS*/
+#define HAVE_WM8731
 
 /* define this if you have a real-time clock */
 #ifndef BOOTLOADER
@@ -155,7 +151,7 @@
 /* Define this to the CPU frequency */
 #define CPU_FREQ      250000000
 
-/* Type of LCD TODO: hopefully the same as the x5 but check this*/
+/* Type of LCD */
 #define CONFIG_LCD LCD_VIEW
 
 /* Offset ( in the firmware file's header ) to the file CRC and data. These are
@@ -171,7 +167,7 @@
 #endif
 
 /* USB On-the-go */
-/* #define CONFIG_USBOTG USBOTG_ARC */
+#define CONFIG_USBOTG USBOTG_ARC
 
 /* enable these for the experimental usb stack */
 #define HAVE_USBSTACK

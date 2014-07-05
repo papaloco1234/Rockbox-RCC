@@ -45,7 +45,7 @@ static const struct sound_setting_entry * get_setting_entry(int setting)
         { "", 0, 0, 0, 0, 0 };
 
     static const struct sound_setting_entry default_entry =
-        { &default_info, NULL }; 
+        { &default_info, NULL };
 
     if ((unsigned)setting >= ARRAYLEN(sound_setting_entries))
         return &default_entry;
@@ -130,6 +130,9 @@ static struct
 #endif
 #if defined(AUDIOHW_HAVE_TREBLE)
     int treble;                       /* tenth dB */
+#endif 
+#if defined(AUDIOHW_HAVE_TONE_GAIN)
+    int tone_gain;                    /* tenth dB */
 #endif
 #if defined(AUDIOHW_HAVE_EQ)
     int eq_gain[AUDIOHW_EQ_BAND_NUM]; /* tenth dB */
@@ -172,7 +175,10 @@ static void set_prescaled_volume(void)
 
     if (volume + prescale > maxvol)
         prescale = maxvol - volume;
-
+#ifdef AUDIOHW_HAVE_TONE_GAIN
+    if (sound_prescaler.tone_gain > 0 && MAX(sound_prescaler.bass, sound_prescaler.treble) > 0)
+        prescale -= MIN(sound_prescaler.tone_gain, MAX(sound_prescaler.bass, sound_prescaler.treble));
+#endif /* AUDIOHW_HAVE_TONE_GAIN */
     audiohw_set_prescaler(prescale);
 
     if (volume <= minvol)
@@ -287,7 +293,19 @@ void sound_set_treble_cutoff(int value)
     audiohw_set_treble_cutoff(value);
 }
 #endif /* AUDIOHW_HAVE_TREBLE_CUTOFF */
+#ifdef AUDIOHW_HAVE_TONE_GAIN
+void sound_set_tone_gain(int value)
+{
+    if (!audio_is_initialized)
+        return;
 
+    sound_prescaler.tone_gain =  sound_value_to_cb(SOUND_TONE_GAIN, value);
+    audiohw_set_tone_gain(value);
+#if !defined(AUDIOHW_HAVE_CLIPPING)
+    set_prescaled_volume();
+#endif
+}
+#endif /* AUDIOHW_HAVE_TONE_GAIN */
 void sound_set_channels(int value)
 {
     if (!audio_is_initialized)

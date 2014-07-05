@@ -227,6 +227,7 @@ static void setoptions (void)
         options.START   = BUTTON_PLAY;
         options.SELECT  = BUTTON_SELECT;
         options.MENU    = BUTTON_MENU;
+
 #elif CONFIG_KEYPAD == CREATIVEZVM_PAD
         options.UP      = BUTTON_UP;
         options.DOWN    = BUTTON_DOWN;
@@ -236,6 +237,16 @@ static void setoptions (void)
         options.START   = BUTTON_BACK;
         options.SELECT  = BUTTON_SELECT;
         options.MENU    = BUTTON_MENU;
+
+#elif CONFIG_KEYPAD == CREATIVE_ZENXFI3_PAD
+        options.UP      = BUTTON_UP;
+        options.DOWN    = BUTTON_DOWN;
+
+        options.A       = BUTTON_VOL_UP;
+        options.B       = BUTTON_VOL_DOWN;
+        options.START   = BUTTON_PLAY;
+        options.SELECT  = BUTTON_NONE;
+        options.MENU    = BUTTON_POWER;
 
 #elif CONFIG_KEYPAD == PHILIPS_HDD1630_PAD
         options.UP      = BUTTON_UP;
@@ -284,7 +295,8 @@ static void setoptions (void)
         options.SELECT  = BUTTON_RIGHT;
         options.MENU    = BUTTON_LEFT;
 
-#elif CONFIG_KEYPAD == SAMSUNG_YH_PAD
+#elif (CONFIG_KEYPAD == SAMSUNG_YH820_PAD) || \
+      (CONFIG_KEYPAD == SAMSUNG_YH920_PAD)
         options.UP      = BUTTON_UP;
         options.DOWN    = BUTTON_DOWN;
 
@@ -365,6 +377,19 @@ static void setoptions (void)
         options.START  = BUTTON_PLAY;
         options.SELECT = BUTTON_SELECT;
         options.MENU   = BUTTON_POWER;
+
+#elif CONFIG_KEYPAD == SONY_NWZ_PAD
+        options.UP     = BUTTON_UP;
+        options.DOWN   = BUTTON_DOWN;
+        options.LEFT   = BUTTON_LEFT;
+        options.RIGHT  = BUTTON_RIGHT;
+
+        options.START  = BUTTON_PLAY;
+        options.MENU   = BUTTON_BACK;
+        options.SELECT = (BUTTON_POWER|BUTTON_PLAY);
+        options.A      = (BUTTON_POWER|BUTTON_LEFT);
+        options.B      = (BUTTON_POWER|BUTTON_RIGHT);
+
 
 #else
 #error No Keymap Defined!

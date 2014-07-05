@@ -93,10 +93,10 @@
 /* LCD dimensions */
 #define LCD_WIDTH  320
 #define LCD_HEIGHT 240
-#define LCD_DEPTH  16   /* 65536 colours */
-#define LCD_PIXELFORMAT RGB565 /* rgb565 */
-/* framebuffer uses 24-bit/pix */
-#define IMX233_FRAMEBUFFER_SIZE (LCD_WIDTH * LCD_HEIGHT * 3)
+/* sqrt(320^2 + 240^2) / 2.5 = 160.0 */
+#define LCD_DPI 160
+#define LCD_DEPTH  24   /* 16M colours */
+#define LCD_PIXELFORMAT RGB888 /* rgb888 */
 
 /* Define this if you have a software controlled poweroff */
 #define HAVE_SW_POWEROFF
@@ -187,7 +187,7 @@
 #define HAVE_BOOTLOADER_USB_MODE
 
 /* Define this if you have adjustable CPU frequency */
-//#define HAVE_ADJUSTABLE_CPU_FREQ
+#define HAVE_ADJUSTABLE_CPU_FREQ
 
 #define BOOTFILE_EXT    "creative"
 #define BOOTFILE        "rockbox." BOOTFILE_EXT

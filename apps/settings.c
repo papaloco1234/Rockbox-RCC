@@ -232,8 +232,13 @@ void settings_load(int which)
         read_nvram_data(nvram_buffer,NVRAM_BLOCK_SIZE);
     if (which&SETTINGS_HD)
     {
+#if !(CONFIG_PLATFORM & PLATFORM_ANDROID)
         settings_load_config(CONFIGFILE, false);
         settings_load_config(FIXEDSETTINGSFILE, false);
+#else
+        settings_load_config(FIXEDSETTINGSFILE, false);
+        settings_load_config(CONFIGFILE, false);
+#endif
     }
 }
 
@@ -594,15 +599,13 @@ static bool settings_write_config(const char* filename, int options)
     return true;
 }
 #ifndef HAVE_RTC_RAM
-static void flush_global_status_callback(void *data)
+static void flush_global_status_callback(void)
 {
-    (void)data;
     write_nvram_data(nvram_buffer,NVRAM_BLOCK_SIZE);
 }
 #endif
-static void flush_config_block_callback(void *data)
+static void flush_config_block_callback(void)
 {
-    (void)data;
     write_nvram_data(nvram_buffer,NVRAM_BLOCK_SIZE);
     settings_write_config(CONFIGFILE, SETTINGS_SAVE_CHANGED);
 }
@@ -741,12 +744,17 @@ void settings_apply_play_freq(int value, bool playback)
     bool changed = value != prev_setting;
     prev_setting = value;
 
-    long offset = 0;
+    unsigned long elapsed = 0;
+    unsigned long offset = 0;
     bool playing = changed && !playback &&
                    audio_status() == AUDIO_STATUS_PLAY;
 
     if (playing)
-        offset = audio_current_track()->offset;
+    {
+        struct mp3entry *id3 = audio_current_track();
+        elapsed = id3->elapsed;
+        offset = id3->offset;
+    }
 
     if (changed && !playback)
         audio_hard_stop();
@@ -755,7 +763,7 @@ void settings_apply_play_freq(int value, bool playback)
     mixer_set_frequency(play_sampr[value]);
 
     if (playing)
-        audio_play(offset);
+        audio_play(elapsed, offset);
 }
 #endif /* HAVE_PLAY_FREQ */
 
@@ -767,10 +775,13 @@ void sound_settings_apply(void)
 #ifdef AUDIOHW_HAVE_TREBLE
     sound_set(SOUND_TREBLE, global_settings.treble);
 #endif
-    sound_set(SOUND_BALANCE, global_settings.balance);
 #ifndef PLATFORM_HAS_VOLUME_CHANGE
     sound_set(SOUND_VOLUME, global_settings.volume);
+#endif	
+#ifdef AUDIOHW_HAVE_TONE_GAIN
+    sound_set(SOUND_TONE_GAIN, global_settings.tone_gain);
 #endif
+    sound_set(SOUND_BALANCE, global_settings.balance);
     sound_set(SOUND_CHANNELS, global_settings.channel_config);
     sound_set(SOUND_STEREO_WIDTH, global_settings.stereo_width);
 #if (CONFIG_CODEC == MAS3587F) || (CONFIG_CODEC == MAS3539F)
@@ -1038,12 +1049,17 @@ void settings_apply(bool read_disk)
     }
 
     dsp_dither_enable(global_settings.dithering_enabled);
+    dsp_surround_set_balance(global_settings.surround_balance);
+    dsp_surround_set_cutoff(global_settings.surround_fx1, global_settings.surround_fx2);
+    dsp_surround_enable(global_settings.surround_enabled);
+    dsp_aatube_enable(global_settings.aatube_enabled);
 #ifdef HAVE_PITCHCONTROL
     dsp_timestretch_enable(global_settings.timestretch_enabled);
 #endif
+    dsp_compressor_switch(global_settings.compressor_switch);
     dsp_set_compressor(&global_settings.compressor_settings);
 #endif
-
+    dsp_rdose_enable(global_settings.rdose);
 #ifdef HAVE_SPDIF_POWER
     spdif_power_enable(global_settings.spdif_enable);
 #endif
@@ -1309,4 +1325,3 @@ void set_file(const char* filename, char* setting, const int maxlen)
     strlcpy(setting, fptr, len);
     settings_save();
 }
-

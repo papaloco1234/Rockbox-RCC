@@ -160,12 +160,12 @@ void* plugin_get_buffer(size_t *buffer_size);
 #define PLUGIN_MAGIC 0x526F634B /* RocK */
 
 /* increase this every time the api struct changes */
-#define PLUGIN_API_VERSION 226
+#define PLUGIN_API_VERSION 230
 
 /* update this to latest version if a change to the api struct breaks
    backwards compatibility (and please take the opportunity to sort in any
    new function which are "waiting" at the end of the function table) */
-#define PLUGIN_MIN_API_VERSION 226
+#define PLUGIN_MIN_API_VERSION 230
 
 /* plugin return codes */
 /* internal returns start at 0x100 to make exit(1..255) work */
@@ -242,7 +242,7 @@ struct plugin_api {
     fb_data* (*lcd_get_backdrop)(void);
     void (*lcd_set_backdrop)(fb_data* backdrop);
 #endif
-#if LCD_DEPTH == 16
+#if LCD_DEPTH >= 16
     void (*lcd_bitmap_transparent_part)(const fb_data *src,
             int src_x, int src_y, int stride,
             int x, int y, int width, int height);
@@ -450,8 +450,8 @@ struct plugin_api {
     void (*storage_spin)(void);
     void (*storage_spindown)(int seconds);
 #if USING_STORAGE_CALLBACK
-    void (*register_storage_idle_func)(void (*function)(void *data));
-    void (*unregister_storage_idle_func)(void (*function)(void *data), bool run);
+    void (*register_storage_idle_func)(void (*function)(void));
+    void (*unregister_storage_idle_func)(void (*function)(void), bool run);
 #endif /* USING_STORAGE_CALLBACK */
     void (*reload_directory)(void);
     char *(*create_numbered_filename)(char *buffer, const char *path,
@@ -569,8 +569,8 @@ struct plugin_api {
     void (*profile_func_exit)(void *this_fn, void *call_site);
 #endif
     /* event api */
-    bool (*add_event)(unsigned short id, bool oneshot, void (*handler)(void *data));
-    void (*remove_event)(unsigned short id, void (*handler)(void *data));
+    bool (*add_event)(unsigned short id, void (*handler)(unsigned short id, void *data));
+    void (*remove_event)(unsigned short id, void (*handler)(unsigned short id, void *data));
     void (*send_event)(unsigned short id, void *data);
 
 #if (CONFIG_PLATFORM & PLATFORM_HOSTED)
@@ -724,8 +724,10 @@ struct plugin_api {
     /* playback control */
     int (*playlist_amount)(void);
     int (*playlist_resume)(void);
-    void (*playlist_resume_track)(int start_index, unsigned int crc, int offset);
-    void (*playlist_start)(int start_index, int offset);
+    void (*playlist_resume_track)(int start_index, unsigned int crc,
+                                  unsigned long elapsed, unsigned long offset);
+    void (*playlist_start)(int start_index, unsigned long elapsed,
+                           unsigned long offset);
     int (*playlist_add)(const char *filename);
     void (*playlist_sync)(struct playlist_info* playlist);
     int (*playlist_remove_all_tracks)(struct playlist_info *playlist);
@@ -736,7 +738,7 @@ struct plugin_api {
                               const char *dirname, int position, bool queue,
                               bool recurse);
     int (*playlist_shuffle)(int random_seed, int start_index);
-    void (*audio_play)(long offset);
+    void (*audio_play)(unsigned long elapsed, unsigned long offset);
     void (*audio_stop)(void);
     void (*audio_pause)(void);
     void (*audio_resume)(void);
@@ -828,7 +830,7 @@ struct plugin_api {
 
     /* misc */
 #if (CONFIG_PLATFORM & PLATFORM_NATIVE)
-    int* __errno;
+    int * (*__errno)(void);
 #endif
     void (*srand)(unsigned int seed);
     int  (*rand)(void);
@@ -975,6 +977,7 @@ struct plugin_api {
 
     /* new stuff at the end, sort into place next time
        the API gets incompatible */
+    void (*plugin_release_audio_buffer)(void);
 };
 
 /* plugin header */
@@ -1005,12 +1008,6 @@ extern unsigned char plugin_end_addr[];
 #endif /* PLUGIN */
 
 int plugin_load(const char* plugin, const void* parameter);
-void* plugin_get_audio_buffer(size_t *buffer_size);
-
-/* plugin_tsr,
-    callback returns true to allow the new plugin to load,
-    reenter means the currently running plugin is being reloaded */
-void plugin_tsr(bool (*exit_callback)(bool reenter));
 
 /* defined by the plugin */
 extern const struct plugin_api *rb;

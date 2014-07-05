@@ -75,7 +75,7 @@
 #include "ata_idle_notify.h"
 #include "file.h"
 #include "action.h"
-#include "dir.h"
+#include "mv.h"
 #include "debug.h"
 #include "audio.h"
 #include "lcd.h"
@@ -105,6 +105,7 @@
 #include "root_menu.h"
 #include "plugin.h" /* To borrow a temp buffer to rewrite a .m3u8 file */
 #include "panic.h"
+#include "logdiskf.h"
 
 #define PLAYLIST_CONTROL_FILE_VERSION 2
 
@@ -523,6 +524,9 @@ static int add_indices_to_playlist(struct playlist_info* playlist,
     bool store_index;
     unsigned char *p;
     int result = 0;
+    /* get emergency buffer so we don't fail horribly */
+    if (!buflen)
+        buffer = __builtin_alloca((buflen = 64));
 
     if(-1 == playlist->fd)
         playlist->fd = open_utf8(playlist->filename, O_RDONLY);
@@ -621,7 +625,7 @@ static int create_and_play_dir(int direction, bool play_last)
 #if (CONFIG_CODEC == SWCODEC)
         current_playlist.started = true;
 #else
-        playlist_start(index, 0);
+        playlist_start(index, 0, 0);
 #endif
     }
 
@@ -1223,9 +1227,8 @@ static int compare(const void* p1, const void* p2)
  * without affecting playlist load up performance.  This thread also flushes
  * any pending control commands when the disk spins up.
  */
-static void playlist_flush_callback(void *param)
+static void playlist_flush_callback(void)
 {
-    (void)param;
     struct playlist_info *playlist;
     playlist = &current_playlist;
     if (playlist->control_fd >= 0)
@@ -1984,8 +1987,6 @@ static int move_callback(int handle, void* current, void* new)
         playlist->indices = new;
     else if (current == playlist->filenames)
         playlist->filenames = new;
-    /* buffer can possibly point to a new buffer temporarily (playlist_save()).
-     * just don't overwrite the pointer to that temp buffer */
     else if (current == playlist->buffer)
         playlist->buffer = new;
 
@@ -2565,7 +2566,8 @@ unsigned int playlist_get_filename_crc32(struct playlist_info *playlist,
 }
 
 /* resume a playlist track with the given crc_32 of the track name. */
-void playlist_resume_track(int start_index, unsigned int crc, int offset)
+void playlist_resume_track(int start_index, unsigned int crc,
+                           unsigned long elapsed, unsigned long offset)
 {
     int i;
     unsigned int tmp_crc;
@@ -2573,7 +2575,7 @@ void playlist_resume_track(int start_index, unsigned int crc, int offset)
     tmp_crc = playlist_get_filename_crc32(playlist, start_index);
     if (tmp_crc == crc)
     {
-        playlist_start(start_index, offset);
+        playlist_start(start_index, elapsed, offset);
         return;
     }
 
@@ -2582,30 +2584,26 @@ void playlist_resume_track(int start_index, unsigned int crc, int offset)
         tmp_crc = playlist_get_filename_crc32(playlist, i);
         if (tmp_crc == crc)
         {
-            playlist_start(i, offset);
+            playlist_start(i, elapsed, offset);
             return;
         }
     }
 
     /* If we got here the file wasnt found, so start from the beginning */
-    playlist_start(0,0);
+    playlist_start(0, 0, 0);
 }
 
 /* start playing current playlist at specified index/offset */
-void playlist_start(int start_index, int offset)
+void playlist_start(int start_index, unsigned long elapsed,
+                    unsigned long offset)
 {
     struct playlist_info* playlist = &current_playlist;
-
-    /* Cancel FM radio selection as previous music. For cases where we start
-       playback without going to the WPS, such as playlist insert.. or
-       playlist catalog. */
-    previous_music_is_wps();
 
     playlist->index = start_index;
 
     playlist->started = true;
     sync_control(playlist, false);
-    audio_play(offset);
+    audio_play(elapsed, offset);
 }
 
 /* Returns false if 'steps' is out of bounds, else true */
@@ -2723,7 +2721,7 @@ int playlist_next(int steps)
 #if CONFIG_CODEC == SWCODEC
             playlist->started = true;
 #else
-            playlist_start(0, 0);
+            playlist_start(0, 0, 0);
 #endif
             playlist->index = 0;
             index = 0;
@@ -2801,11 +2799,13 @@ int playlist_update_resume_info(const struct mp3entry* id3)
     if (id3)
     {
         if (global_status.resume_index  != playlist->index ||
+            global_status.resume_elapsed != id3->elapsed ||
             global_status.resume_offset != id3->offset)
         {
             unsigned int crc = crc_32(id3->path, strlen(id3->path), -1);
             global_status.resume_index  = playlist->index;
             global_status.resume_crc32 = crc;
+            global_status.resume_elapsed = id3->elapsed;
             global_status.resume_offset = id3->offset;
             status_save();
         }
@@ -2814,6 +2814,7 @@ int playlist_update_resume_info(const struct mp3entry* id3)
     {
         global_status.resume_index  = -1;
         global_status.resume_crc32 = -1;
+        global_status.resume_elapsed = -1;
         global_status.resume_offset = -1;
         status_save();
     }
@@ -3524,8 +3525,11 @@ int playlist_get_track_info(struct playlist_info* playlist, int index,
     return 0;
 }
 
-/* save the current dynamic playlist to specified file */
-int playlist_save(struct playlist_info* playlist, char *filename)
+/* save the current dynamic playlist to specified file. The
+ * temp_buffer (if not NULL) is used as a scratchpad when loading indices
+ * (slow if not used). */
+int playlist_save(struct playlist_info* playlist, char *filename,
+                       void* temp_buffer, size_t temp_buffer_size)
 {
     int fd;
     int i, index;
@@ -3534,6 +3538,17 @@ int playlist_save(struct playlist_info* playlist, char *filename)
     char tmp_buf[MAX_PATH+1];
     int result = 0;
     bool overwrite_current = false;
+    int *seek_buf;
+    bool reparse;
+
+    ALIGN_BUFFER(temp_buffer, temp_buffer_size, sizeof(int));
+    seek_buf = temp_buffer;
+
+    /* without temp_buffer, or when it's depleted, and we overwrite the current
+     * playlist then the newly saved playlist has to be reparsed. With
+     * sufficient temp_buffer the indicies be remembered and added without
+     * reparsing */
+    reparse = temp_buffer_size == 0;
 
     if (!playlist)
         playlist = &current_playlist;
@@ -3552,23 +3567,9 @@ int playlist_save(struct playlist_info* playlist, char *filename)
 
     if (!strncmp(playlist->filename, path, strlen(path)))
     {
-        /* Attempting to overwrite current playlist file.*/
-
-        if (playlist->buffer_size < (int)(playlist->amount * sizeof(int)))
-        {
-            /* not enough buffer space to store updated indices */
-            /* Try to get a buffer */
-            playlist->buffer = plugin_get_buffer((size_t*)&playlist->buffer_size);
-            if (playlist->buffer_size < (int)(playlist->amount * sizeof(int)))
-            {
-                splash(HZ*2, ID2P(LANG_PLAYLIST_ACCESS_ERROR));
-                result = -1;
-                goto reset_old_buffer;
-            }
-        }
-
-        /* use temporary pathname */
-        snprintf(path, sizeof(path), "%s_temp", playlist->filename);
+        /* Attempting to overwrite current playlist file.
+         * use temporary pathname and overwrite later */
+        strlcat(path, "_temp", sizeof(path));
         overwrite_current = true;
     }
 
@@ -3620,8 +3621,8 @@ int playlist_save(struct playlist_info* playlist, char *filename)
                 break;
             }
 
-            if (overwrite_current)
-                playlist->seek_buf[count] = lseek(fd, 0, SEEK_CUR);
+            if (overwrite_current && !reparse)
+                seek_buf[count] = lseek(fd, 0, SEEK_CUR);
 
             if (fdprintf(fd, "%s\n", tmp_buf) < 0)
             {
@@ -3631,6 +3632,10 @@ int playlist_save(struct playlist_info* playlist, char *filename)
             }
 
             count++;
+            /* when our temp buffer is depleted we have to fall
+             * back to reparsing the playlist (slow) */
+            if (count*sizeof(int) >= temp_buffer_size)
+                reparse = true;
 
             if ((count % PLAYLIST_DISPLAY_COUNT) == 0)
                 display_playlist_count(count, ID2P(LANG_PLAYLIST_SAVE_COUNT),
@@ -3662,17 +3667,25 @@ int playlist_save(struct playlist_info* playlist, char *filename)
                 playlist->fd = open_utf8(playlist->filename, O_RDONLY);
                 if (playlist->fd >= 0)
                 {
-                    index = playlist->first_index;
-                    for (i=0, count=0; i<playlist->amount; i++)
+                    if (!reparse)
                     {
-                        if (!(playlist->indices[index] & PLAYLIST_QUEUE_MASK))
+                        index = playlist->first_index;
+                        for (i=0, count=0; i<playlist->amount; i++)
                         {
-                            playlist->indices[index] = playlist->seek_buf[count];
-                            count++;
+                            if (!(playlist->indices[index] & PLAYLIST_QUEUE_MASK))
+                            {
+                                playlist->indices[index] = seek_buf[count];
+                                count++;
+                            }
+                            index = (index+1)%playlist->amount;
                         }
-                        index = (index+1)%playlist->amount;
                     }
-
+                    else
+                    {
+                        NOTEF("reparsing current playlist (slow)");
+                        playlist->amount = 0;
+                        add_indices_to_playlist(playlist, temp_buffer, temp_buffer_size);
+                    }
                     /* we need to recreate control because inserted tracks are
                        now part of the playlist and shuffle has been
                        invalidated */

@@ -57,18 +57,13 @@ public class RockboxFramebuffer extends SurfaceView
         setEnabled(false);
     }
 
-    /* second stage init; called from Rockbox with information about the 
-     * display framebuffer */
-    private void initialize(int lcd_width, int lcd_height)
-    {
-        btm = Bitmap.createBitmap(lcd_width, lcd_height, Bitmap.Config.RGB_565);
-        setEnabled(true);
-    }
-
     private void update(ByteBuffer framebuffer)
     {
         SurfaceHolder holder = getHolder();                            
         Canvas c = holder.lockCanvas();
+        if (c == null)
+			return;
+
         btm.copyPixelsFromBuffer(framebuffer);
         synchronized (holder)
         { /* draw */
@@ -81,6 +76,10 @@ public class RockboxFramebuffer extends SurfaceView
     {
         SurfaceHolder holder = getHolder();         
         Canvas c = holder.lockCanvas(dirty);
+        
+        if (c == null)
+			return;
+
         /* can't copy a partial buffer, but it doesn't make a noticeable difference anyway */
         btm.copyPixelsFromBuffer(framebuffer);
         synchronized (holder)
@@ -138,5 +137,7 @@ public class RockboxFramebuffer extends SurfaceView
     public native void surfaceDestroyed(SurfaceHolder holder);
     public void surfaceChanged(SurfaceHolder holder, int format, int width, int height)
     {
+        btm = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565);
+        setEnabled(true);
     }
 }

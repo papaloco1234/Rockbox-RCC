@@ -55,12 +55,9 @@
 #define PLUGIN_DIR          ROCKBOX_DIR "/rocks"
 #define CODECS_DIR          ROCKBOX_DIR "/codecs"
 
-#define paths_init()
-
 #else /* APPLICATION */
 
 #define HOME_DIR "<HOME>" /* replaced at runtime */
-#define HOME_DIR_LEN (sizeof(HOME_DIR)-1)
 
 #define PLUGIN_DIR          ROCKBOX_LIBRARY_PATH "/rockbox/rocks"
 #if (CONFIG_PLATFORM & PLATFORM_ANDROID)
@@ -69,9 +66,30 @@
 #define CODECS_DIR          ROCKBOX_LIBRARY_PATH "/rockbox/codecs"
 #endif
 
+#endif /* !APPLICATION || SAMSUNG_YPR0 */
+
+#define HOME_DIR_LEN (sizeof(HOME_DIR)-1)
+
+#ifdef APPLICATION
+
+#include <dirent.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+int app_open(const char *name, int o, ...);
+int app_creat(const char* name, mode_t mode);
+int app_remove(const char *name);
+int app_rename(const char *old, const char *new);
+DIR* app_opendir(const char *_name);
+int app_closedir(DIR *dir);
+struct dirent* app_readdir(DIR* dir);
+int app_mkdir(const char* name);
+int app_rmdir(const char* name);
+ssize_t app_readlink(const char *path, char *buf, size_t bufsiz);
+
 extern void paths_init(void);
 
-#endif /* !APPLICATION || SAMSUNG_YPR0 */
+#endif
 
 #define REC_BASE_DIR        HOME_DIR
 #define PLAYLIST_CATALOG_DEFAULT_DIR HOME_DIR "/Playlists"
@@ -120,4 +138,5 @@ extern void paths_init(void);
 #define PLAYLIST_CONTROL_FILE   ROCKBOX_DIR "/.playlist_control"
 #define NVRAM_FILE              ROCKBOX_DIR "/nvram.bin"
 #define GLYPH_CACHE_FILE        ROCKBOX_DIR "/.glyphcache"
+
 #endif /* __PATHS_H__ */

@@ -44,10 +44,12 @@
 /* LCD dimensions */
 #define LCD_WIDTH  240
 #define LCD_HEIGHT 320
+/* sqrt(240^2 + 320^2) / 2.6 = 153.8 */
+#define LCD_DPI 154
 
-#define LCD_DEPTH  16
+#define LCD_DEPTH  24
 /* Check that but should not matter */
-#define LCD_PIXELFORMAT RGB565
+#define LCD_PIXELFORMAT RGB888
 
 /* YP-R0 has the backlight */
 #define HAVE_BACKLIGHT
@@ -160,3 +162,11 @@
 
 /* This folder resides in the ReadOnly CRAMFS. It is binded to /mnt/media0/.rockbox */
 #define BOOTDIR "/.rockbox"
+
+/* External SD card can be mounted */
+#define CONFIG_STORAGE (STORAGE_HOSTFS|STORAGE_SD)
+#define HAVE_MULTIDRIVE
+#define NUM_DRIVES 2
+#define HAVE_HOTSWAP
+#define HAVE_STORAGE_FLUSH
+#define MULTIDRIVE_DIR "/mnt/mmc"

@@ -56,9 +56,6 @@ struct line_desc {
      * from the font. The text will be centered if the height is larger,
      * but the decorations will span the entire height */
     int height;
-    /* height of the line separator (in pixels). 0 to disable drawing
-     * of the separator */
-    int8_t separator_height;
     /* multiline support: For some decorations (e.g. gradient) to work
      * across multiple lines (e.g. to draw a line selector across 2 lines)
      * the line index and line count must be known. For normal, single
@@ -69,14 +66,17 @@ struct line_desc {
     int16_t line;
     /* line text color if STYLE_COLORED is specified, in native
      * lcd format (convert with LCD_RGBPACK() if necessary) */
-    fb_data text_color;
+    unsigned text_color;
     /* line color if STYLE_COLORBAR or STYLE_GRADIENT is specified, in native
      * lcd format (convert with LCD_RGBPACK() if necessary) */
-    fb_data line_color, line_end_color;
+    unsigned line_color, line_end_color;
     /* line decorations, see STYLE_DEFAULT etc. */
     enum line_styles style;
     /* whether the line can scroll */
     bool scroll;
+    /* height of the line separator (in pixels). 0 to disable drawing
+     * of the separator */
+    int8_t separator_height;
 };
 
 /* default initializer, can be used for static initialitation also.

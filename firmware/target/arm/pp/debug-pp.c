@@ -19,9 +19,10 @@
  *
  ****************************************************************************/
 
+#include <stdbool.h>
 #include "config.h"
 #include "system.h"
-#include <stdbool.h>
+#include "kernel.h"
 #include "font.h"
 #include "lcd.h"
 #include "button.h"
@@ -50,7 +51,8 @@
       (CONFIG_KEYPAD == PHILIPS_HDD1630_PAD)
 #   define DEBUG_CANCEL  BUTTON_POWER
 
-#elif (CONFIG_KEYPAD == SAMSUNG_YH_PAD)
+#elif (CONFIG_KEYPAD == SAMSUNG_YH820_PAD) || \
+      (CONFIG_KEYPAD == SAMSUNG_YH920_PAD)
 #   define DEBUG_CANCEL  BUTTON_PLAY
 
 #elif (CONFIG_KEYPAD == PBELL_VIBE500_PAD)

@@ -7,7 +7,7 @@
 #define MODEL_NAME   "Samsung YH-820"
 
 /* define this if you have recording possibility */
-/* todo #define HAVE_RECORDING */
+#define HAVE_RECORDING
 
 /* Define bitmask of input sources - recordable bitmask can be defined
    explicitly if different */
@@ -29,6 +29,8 @@
 /* LCD dimensions */
 #define LCD_WIDTH  128
 #define LCD_HEIGHT 96
+/* sqrt(128^2 + 96^2) / 1.5 = 106.7 */
+#define LCD_DPI 107
 #define LCD_DEPTH  16   /* 65536 colours */
 #define LCD_PIXELFORMAT RGB565
 
@@ -62,7 +64,7 @@
 /* #define HAVE_LCD_FLIP */
 
 /* define this if you can invert the colours on your LCD */
-/* todo #define HAVE_LCD_INVERT */
+#define HAVE_LCD_INVERT
 
 /* put the lcd frame buffer in IRAM */
 /* #define IRAM_LCDFRAMEBUFFER IDATA_ATTR */
@@ -88,7 +90,7 @@
 /* define this if you would like tagcache to build on this target */
 #define HAVE_TAGCACHE
 
-#define CONFIG_KEYPAD SAMSUNG_YH_PAD
+#define CONFIG_KEYPAD SAMSUNG_YH820_PAD
 
 /* Define this if you do software codec */
 #define CONFIG_CODEC SWCODEC

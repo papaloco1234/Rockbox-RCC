@@ -76,6 +76,9 @@
 /* define this if you have an i.MX23 codec */
 #define HAVE_IMX233_CODEC
 
+/* Define this if you have a speaker */
+#define HAVE_SPEAKER
+
 #define CONFIG_TUNER TEA5760
 
 /* There is no hardware tone control */
@@ -93,6 +96,8 @@
 /* LCD dimensions */
 #define LCD_WIDTH  128
 #define LCD_HEIGHT 160
+/* sqrt(128^2 + 160^2) / 1.8 = 113.8 */
+#define LCD_DPI 114
 #define LCD_DEPTH  16   /* 65536 colours */
 #define LCD_PIXELFORMAT RGB565 /* rgb565 */
 

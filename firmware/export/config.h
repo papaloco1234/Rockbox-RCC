@@ -32,6 +32,7 @@
 #define STORAGE_SD      0x04
 #define STORAGE_NAND    0x08
 #define STORAGE_RAMDISK 0x10
+#define STORAGE_HOSTFS  0x20 /* meant for APPLICATION targets (implicit for SIMULATOR) */
 
 /* CONFIG_TUNER (note these are combineable bit-flags) */
 #define S1A0903X01 0x01 /* Samsung */
@@ -129,7 +130,7 @@
 #define SANSA_CLIP_PAD     35
 #define SANSA_FUZE_PAD     36
 #define LYRE_PROTO1_PAD    37
-#define SAMSUNG_YH_PAD     38
+#define SAMSUNG_YH820_PAD  38
 #define ONDAVX777_PAD      39
 #define SAMSUNG_YPS3_PAD   40
 #define MINI2440_PAD       41
@@ -153,6 +154,7 @@
 #define SAMSUNG_YPZ5_PAD   59
 #define IHIFI_PAD          60
 #define SAMSUNG_YPR1_PAD  61
+#define SAMSUNG_YH920_PAD  62
 
 /* CONFIG_REMOTE_KEYPAD */
 #define H100_REMOTE   1
@@ -273,6 +275,7 @@
 #define VERTICAL_INTERLEAVED 4
 #define RGB565 565
 #define RGB565SWAPPED 3553
+#define RGB888 888
 
 /* LCD_STRIDEFORMAT */
 #define VERTICAL_STRIDE     1
@@ -574,7 +577,6 @@ Lyre prototype 1 */
 
 #ifdef APPLICATION
 #define CONFIG_CPU 0
-#define CONFIG_STORAGE 0
 #endif
 
 /* keep this include after the target configs */
@@ -1109,8 +1111,10 @@ Lyre prototype 1 */
 #define INCLUDE_TIMEOUT_API
 #endif /* HAVE_GUI_BOOST && HAVE_ADJUSTABLE_CPU_FREQ */
 
+#ifndef SIMULATOR
 #if defined(HAVE_USBSTACK) || (CONFIG_STORAGE & STORAGE_NAND)
 #define STORAGE_GET_INFO
+#endif
 #endif
 
 #ifdef CPU_MIPS
@@ -1193,8 +1197,7 @@ Lyre prototype 1 */
 #endif
 
 /* enable logging messages to disk*/
-#if CONFIG_PLATFORM == PLATFORM_NATIVE  && !defined(SIMULATOR) && !defined(BOOTLOADER) \
-    && !defined(__PCTOOL__) && (CONFIG_CODEC == SWCODEC)
+#if !defined(BOOTLOADER) && !defined(__PCTOOL__) && (CONFIG_CODEC == SWCODEC)
 #define ROCKBOX_HAS_LOGDISKF
 #endif
 
