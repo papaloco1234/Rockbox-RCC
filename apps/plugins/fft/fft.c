@@ -302,7 +302,7 @@ GREY_INFO_STRUCT
 #   define FFT_QUIT         BUTTON_POWER
 
 #elif (CONFIG_KEYPAD == ANDROID_PAD)
-#   define define FFT_QUIT  BUTTON_BACK
+#   define FFT_QUIT  BUTTON_BACK
 
 #elif !defined(HAVE_TOUCHSCREEN)
 #error No keymap defined!
