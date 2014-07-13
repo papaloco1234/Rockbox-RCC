@@ -122,6 +122,7 @@ Java_org_rockbox_RockboxPCM_nativeWrite(JNIEnv *env, jobject this,
         if (ret < 0)
         {
             unlock_audio();
+            (*env)->DeleteLocalRef(env, pcm_class);
             return ret;
         }
 
@@ -138,6 +139,7 @@ Java_org_rockbox_RockboxPCM_nativeWrite(JNIEnv *env, jobject this,
         pcm_play_dma_status_callback(PCM_DMAST_STARTED);
 
     unlock_audio();
+    (*env)->DeleteLocalRef(env, pcm_class);
     return max_size - left;
 }
 
@@ -180,6 +182,7 @@ void pcm_play_dma_stop(void)
     (*env)->CallVoidMethod(env,
                            RockboxPCM_instance,
                            stop_method);
+    (*env)->DeleteLocalRef(env, pcm_class);
 }
 
 void pcm_play_dma_pause(bool pause)

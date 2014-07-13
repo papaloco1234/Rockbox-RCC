@@ -45,6 +45,8 @@ Java_org_rockbox_RockboxKeyboardInput_put_1result(JNIEnv *env, jobject this,
     accepted = (bool)_accepted;
     if (accepted)
     {
+        if (new_string) 
+            (*env)->DeleteGlobalRef(env, new_string);
         new_string = (*env)->NewGlobalRef(env, _new_string);
     }
     semaphore_release(&kbd_wakeup);
