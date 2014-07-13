@@ -16,7 +16,6 @@
     <string name="rockbox_wakelock_off_toast">關閉待機後強制繼續播放功能</string>
     <string name="rockbox_about">關於</string>
     <string name="rockbox_about_title">關於 Rockbox</string>
-    <string name="rockbox_about_message">"Rockbox-RCC\nhttp://www.rockboxcn.org/\n\n*轉載請註明出處*"</string>
     <string name="rockbox_vollock_on">設定音量鎖定</string>
     <string name="rockbox_vollock_info">請輸入鎖定音量值（範圍：1-100）</string>
     <string name="rockbox_vollock_hint1">目前值：</string>
@@ -45,9 +44,6 @@
     <string name="pre_rockbox_wire_title">預設:</string>
     <string name="pre_rockbox_wire_summary">[單擊：播放/暫停][雙擊：下一首][長按：上一首]</string>
     <string name="pre_rockbox_about_title">關於</string>
-    <string name="pre_rockbox_feedback_title">回饋意見</string>
-    <string name="pre_rockbox_rcc_title">Rockbox中文社區</string>
-    <string name="pre_rockbox_rcc_summary">訪問Rockbox中文社區</string>
     <string name="pre_rockbox_config">配置設定管理</string>
     <string name="pre_rockbox_backup">備份恢復</string>
     <string name="pre_rockbox_backup_dialogMessage">請選擇備份/恢復操作：</string>

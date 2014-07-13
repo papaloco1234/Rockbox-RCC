@@ -17,9 +17,6 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 
-import com.umeng.analytics.MobclickAgent;
-import com.umeng.fb.NotificationType;
-import com.umeng.fb.UMFeedbackService;
 
 import android.os.Environment;
 import java.io.File;

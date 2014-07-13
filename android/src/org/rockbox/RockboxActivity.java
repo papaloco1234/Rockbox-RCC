@@ -38,9 +38,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 
-import com.umeng.analytics.MobclickAgent;
-import com.umeng.fb.NotificationType;
-import com.umeng.fb.UMFeedbackService;
+
 
 import android.content.DialogInterface;
 
@@ -52,7 +50,7 @@ public class RockboxActivity extends Activity
     public void onCreate(Bundle savedInstanceState) 
     {
         super.onCreate(savedInstanceState);
-        UMFeedbackService.enableNewReplyNotification(this, NotificationType.AlertDialog);
+        
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         if (RockboxAppSetting.getTitlebarStatus())
         {
@@ -195,7 +193,6 @@ public class RockboxActivity extends Activity
                 } catch (InterruptedException e) {}
                 break;            
             case 3:
-		        MobclickAgent.onKillProcess(this);
 		        RockboxNativeInterface.powerOff();
 		        new Thread("Power-Off"){
 		            @Override
@@ -257,7 +254,6 @@ public class RockboxActivity extends Activity
     {
         super.onResume();
         RockboxAppSetting.releaseWakeLock();
-        MobclickAgent.onResume(this);
         setServiceActivity(true);
         setVisible(true);
     }
@@ -270,7 +266,6 @@ public class RockboxActivity extends Activity
     {
         super.onPause();
         RockboxAppSetting.acquireWakeLock();
-        MobclickAgent.onPause(this);
         /* this will cause the framebuffer's Surface to be destroyed, enabling
          * us to disable drawing */
         setVisible(false);
