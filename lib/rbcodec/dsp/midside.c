@@ -7,8 +7,10 @@
 
 static int32_t mid  IBSS_ATTR;
 static int32_t side IBSS_ATTR;
+static int32_t delayed_side IBSS_ATTR;
 static bool midside_enabled = false;
 static int mid_ratio = 100, side_ratio = 100;
+static bool delay = false;
 unsigned int fout;
 
 static void dsp_midside_flush(void)
@@ -17,6 +19,7 @@ static void dsp_midside_flush(void)
         return;
     mid=0;
     side=0;
+    delayed_side=0;
 }
 
 void dsp_midside_enable(int var)
@@ -40,6 +43,10 @@ void dsp_midside_side_level(int var)
     side_ratio = var;
 }
 
+void dsp_midside_delay(int var)
+{
+    delay =(var > 0)? true:false;
+}
 
 static void mid_side_process(struct dsp_proc_entry *this,
                                struct dsp_buffer **buf_p)
@@ -51,10 +58,14 @@ static void mid_side_process(struct dsp_proc_entry *this,
     for (i = 0; i < count; i++)
     {     
          mid  = buf->p32[0][i]/2 + buf->p32[1][i]/2;
+         delayed_side = side;
          side = (buf->p32[0][i] - buf->p32[1][i])/2; 
+       
+         if (!delay)
+             delayed_side = side;
          
-         buf->p32[0][i] =  mid/100 * mid_ratio + side/100 * side_ratio;
-         buf->p32[1][i] =  mid/100 * mid_ratio - side/100 * side_ratio;
+         buf->p32[0][i] =  mid/100 * mid_ratio + (side + (delayed_side - side))/100 * side_ratio;
+         buf->p32[1][i] =  mid/100 * mid_ratio - (side + (delayed_side - side))/100 * side_ratio;
            
     }
     (void)this;

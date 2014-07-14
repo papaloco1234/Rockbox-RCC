@@ -857,6 +857,7 @@ struct user_settings
     int midside_enabled;
     int mid_mix_level;
     int side_mix_level;
+    int midside_delay; 
 };
 
 /** global variables **/

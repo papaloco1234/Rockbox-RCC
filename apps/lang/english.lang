@@ -13684,3 +13684,20 @@
     swcodec: "SIDE Level"
   </voice>
 </phrase>
+<phrase>
+  id: LANG_MIDSIDE_DELAY
+  desc: in sound settings
+  user: core
+  <source>
+    *: none
+    swcodec: "Separation Delay"
+  </source>
+  <dest>
+    *: none
+    swcodec: "Separation Delay"
+  </dest>
+  <voice>
+    *: none
+    swcodec: "Separation Delay"
+  </voice>
+</phrase>

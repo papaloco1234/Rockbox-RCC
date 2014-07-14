@@ -2335,7 +2335,11 @@ const struct settings_list settings[] = {
     INT_SETTING_NOWRAP(F_SOUNDSETTING, side_mix_level,
                        LANG_MIDSIDE_SIDE, 100,
                        "side mix level", UNIT_PERCENT, 0, 100,
-                       1, NULL, NULL, dsp_midside_side_level), 	
+                       1, NULL, NULL, dsp_midside_side_level),
+    CHOICE_SETTING(F_SOUNDSETTING|F_NO_WRAP, midside_delay,
+                       LANG_MIDSIDE_DELAY, 0,"midside delay",
+                       "off,on", dsp_midside_delay, 2,
+                       ID2P(LANG_OFF), ID2P(LANG_ON)),	
     /* rDose */
     CHOICE_SETTING(F_SOUNDSETTING|F_NO_WRAP, rdose,
                    LANG_RDOSE, 0, "rdose enabled",
