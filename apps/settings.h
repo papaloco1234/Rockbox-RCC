@@ -857,7 +857,10 @@ struct user_settings
     int midside_enabled;
     int mid_mix_level;
     int side_mix_level;
-    int midside_delay; 
+    int midside_delay;
+    int midside_acoustic_path;
+    int midside_crosstalk;
+    int midside_hrtf; 
 };
 
 /** global variables **/

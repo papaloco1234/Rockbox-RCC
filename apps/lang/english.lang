@@ -13701,3 +13701,54 @@
     swcodec: "Separation Delay"
   </voice>
 </phrase>
+<phrase>
+  id: LANG_MIDSIDE_ASCOUTIC_PATH
+  desc: in sound settings
+  user: core
+  <source>
+    *: none
+    swcodec: "Ascoutic path"
+  </source>
+  <dest>
+    *: none
+    swcodec: "Ascoutic path"
+  </dest>
+  <voice>
+    *: none
+    swcodec: "Ascoutic path"
+  </voice>
+</phrase>
+<phrase>
+  id: LANG_MIDSIDE_CROSSTALK
+  desc: in sound settings
+  user: core
+  <source>
+    *: none
+    swcodec: "Crosstalk"
+  </source>
+  <dest>
+    *: none
+    swcodec: "Crosstalk"
+  </dest>
+  <voice>
+    *: none
+    swcodec: "Crosstalk"
+  </voice>
+</phrase>
+<phrase>
+  id: LANG_MIDSIDE_HRTF
+  desc: in sound settings
+  user: core
+  <source>
+    *: none
+    swcodec: "HRTF"
+  </source>
+  <dest>
+    *: none
+    swcodec: "HRTF"
+  </dest>
+  <voice>
+    *: none
+    swcodec: "HRTF"
+  </voice>
+</phrase>
