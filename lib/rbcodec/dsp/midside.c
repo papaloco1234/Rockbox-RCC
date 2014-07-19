@@ -5,6 +5,7 @@
 #include "settings.h"
 #include "dsp_proc_entry.h"
 
+#define MAX_ASCOUSTIC_PATH 200
 static int32_t mid  IBSS_ATTR;
 static int32_t side IBSS_ATTR;
 static int32_t delayed_side IBSS_ATTR;
@@ -79,6 +80,9 @@ static void mid_side_process(struct dsp_proc_entry *this,
     float fma = 1 - (crosstalk+acoustic_path)/acoustic_path;
     bool hrtf_enabled = hrtf;
 
+    int32_t hcoef = fp_div(7000, fout, 31);
+    int32_t tcoef = fp_div(1280, fout, 31);
+
     for (i = 0; i < count; i++)
     {     
          mid  = buf->p32[0][i]/2 + buf->p32[1][i]/2;
@@ -87,6 +91,10 @@ static void mid_side_process(struct dsp_proc_entry *this,
          if (hrtf_enabled)
          {
              mid += mid * fma;
+             /*fake high frequency signal transfer decay*/
+             mid = (mid- FRACMUL(mid, tcoef)) / 100 * 96 
+                    + (FRACMUL(mid, tcoef) -FRACMUL(mid, hcoef))/150 * (MAX_ASCOUSTIC_PATH-acoustic_path) / 100 * 96
+                    + FRACMUL(mid, hcoef)/150 * (MAX_ASCOUSTIC_PATH-acoustic_path);
              side += -side * fsa;
              delayed_side+=-delayed_side * fsa;
              delay = true;  /*force delay as part of phase shift*/

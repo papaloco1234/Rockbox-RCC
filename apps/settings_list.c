@@ -2346,7 +2346,7 @@ const struct settings_list settings[] = {
                        10, NULL, NULL, dsp_midside_acoustic_path),
     INT_SETTING_NOWRAP(F_SOUNDSETTING, midside_crosstalk,
                        LANG_MIDSIDE_CROSSTALK, 20,
-                       "hrtf crosstalk", UNIT_INT, 5, 50,
+                       "hrtf crosstalk", UNIT_INT, 5, 35,
                        1, NULL, NULL, dsp_midside_crosstalk),
     CHOICE_SETTING(F_SOUNDSETTING|F_NO_WRAP, midside_hrtf,
                        LANG_MIDSIDE_HRTF, 0,"hrtf",
