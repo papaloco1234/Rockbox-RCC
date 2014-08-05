@@ -158,7 +158,7 @@ public class MediaButtonReceiver
                     	doubleclickcode=KeyEvent.KEYCODE_MEDIA_NEXT;
                     }
                     if (s == null || !s.isRockboxRunning()) //先启动服务
-                	    startService(context, intent);
+                	    return;//startService(context, intent);
                     else
                     {
                         switch (keyCode) {
