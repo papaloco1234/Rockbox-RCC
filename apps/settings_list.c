@@ -532,76 +532,76 @@ struct eq_band_setting eq_defaults[EQ_NUM_BANDS] = {
     { 60, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 6
-    { 70, 43, 0 },
+    { 80, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 7
-    { 90, 43, 0 },
+    { 100, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 8
-    { 110, 43, 0 },
+    { 130, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 9
-    { 140, 43, 0 },
+    { 160, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 10
-    { 180, 43, 0 },
+    { 200, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 11
-    { 230, 43, 0 },
+    { 250, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 12
-    { 290, 43, 0 },
+    { 320, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 13
-    { 360, 43, 0 },
+    { 400, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 14
-    { 450, 43, 0 },
+    { 500, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 15
-    { 570, 43, 0 },
+    { 630, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 16
-    { 720, 43, 0 },
+    { 800, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 17
-    { 910, 43, 0 },
+    { 1000, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 18
-    { 1140, 43, 0 },
+    { 1250, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 19
-    { 1440, 43, 0 },
+    { 1600, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 20
-    { 1810, 43, 0 },
+    { 2000, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 21
-    { 2280, 43, 0 },
+    { 2500, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 22
-    { 2880, 43, 0 },
+    { 3150, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 23
-    { 3620, 43, 0 },
+    { 4000, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 24
-    { 4560, 43, 0 },
+    { 5000, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 25
-    { 5750, 43, 0 },
+    { 6300, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 26
     { 7250, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 27
-    { 9130, 43, 0 },
+    { 10000, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 28
-    { 11500, 43, 0 },
+    { 12500, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 29
-    { 14490, 43, 0 },
+    { 16000, 43, 0 },
 #endif
 #if EQ_NUM_BANDS > 30
     { 18260, 43, 0 },
@@ -609,7 +609,7 @@ struct eq_band_setting eq_defaults[EQ_NUM_BANDS] = {
 #if EQ_NUM_BANDS > 31
     { 19420, 43, 0 },
 #endif
-    { 19810, 43, 0 },
+    { 20000, 43, 0 },
 };
 
 static void eq_load_from_cfg(void *setting, char *value)
@@ -2194,99 +2194,95 @@ const struct settings_list settings[] = {
                   eq_load_from_cfg, eq_write_to_cfg,            \
                   eq_is_changed, eq_set_default)
     EQ_BAND(0, "eq low shelf filter"),
-#if EQ_NUM_BANDS > 1
     EQ_BAND(1, "eq peak filter 1"),
-#endif
-#if EQ_NUM_BANDS > 2
+#if EQ_NUM_BANDS > 3
     EQ_BAND(2, "eq peak filter 2"),
 #endif
-#if EQ_NUM_BANDS > 3
+#if EQ_NUM_BANDS > 4
     EQ_BAND(3, "eq peak filter 3"),
 #endif
-#if EQ_NUM_BANDS > 4
+#if EQ_NUM_BANDS > 5
     EQ_BAND(4, "eq peak filter 4"),
 #endif
-#if EQ_NUM_BANDS > 5
+#if EQ_NUM_BANDS > 6
     EQ_BAND(5, "eq peak filter 5"),
 #endif
-#if EQ_NUM_BANDS > 6
+#if EQ_NUM_BANDS > 7
     EQ_BAND(6, "eq peak filter 6"),
 #endif
-#if EQ_NUM_BANDS > 7
+#if EQ_NUM_BANDS > 8
     EQ_BAND(7, "eq peak filter 7"),
 #endif
-#if EQ_NUM_BANDS > 8
+#if EQ_NUM_BANDS > 9
     EQ_BAND(8, "eq peak filter 8"),
 #endif
-#if EQ_NUM_BANDS > 9
+#if EQ_NUM_BANDS > 10
     EQ_BAND(9, "eq peak filter 9"),
 #endif
-#if EQ_NUM_BANDS > 10
+#if EQ_NUM_BANDS > 11
     EQ_BAND(10, "eq peak filter 10"),
 #endif
-#if EQ_NUM_BANDS > 11
+#if EQ_NUM_BANDS > 12
     EQ_BAND(11, "eq peak filter 11"),
 #endif
-#if EQ_NUM_BANDS > 12
+#if EQ_NUM_BANDS > 13
     EQ_BAND(12, "eq peak filter 12"),
 #endif
-#if EQ_NUM_BANDS > 13
+#if EQ_NUM_BANDS > 14
     EQ_BAND(13, "eq peak filter 13"),
 #endif
-#if EQ_NUM_BANDS > 14
+#if EQ_NUM_BANDS > 15
     EQ_BAND(14, "eq peak filter 14"),
 #endif
-#if EQ_NUM_BANDS > 15
+#if EQ_NUM_BANDS > 16
     EQ_BAND(15, "eq peak filter 15"),
 #endif
-#if EQ_NUM_BANDS > 16
+#if EQ_NUM_BANDS > 17
     EQ_BAND(16, "eq peak filter 16"),
 #endif
-#if EQ_NUM_BANDS > 17
+#if EQ_NUM_BANDS > 18
     EQ_BAND(17, "eq peak filter 17"),
 #endif
-#if EQ_NUM_BANDS > 18
+#if EQ_NUM_BANDS > 19
     EQ_BAND(18, "eq peak filter 18"),
 #endif
-#if EQ_NUM_BANDS > 19
+#if EQ_NUM_BANDS > 20
     EQ_BAND(19, "eq peak filter 19"),
 #endif
-#if EQ_NUM_BANDS > 20
+#if EQ_NUM_BANDS > 21
     EQ_BAND(20, "eq peak filter 20"),
 #endif
-#if EQ_NUM_BANDS > 21
+#if EQ_NUM_BANDS > 22
     EQ_BAND(21, "eq peak filter 21"),
 #endif
-#if EQ_NUM_BANDS > 22
+#if EQ_NUM_BANDS > 23
     EQ_BAND(22, "eq peak filter 22"),
 #endif
-#if EQ_NUM_BANDS > 23
+#if EQ_NUM_BANDS > 24
     EQ_BAND(23, "eq peak filter 23"),
 #endif
-#if EQ_NUM_BANDS > 24
+#if EQ_NUM_BANDS > 25
     EQ_BAND(24, "eq peak filter 24"),
 #endif
-#if EQ_NUM_BANDS > 25
+#if EQ_NUM_BANDS > 26
     EQ_BAND(25, "eq peak filter 25"),
 #endif
-#if EQ_NUM_BANDS > 26
+#if EQ_NUM_BANDS > 27
     EQ_BAND(26, "eq peak filter 26"),
 #endif
-#if EQ_NUM_BANDS > 27
+#if EQ_NUM_BANDS > 28
     EQ_BAND(27, "eq peak filter 27"),
 #endif
-#if EQ_NUM_BANDS > 28
+#if EQ_NUM_BANDS > 29
     EQ_BAND(28, "eq peak filter 28"),
 #endif
-#if EQ_NUM_BANDS > 29
+#if EQ_NUM_BANDS > 30
     EQ_BAND(29, "eq peak filter 29"),
 #endif
-#if EQ_NUM_BANDS > 30
+#if EQ_NUM_BANDS > 31
     EQ_BAND(30, "eq peak filter 30"),
 #endif
-#if EQ_NUM_BANDS > 31
     EQ_BAND(EQ_NUM_BANDS-1, "eq high shelf filter"),
-#endif
 #undef EQ_BAND
 
     /* dithering */
