@@ -1053,12 +1053,15 @@ void settings_apply(bool read_disk)
     dsp_surround_set_cutoff(global_settings.surround_fx1, global_settings.surround_fx2);
     dsp_surround_enable(global_settings.surround_enabled);
     dsp_aatube_enable(global_settings.aatube_enabled);
+    dsp_tts_enable(global_settings.tts_enabled);
 #ifdef HAVE_PITCHCONTROL
     dsp_timestretch_enable(global_settings.timestretch_enabled);
 #endif
     dsp_compressor_switch(global_settings.compressor_switch);
     dsp_set_compressor(&global_settings.compressor_settings);
 #endif
+    dsp_bbe_precut(global_settings.bbe_precut);
+    dsp_bbe_enable(global_settings.bbe);
     dsp_rdose_enable(global_settings.rdose);
 #ifdef HAVE_SPDIF_POWER
     spdif_power_enable(global_settings.spdif_enable);

@@ -2323,6 +2323,11 @@ const struct settings_list settings[] = {
                        LANG_ANTIALIAS_WARM, 0,"aatube enabled",
                        "off,weak,moderate,strong", dsp_aatube_enable, 4,
                        ID2P(LANG_OFF), ID2P(LANG_WEAK),ID2P(LANG_MODERATE),ID2P(LANG_STRONG)),
+    /* tts */
+    CHOICE_SETTING(F_SOUNDSETTING|F_NO_WRAP, tts_enabled,
+                       LANG_TTS, 0,"tts enabled",
+                       "off,weak,moderate,strong", dsp_tts_enable, 4,
+                       ID2P(LANG_OFF), ID2P(LANG_WEAK),ID2P(LANG_MODERATE),ID2P(LANG_STRONG)),
     /* mid-side */
     CHOICE_SETTING(F_SOUNDSETTING|F_NO_WRAP, midside_enabled,
                        LANG_MIDSIDE, 0,"midside enabled",
@@ -2357,6 +2362,15 @@ const struct settings_list settings[] = {
                    LANG_RDOSE, 0, "rdose enabled",
                    "off,weak,moderate,strong", dsp_rdose_enable, 4,
                    ID2P(LANG_OFF), ID2P(LANG_WEAK),ID2P(LANG_MODERATE),ID2P(LANG_STRONG)),
+    /* BBE */
+    INT_SETTING_NOWRAP(F_SOUNDSETTING, bbe,
+                       LANG_BBE, 0,
+                       "bbe", UNIT_PERCENT, 0, 100,
+                       25, NULL, NULL, dsp_bbe_enable),
+    INT_SETTING_NOWRAP(F_SOUNDSETTING, bbe_precut,
+                       LANG_BBE_PRECUT, -16,
+                       "bbe precut", UNIT_DB, -25, 0,
+                       1, db_format, NULL, dsp_bbe_precut),
 #ifdef HAVE_PITCHCONTROL
     /* timestretch */
     OFFON_SETTING(F_SOUNDSETTING, timestretch_enabled, LANG_TIMESTRETCH, false,

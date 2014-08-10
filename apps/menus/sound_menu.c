@@ -197,8 +197,16 @@ static int timestretch_callback(int action,const struct menu_item_ex *this_item)
                      &global_settings.surround_mix, lowlatency_callback);
     MENUITEM_SETTING(aatube_enabled,
                      &global_settings.aatube_enabled, lowlatency_callback);
+    MENUITEM_SETTING(tts_enabled,
+                     &global_settings.tts_enabled, lowlatency_callback);
     MENUITEM_SETTING(rdose,
                      &global_settings.rdose, lowlatency_callback);
+    MENUITEM_SETTING(bbe,
+                     &global_settings.bbe, lowlatency_callback);
+    MENUITEM_SETTING(bbe_precut,
+                     &global_settings.bbe_precut, lowlatency_callback);
+    MAKE_MENU(bbe_menu,ID2P(LANG_BBE), NULL, Icon_NOICON,
+              &bbe,&bbe_precut);
 
     MAKE_MENU(surround_menu,ID2P(LANG_SURROUND), NULL, Icon_NOICON,
               &surround_enabled,&surround_balance,&surround_fx1,&surround_fx2,&surround_method2,&surround_mix);
@@ -300,7 +308,8 @@ MAKE_MENU(sound_settings, ID2P(LANG_SOUND_SETTINGS), NULL, Icon_Audio,
           ,&roll_off
 #endif
 #if CONFIG_CODEC == SWCODEC
-          ,&crossfeed_menu, &space80_menu, &equalizer_menu, &dithering_enabled, &surround_menu,&aatube_enabled, &rdose,&midside_menu
+          ,&crossfeed_menu, &space80_menu, &equalizer_menu, &dithering_enabled 
+          ,&surround_menu,&aatube_enabled, &rdose, &bbe_menu, &tts_enabled, &midside_menu
 #ifdef HAVE_PITCHCONTROL
           ,&timestretch_enabled
 #endif

@@ -861,6 +861,10 @@ struct user_settings
     int midside_acoustic_path;
     int midside_crosstalk;
     int midside_hrtf; 
+
+    int bbe;
+    int bbe_precut;
+    int tts_enabled;
 };
 
 /** global variables **/
