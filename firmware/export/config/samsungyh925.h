@@ -7,7 +7,7 @@
 #define MODEL_NAME   "Samsung YH-925"
 
 /* define this if you have recording possibility */
-/* todo #define HAVE_RECORDING */
+#define HAVE_RECORDING
 
 /* Define bitmask of input sources - recordable bitmask can be defined
    explicitly if different */
@@ -87,7 +87,7 @@
 /* define this if you would like tagcache to build on this target */
 #define HAVE_TAGCACHE
 
-#define CONFIG_KEYPAD SAMSUNG_YH_PAD
+#define CONFIG_KEYPAD SAMSUNG_YH920_PAD
 
 /* Define this if you do software codec */
 #define CONFIG_CODEC SWCODEC
@@ -110,7 +110,10 @@
 #define HAVE_LBA48
 
 /* We're able to shut off power to the HDD */
-/* todo #define HAVE_ATA_POWER_OFF */
+#define HAVE_ATA_POWER_OFF
+
+/* Software controlled LED */
+#define CONFIG_LED LED_REAL
 
 /* Define this if you have a software controlled poweroff */
 #define HAVE_SW_POWEROFF

@@ -328,7 +328,8 @@
 #elif CONFIG_KEYPAD == ONDAVX777_PAD
 #define ROCKBLOX_OFF           BUTTON_POWER
 
-#elif CONFIG_KEYPAD == SAMSUNG_YH_PAD
+#elif (CONFIG_KEYPAD == SAMSUNG_YH820_PAD) || \
+      (CONFIG_KEYPAD == SAMSUNG_YH920_PAD)
 
 #define ROCKBLOX_OFF           (BUTTON_REC|BUTTON_PLAY)
 #define ROCKBLOX_ROTATE_CCW    BUTTON_UP
@@ -427,6 +428,26 @@
 #define ROCKBLOX_RIGHT         BUTTON_RIGHT
 #define ROCKBLOX_DROP          BUTTON_SELECT
 #define ROCKBLOX_RESTART       BUTTON_PLAY
+
+#elif CONFIG_KEYPAD == SONY_NWZ_PAD
+#define ROCKBLOX_OFF           (BUTTON_BACK|BUTTON_REPEAT)
+#define ROCKBLOX_ROTATE_CCW    BUTTON_POWER
+#define ROCKBLOX_ROTATE_CW     BUTTON_UP
+#define ROCKBLOX_DOWN          BUTTON_DOWN
+#define ROCKBLOX_LEFT          BUTTON_LEFT
+#define ROCKBLOX_RIGHT         BUTTON_RIGHT
+#define ROCKBLOX_DROP          BUTTON_PLAY
+#define ROCKBLOX_RESTART       BUTTON_BACK
+
+#elif CONFIG_KEYPAD == CREATIVE_ZEN_PAD
+#define ROCKBLOX_OFF           BUTTON_BACK
+#define ROCKBLOX_ROTATE_CCW    BUTTON_MENU
+#define ROCKBLOX_ROTATE_CW     BUTTON_UP
+#define ROCKBLOX_DOWN          BUTTON_DOWN
+#define ROCKBLOX_LEFT          BUTTON_LEFT
+#define ROCKBLOX_RIGHT         BUTTON_RIGHT
+#define ROCKBLOX_DROP          BUTTON_SELECT
+#define ROCKBLOX_RESTART       BUTTON_SHORTCUT
 
 #else
 #error No keymap defined!
@@ -788,7 +809,7 @@ static const short scoring[4] = {  /* scoring for each number of lines */
 struct figure
 {
 #if LCD_DEPTH >= 2
-    unsigned short color[3];    /* color of figure (light,middle,shadow) */
+    unsigned int color[3];    /* color of figure (light,middle,shadow) */
 #endif
     unsigned short max_or;      /* max orientations */
     signed short shapeX[4], shapeY[4];  /* implementation of figures */

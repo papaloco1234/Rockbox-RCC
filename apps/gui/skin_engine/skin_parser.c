@@ -429,6 +429,7 @@ static int parse_image_load(struct skin_element *element,
     img->using_preloaded_icons = false;
     img->buflib_handle = -1;
     img->is_9_segment = false;
+    img->loaded = false;
 
     /* save current viewport */
     img->vp = PTRTOSKINOFFSET(skin_buffer, &curr_vp->vp);
@@ -1127,6 +1128,7 @@ static int parse_progressbar_tag(struct skin_element* element,
             img->using_preloaded_icons = false;
             img->buflib_handle = -1;
             img->vp = PTRTOSKINOFFSET(skin_buffer, &curr_vp->vp);
+            img->loaded = false;
             struct skin_token_list *item = new_skin_token_list_item(NULL, img);
             if (!item)
                 return WPS_ERROR_INVALID_PARAM;
@@ -1571,6 +1573,7 @@ static int parse_touchregion(struct skin_element *element,
         p = 1;
         /* "[SI]III[SI]|SS" is the param list. There MUST be 4 numbers
          * followed by at least one string. Verify that here */
+
         if (element->params_count < 6)
             return WPS_ERROR_INVALID_PARAM;
     }
@@ -1589,7 +1592,8 @@ static int parse_touchregion(struct skin_element *element,
         else if (param->type == PERCENT)
             region->x = param->data.number * curr_vp->vp.width / 1000;
     }
-/*y*/  
+/*y*/
+
     param = get_param(element, ++p);
     region->y = 0;
     if (!isdefault(param))
@@ -1750,7 +1754,19 @@ void skin_data_free_buflib_allocs(struct wps_data *wps_data)
         struct wps_token *token = SKINOFFSETTOPTR(skin_buffer, list->token);
         struct gui_img *img = (struct gui_img*)SKINOFFSETTOPTR(skin_buffer, token->value.data);
         if (img->buflib_handle > 0)
+        {
+            struct skin_token_list *imglist = SKINOFFSETTOPTR(skin_buffer, list->next);
             core_free(img->buflib_handle);
+
+            while (imglist)
+            {
+                struct wps_token *freetoken = SKINOFFSETTOPTR(skin_buffer, imglist->token);
+                struct gui_img *freeimg = (struct gui_img*)SKINOFFSETTOPTR(skin_buffer, freetoken->value.data);
+                if (img->buflib_handle == freeimg->buflib_handle)
+                    freeimg->buflib_handle = -1;
+                imglist = SKINOFFSETTOPTR(skin_buffer, imglist->next);
+            }
+        }
         list = SKINOFFSETTOPTR(skin_buffer, list->next);
     }
     wps_data->images = PTRTOSKINOFFSET(skin_buffer, NULL);
@@ -1822,18 +1838,16 @@ static int buflib_move_callback(int handle, void* current, void* new)
 {
     (void)current;
     (void)new;
-    int i;
     if (handle == currently_loading_handle)
         return BUFLIB_CB_CANNOT_MOVE;
     /* Any active skins may be scrolling - which means using viewports which
      * will be moved after this callback returns. This is a hammer to make that
      * safe. TODO: use a screwdriver instead.
      */
-    lcd_scroll_stop();
-#ifdef HAVE_LCD_REMOTE
-    lcd_remote_scroll_stop();
-#endif
-    for (i = 0; i < SKINNABLE_SCREENS_COUNT; i++)
+    FOR_NB_SCREENS(i)
+        screens[i].scroll_stop();
+
+    for (int i = 0; i < SKINNABLE_SCREENS_COUNT; i++)
         skin_request_full_update(i);
 
     return BUFLIB_CB_OK;
@@ -1924,7 +1938,7 @@ static bool load_skin_bitmaps(struct wps_data *wps_data, char *bmpdir)
     {
         struct wps_token *token = SKINOFFSETTOPTR(skin_buffer, list->token);
         struct gui_img *img = (struct gui_img*)SKINOFFSETTOPTR(skin_buffer, token->value.data);
-        if (img->bm.data)
+        if (!img->loaded)
         {
             if (img->using_preloaded_icons)
             {
@@ -1933,10 +1947,30 @@ static bool load_skin_bitmaps(struct wps_data *wps_data, char *bmpdir)
             }
             else
             {
-                img->buflib_handle = load_skin_bmp(wps_data, &img->bm, bmpdir);
+                char path[MAX_PATH];
+                int handle;
+                strcpy(path, img->bm.data);
+                handle = load_skin_bmp(wps_data, &img->bm, bmpdir);
+                img->buflib_handle = handle;
                 img->loaded = img->buflib_handle >= 0;
                 if (img->loaded)
+                {
+                    struct skin_token_list *imglist = SKINOFFSETTOPTR(skin_buffer, list->next);
+
                     img->subimage_height = img->bm.height / img->num_subimages;
+                    while (imglist)
+                    {
+                        token = SKINOFFSETTOPTR(skin_buffer, imglist->token);
+                        img = (struct gui_img*)SKINOFFSETTOPTR(skin_buffer, token->value.data);
+                        if (!strcmp(path, img->bm.data))
+                        {
+                            img->loaded = true;
+                            img->buflib_handle = handle;
+                            img->subimage_height = img->bm.height / img->num_subimages;
+                        }
+                        imglist = SKINOFFSETTOPTR(skin_buffer, imglist->next);
+                    }
+                }
                 else
                     retval = false;
             }

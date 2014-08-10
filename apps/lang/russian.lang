@@ -9843,11 +9843,11 @@
   </source>
   <dest>
     *: none
-    swcodec: "Фасонирование"
+    swcodec: "Дизеринг"
   </dest>
   <voice>
     *: none
-    swcodec: "Фасонирование"
+    swcodec: "Дизеринг"
   </voice>
 </phrase>
 <phrase>
@@ -12787,6 +12787,34 @@
   </dest>
   <voice>
     *: "Отменить таймер сна"
+  </voice>
+</phrase>
+<phrase>
+  id: LANG_LIST_SEPARATOR
+  desc: line between lines in lists
+  user: core
+  <source>
+    *: "Line Separator"
+  </source>
+  <dest>
+    *: "Линия разделитель"
+  </dest>
+  <voice>
+    *: "Линия разделитель"
+  </voice>
+</phrase>
+<phrase>
+  id: LANG_LIST_SEPARATOR_COLOR
+  desc: line between lines in lists
+  user: core
+  <source>
+    *: "Line Separator Colour"
+  </source>
+  <dest>
+    *: "Цвет линии разделителя"
+  </dest>
+  <voice>
+    *: "Цвет линии разделителя"
   </voice>
 </phrase>
 <phrase>

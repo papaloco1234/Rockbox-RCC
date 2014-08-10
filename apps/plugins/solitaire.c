@@ -452,7 +452,8 @@
 CONFIG_KEYPAD == MROBE500_PAD
 #   define SOL_QUIT          BUTTON_POWER
 
-#elif (CONFIG_KEYPAD == SAMSUNG_YH_PAD)
+#elif (CONFIG_KEYPAD == SAMSUNG_YH820_PAD) || \
+      (CONFIG_KEYPAD == SAMSUNG_YH920_PAD)
 #   define SOL_QUIT          BUTTON_REC
 #   define SOL_UP            BUTTON_UP
 #   define SOL_DOWN          BUTTON_DOWN
@@ -615,6 +616,40 @@ CONFIG_KEYPAD == MROBE500_PAD
 #   define HK_REM2CUR      "SELECT"
 #   define HK_CUR2STACK    "POWER + LEFT"
 #   define HK_REM2STACK    "POWER + RIGHT"
+
+#elif (CONFIG_KEYPAD == SONY_NWZ_PAD)
+#define SOL_QUIT      BUTTON_BACK
+#define SOL_UP        BUTTON_UP
+#define SOL_DOWN      BUTTON_DOWN
+#define SOL_LEFT      BUTTON_LEFT
+#define SOL_RIGHT     BUTTON_RIGHT
+#define SOL_MOVE      BUTTON_PLAY
+#define SOL_DRAW      (BUTTON_POWER|BUTTON_UP)
+#define SOL_REM2CUR   (BUTTON_POWER|BUTTON_DOWN)
+#define SOL_CUR2STACK (BUTTON_POWER|BUTTON_LEFT)
+#define SOL_REM2STACK (BUTTON_POWER|BUTTON_RIGHT)
+#define HK_MOVE       "Play"
+#define HK_DRAW       "Option+Up"
+#define HK_REM2CUR    "Option+Down"
+#define HK_CUR2STACK  "Option+Left"
+#define HK_REM2STACK  "Option+Right"
+
+#elif (CONFIG_KEYPAD == CREATIVE_ZEN_PAD)
+#define SOL_QUIT      BUTTON_POWER
+#define SOL_UP        BUTTON_UP
+#define SOL_DOWN      BUTTON_DOWN
+#define SOL_LEFT      BUTTON_LEFT
+#define SOL_RIGHT     BUTTON_RIGHT
+#define SOL_MOVE      BUTTON_SELECT
+#define SOL_DRAW      BUTTON_PLAYPAUSE
+#define SOL_REM2CUR   BUTTON_BACK
+#define SOL_CUR2STACK BUTTON_MENU
+#define SOL_REM2STACK BUTTON_SHORTCUT
+#define HK_MOVE       "Select"
+#define HK_DRAW       "Play/pause"
+#define HK_REM2CUR    "Back"
+#define HK_CUR2STACK  "Menu"
+#define HK_REM2STACK  "Shortcut"
 
 #else
 #error No keymap defined!

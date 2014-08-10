@@ -208,7 +208,8 @@ CONFIG_KEYPAD == MROBE500_PAD
 
 #define QUIT BUTTON_POWER
 
-#elif CONFIG_KEYPAD == SAMSUNG_YH_PAD
+#elif (CONFIG_KEYPAD == SAMSUNG_YH820_PAD) || \
+      (CONFIG_KEYPAD == SAMSUNG_YH920_PAD)
 
 #define QUIT  BUTTON_REC
 #define LEFT  BUTTON_LEFT
@@ -232,6 +233,20 @@ CONFIG_KEYPAD == MROBE500_PAD
 #elif CONFIG_KEYPAD == SANSA_FUZEPLUS_PAD
 
 #define QUIT  BUTTON_POWER
+#define LEFT  BUTTON_LEFT
+#define RIGHT BUTTON_RIGHT
+#define FIRE  BUTTON_SELECT
+
+#elif CONFIG_KEYPAD == SONY_NWZ_PAD
+
+#define QUIT  BUTTON_BACK
+#define LEFT  BUTTON_LEFT
+#define RIGHT BUTTON_RIGHT
+#define FIRE  BUTTON_PLAY
+
+#elif CONFIG_KEYPAD == CREATIVE_ZEN_PAD
+
+#define QUIT  BUTTON_BACK
 #define LEFT  BUTTON_LEFT
 #define RIGHT BUTTON_RIGHT
 #define FIRE  BUTTON_SELECT
@@ -1026,7 +1041,7 @@ static inline void draw_ship(void)
 }
 
 
-static inline void fire_alpha(int xc, int yc, fb_data color)
+static inline void fire_alpha(int xc, int yc, unsigned color)
 {
     int oldmode = rb->lcd_get_drawmode();
 
@@ -1127,12 +1142,12 @@ static void move_fire(void)
         /* Check for hit*/
         for (i = FIRE_SPEED; i >= 0; i--) {
             pix = get_pixel(fire_x, fire_y + i);
-            if(pix == screen_white) {
+            if(!memcmp(&pix, &screen_white, sizeof(fb_data))) {
                 hit_white = true;
                 fire_y += i;
                 break;
             }
-            if(pix == screen_green) {
+            if(!memcmp(&pix, &screen_green, sizeof(fb_data))) {
                 hit_green = true;
                 fire_y += i;
                 break;
@@ -1335,7 +1350,8 @@ static void move_bombs(void)
             /* Check for green (ship or shield) */
             for (j = BOMB_HEIGHT; j >= BOMB_HEIGHT - BOMB_SPEED; j--) {
                 bombs[i].target = 0;
-                if(get_pixel(bombs[i].x + BOMB_WIDTH / 2, bombs[i].y + j) == screen_green) {
+                fb_data pix = get_pixel(bombs[i].x + BOMB_WIDTH / 2, bombs[i].y + j);
+                if(!memcmp(&pix, &screen_green, sizeof(fb_data))) {
                     /* Move to hit pixel */
                     bombs[i].x += BOMB_WIDTH / 2;
                     bombs[i].y += j;

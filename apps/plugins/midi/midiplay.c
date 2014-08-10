@@ -193,7 +193,8 @@
 #elif CONFIG_KEYPAD == ONDAVX777_PAD
 #define BTN_QUIT         BUTTON_POWER
 
-#elif CONFIG_KEYPAD == SAMSUNG_YH_PAD
+#elif (CONFIG_KEYPAD == SAMSUNG_YH820_PAD) || \
+      (CONFIG_KEYPAD == SAMSUNG_YH920_PAD)
 #define BTN_QUIT         BUTTON_REW
 #define BTN_RIGHT        BUTTON_RIGHT
 #define BTN_LEFT         BUTTON_LEFT
@@ -257,6 +258,22 @@
 #define BTN_UP           BUTTON_UP
 #define BTN_DOWN         BUTTON_DOWN
 #define BTN_PLAY         BUTTON_SELECT
+
+#elif (CONFIG_KEYPAD == SONY_NWZ_PAD)
+#define BTN_QUIT         BUTTON_BACK
+#define BTN_RIGHT        BUTTON_RIGHT
+#define BTN_LEFT         BUTTON_LEFT
+#define BTN_UP           BUTTON_UP
+#define BTN_DOWN         BUTTON_DOWN
+#define BTN_PLAY         BUTTON_PLAY
+
+#elif (CONFIG_KEYPAD == CREATIVE_ZEN_PAD)
+#define BTN_QUIT         BUTTON_BACK
+#define BTN_RIGHT        BUTTON_RIGHT
+#define BTN_LEFT         BUTTON_LEFT
+#define BTN_UP           BUTTON_UP
+#define BTN_DOWN         BUTTON_DOWN
+#define BTN_PLAY         BUTTON_PLAYPAUSE
 
 #else
 #error No keymap defined!

@@ -279,7 +279,8 @@
 #elif CONFIG_KEYPAD == ONDAVX777_PAD
 #define CUBE_QUIT          BUTTON_POWER
 
-#elif CONFIG_KEYPAD == SAMSUNG_YH_PAD
+#elif (CONFIG_KEYPAD == SAMSUNG_YH820_PAD) || \
+      (CONFIG_KEYPAD == SAMSUNG_YH920_PAD)
 #define CUBE_QUIT          BUTTON_REC
 #define CUBE_NEXT          BUTTON_RIGHT
 #define CUBE_PREV          BUTTON_LEFT
@@ -368,6 +369,26 @@
 #define CUBE_MODE          BUTTON_PREV
 #define CUBE_PAUSE         BUTTON_SELECT
 #define CUBE_HIGHSPEED     BUTTON_NEXT
+
+#elif (CONFIG_KEYPAD == SONY_NWZ_PAD)
+#define CUBE_QUIT        BUTTON_BACK
+#define CUBE_NEXT        BUTTON_RIGHT
+#define CUBE_PREV        BUTTON_LEFT
+#define CUBE_INC         BUTTON_UP
+#define CUBE_DEC         BUTTON_DOWN
+#define CUBE_MODE        (BUTTON_POWER|BUTTON_UP)
+#define CUBE_PAUSE       BUTTON_PLAY
+#define CUBE_HIGHSPEED   (BUTTON_POWER|BUTTON_DOWN)
+
+#elif (CONFIG_KEYPAD == CREATIVE_ZEN_PAD)
+#define CUBE_QUIT        BUTTON_BACK
+#define CUBE_NEXT        BUTTON_RIGHT
+#define CUBE_PREV        BUTTON_LEFT
+#define CUBE_INC         BUTTON_UP
+#define CUBE_DEC         BUTTON_DOWN
+#define CUBE_MODE        BUTTON_MENU
+#define CUBE_PAUSE       BUTTON_PLAYPAUSE
+#define CUBE_HIGHSPEED   BUTTON_SHORTCUT
 
 #else
 #error No keymap defined!

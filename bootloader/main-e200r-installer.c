@@ -28,7 +28,7 @@
 #include "cpu.h"
 #include "file.h"
 #include "system.h"
-#include "kernel.h"
+#include "../kernel-internal.h"
 #include "lcd.h"
 #include "font.h"
 #include "storage.h"
@@ -93,8 +93,6 @@ void* main(void)
     int crc32;
     char sector[512];
     struct partinfo* pinfo;
-
-    chksum_crc32gentab ();
 
     system_init();
     kernel_init();

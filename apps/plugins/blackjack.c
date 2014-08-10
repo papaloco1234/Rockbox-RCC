@@ -393,7 +393,8 @@ enum {
 #define BJACK_QUIT_NAME     "POWER"
 #define BJACK_QUIT          BUTTON_POWER
 
-#elif CONFIG_KEYPAD == SAMSUNG_YH_PAD
+#elif (CONFIG_KEYPAD == SAMSUNG_YH820_PAD) || \
+      (CONFIG_KEYPAD == SAMSUNG_YH920_PAD)
 #define BJACK_SELECT_NAME  "PLAY"
 #define BJACK_STAY_NAME    "RECORD"
 #define BJACK_QUIT_NAME    "REW"
@@ -511,6 +512,34 @@ enum {
 #define BJACK_DOWN          BUTTON_DOWN
 #define BJACK_RIGHT         BUTTON_RIGHT
 #define BJACK_LEFT          BUTTON_LEFT
+
+#elif CONFIG_KEYPAD == SONY_NWZ_PAD
+#define BJACK_SELECT        BUTTON_PLAY
+#define BJACK_QUIT          BUTTON_BACK
+#define BJACK_STAY          (BUTTON_POWER|BUTTON_PLAY)
+#define BJACK_DOUBLEDOWN    (BUTTON_POWER|BUTTON_DOWN)
+#define BJACK_UP            BUTTON_UP
+#define BJACK_DOWN          BUTTON_DOWN
+#define BJACK_RIGHT         BUTTON_RIGHT
+#define BJACK_LEFT          BUTTON_LEFT
+#define BJACK_SELECT_NAME   "Play"
+#define BJACK_STAY_NAME     "Option+Play"
+#define BJACK_QUIT_NAME     "Back"
+#define BJACK_DOUBLE_NAME   "Option+Down"
+
+#elif CONFIG_KEYPAD == CREATIVE_ZEN_PAD
+#define BJACK_SELECT        BUTTON_SELECT
+#define BJACK_QUIT          BUTTON_BACK
+#define BJACK_STAY          BUTTON_PLAYPAUSE
+#define BJACK_DOUBLEDOWN    BUTTON_SHORTCUT
+#define BJACK_UP            BUTTON_UP
+#define BJACK_DOWN          BUTTON_DOWN
+#define BJACK_RIGHT         BUTTON_RIGHT
+#define BJACK_LEFT          BUTTON_LEFT
+#define BJACK_SELECT_NAME   "Select"
+#define BJACK_STAY_NAME     "Play/Pause"
+#define BJACK_QUIT_NAME     "Back"
+#define BJACK_DOUBLE_NAME   "Shortcut"
 
 #else
 #error No keymap defined!

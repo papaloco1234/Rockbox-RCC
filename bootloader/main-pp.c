@@ -29,7 +29,7 @@
 #include "cpu.h"
 #include "file.h"
 #include "system.h"
-#include "kernel.h"
+#include "../kernel-internal.h"
 #include "lcd.h"
 #include "font.h"
 #include "storage.h"
@@ -81,7 +81,8 @@ extern void show_logo(void);
 #elif CONFIG_KEYPAD == PHILIPS_HDD6330_PAD
 #define BOOTLOADER_BOOT_OF      BUTTON_VOL_UP
 
-#elif CONFIG_KEYPAD == SAMSUNG_YH_PAD
+#elif (CONFIG_KEYPAD == SAMSUNG_YH820_PAD) || \
+      (CONFIG_KEYPAD == SAMSUNG_YH920_PAD)
 #define BOOTLOADER_BOOT_OF      BUTTON_LEFT
 
 #elif CONFIG_KEYPAD == SANSA_FUZE_PAD
@@ -296,8 +297,6 @@ void* main(void)
     unsigned short* identify_info;
 #endif
     int usb = USB_EXTRACTED;
-
-    chksum_crc32gentab ();
 
     system_init();
     kernel_init();

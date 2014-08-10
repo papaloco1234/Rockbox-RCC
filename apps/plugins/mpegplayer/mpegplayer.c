@@ -317,7 +317,8 @@ CONFIG_KEYPAD == SANSA_M200_PAD
 #elif CONFIG_KEYPAD == ONDAVX777_PAD
 #define MPEG_MENU       BUTTON_POWER
 
-#elif CONFIG_KEYPAD == SAMSUNG_YH_PAD
+#elif (CONFIG_KEYPAD == SAMSUNG_YH820_PAD) || \
+      (CONFIG_KEYPAD == SAMSUNG_YH920_PAD)
 #define MPEG_MENU       BUTTON_LEFT
 #define MPEG_STOP       BUTTON_RIGHT
 #define MPEG_PAUSE      BUTTON_PLAY
@@ -398,8 +399,28 @@ CONFIG_KEYPAD == SANSA_M200_PAD
 #define MPEG_RW         BUTTON_PREV
 #define MPEG_FF         BUTTON_NEXT
 
+
 #elif (CONFIG_KEYPAD == ANDROID_PAD)
 #define MPEG_STOP  BUTTON_BACK
+
+#elif CONFIG_KEYPAD == SONY_NWZ_PAD
+#define MPEG_MENU       BUTTON_BACK
+#define MPEG_PAUSE      BUTTON_PLAY
+#define MPEG_STOP       BUTTON_POWER
+#define MPEG_VOLDOWN    BUTTON_UP
+#define MPEG_VOLUP      BUTTON_DOWN
+#define MPEG_RW         BUTTON_LEFT
+#define MPEG_FF         BUTTON_RIGHT
+
+#elif CONFIG_KEYPAD == CREATIVE_ZEN_PAD
+#define MPEG_MENU       BUTTON_MENU
+#define MPEG_PAUSE      BUTTON_PLAYPAUSE
+#define MPEG_STOP       BUTTON_BACK
+#define MPEG_VOLDOWN    BUTTON_DOWN
+#define MPEG_VOLUP      BUTTON_UP
+#define MPEG_RW         BUTTON_LEFT
+#define MPEG_FF         BUTTON_RIGHT
+
 
 #else
 #error No keymap defined!
@@ -704,7 +725,7 @@ static void draw_oriented_mono_bitmap_part(const unsigned char *src,
             dst_col--;
 
             if (data & 1)
-                *dst_col = fg_pattern;
+                *dst_col = FB_SCALARPACK(fg_pattern);
 #if 0
             else
                 *dst_col = bg_pattern;
@@ -721,7 +742,7 @@ static void draw_oriented_mono_bitmap_part(const unsigned char *src,
     while (src < src_end);
 }
 
-/* draw alpha bitmap for anti-alias font */
+
 #define ALPHA_COLOR_FONT_DEPTH 2
 #define ALPHA_COLOR_LOOKUP_SHIFT (1 << ALPHA_COLOR_FONT_DEPTH)
 #define ALPHA_COLOR_LOOKUP_SIZE ((1 << ALPHA_COLOR_LOOKUP_SHIFT) - 1)
@@ -729,6 +750,7 @@ static void draw_oriented_mono_bitmap_part(const unsigned char *src,
 #define ALPHA_COLOR_PIXEL_PER_WORD (32 >> ALPHA_COLOR_FONT_DEPTH)
 #ifdef CPU_ARM
 #define BLEND_INIT do {} while (0)
+#define BLEND_FINISH do {} while(0)
 #define BLEND_START(acc, color, alpha) \
     asm volatile("mul %0, %1, %2" : "=&r" (acc) : "r" (color), "r" (alpha))
 #define BLEND_CONT(acc, color, alpha) \
@@ -736,13 +758,18 @@ static void draw_oriented_mono_bitmap_part(const unsigned char *src,
 #define BLEND_OUT(acc) do {} while (0)
 #elif defined(CPU_COLDFIRE)
 #define ALPHA_BITMAP_READ_WORDS
-#define BLEND_INIT coldfire_set_macsr(EMAC_UNSIGNED)
+#define BLEND_INIT \
+    unsigned long _macsr = coldfire_get_macsr(); \
+    coldfire_set_macsr(EMAC_UNSIGNED)
+#define BLEND_FINISH \
+    coldfire_set_macsr(_macsr)
 #define BLEND_START(acc, color, alpha) \
     asm volatile("mac.l %0, %1, %%acc0" :: "%d" (color), "d" (alpha))
 #define BLEND_CONT BLEND_START
 #define BLEND_OUT(acc) asm volatile("movclr.l %%acc0, %0" : "=d" (acc))
 #else
 #define BLEND_INIT do {} while (0)
+#define BLEND_FINISH do {} while(0)
 #define BLEND_START(acc, color, alpha) ((acc) = (color) * (alpha))
 #define BLEND_CONT(acc, color, alpha) ((acc) += (color) * (alpha))
 #define BLEND_OUT(acc) do {} while (0)
@@ -751,6 +778,7 @@ static void draw_oriented_mono_bitmap_part(const unsigned char *src,
 /* Blend the given two colors */
 static inline unsigned blend_two_colors(unsigned c1, unsigned c2, unsigned a)
 {
+#if LCD_DEPTH == 16
     a += a >> (ALPHA_COLOR_LOOKUP_SHIFT - 1);
 #if (LCD_PIXELFORMAT == RGB565SWAPPED)
     c1 = swap16(c1);
@@ -768,6 +796,20 @@ static inline unsigned blend_two_colors(unsigned c1, unsigned c2, unsigned a)
     return swap16(p);
 #else
     return p;
+#endif
+
+#else /* LCD_DEPTH == 24 */
+    unsigned s = c1;
+    unsigned d = c2;
+    unsigned s1 = s & 0xff00ff;
+    unsigned d1 = d & 0xff00ff;
+    a += a >> (ALPHA_COLOR_LOOKUP_SHIFT - 1);
+    d1 = (d1 + ((s1 - d1) * a >> ALPHA_COLOR_LOOKUP_SHIFT)) & 0xff00ff;
+    s &= 0xff00;
+    d &= 0xff00;
+    d = (d + ((s - d) * a >> ALPHA_COLOR_LOOKUP_SHIFT)) & 0xff00;
+
+    return d1 | d;
 #endif
 }
 
@@ -851,8 +893,9 @@ static void draw_oriented_alpha_bitmap_part(const unsigned char *src,
 #endif
         do
         {
-            *dst=blend_two_colors(*dst, fg_pattern,
-                        data & ALPHA_COLOR_LOOKUP_SIZE );
+            unsigned color = blend_two_colors(FB_UNPACK_SCALAR_LCD(*dst), fg_pattern,
+                                    data & ALPHA_COLOR_LOOKUP_SIZE );
+            *dst= FB_SCALARPACK(color);
             dst += LCD_WIDTH;
             UPDATE_SRC_ALPHA;
         }

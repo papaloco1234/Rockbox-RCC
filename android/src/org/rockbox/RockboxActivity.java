@@ -256,6 +256,7 @@ public class RockboxActivity extends Activity
         RockboxAppSetting.releaseWakeLock();
         setServiceActivity(true);
         setVisible(true);
+        setServiceActivity(true);
     }
     
     /* this is also called when the backlight goes off,
