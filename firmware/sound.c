@@ -178,6 +178,8 @@ static void set_prescaled_volume(void)
 #ifdef AUDIOHW_HAVE_TONE_GAIN
     if (sound_prescaler.tone_gain > 0 && MAX(sound_prescaler.bass, sound_prescaler.treble) > 0)
         prescale -= MIN(sound_prescaler.tone_gain, MAX(sound_prescaler.bass, sound_prescaler.treble));
+    if (sound_prescaler.tone_gain < 0 )
+        prescale += -(sound_prescaler.tone_gain);
 #endif /* AUDIOHW_HAVE_TONE_GAIN */
     audiohw_set_prescaler(prescale);
 
