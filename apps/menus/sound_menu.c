@@ -219,18 +219,8 @@ static int timestretch_callback(int action,const struct menu_item_ex *this_item)
                      &global_settings.side_mix_level, lowlatency_callback);
     MENUITEM_SETTING(midside_delay,
                      &global_settings.midside_delay, lowlatency_callback);
-
-    MENUITEM_SETTING(midside_acoustic_path,
-                     &global_settings.midside_acoustic_path, lowlatency_callback);
-    MENUITEM_SETTING(midside_crosstalk,
-                     &global_settings.midside_crosstalk, lowlatency_callback);
-    MENUITEM_SETTING(midside_hrtf,
-                     &global_settings.midside_hrtf, lowlatency_callback);
-    MAKE_MENU(hrtf_menu,ID2P(LANG_MIDSIDE_HRTF), NULL, Icon_NOICON,
-              &midside_hrtf,&midside_crosstalk,&midside_acoustic_path); 
-
     MAKE_MENU(midside_menu,ID2P(LANG_MIDSIDE), NULL, Icon_NOICON,
-              &midside_enabled,&midside_mid_mix_level,&midside_side_mix_level,&midside_delay,&hrtf_menu); 
+              &midside_enabled,&midside_mid_mix_level,&midside_side_mix_level,&midside_delay); 
     /* compressor submenu */
     MENUITEM_SETTING(compressor_switch,
                      &global_settings.compressor_switch,
