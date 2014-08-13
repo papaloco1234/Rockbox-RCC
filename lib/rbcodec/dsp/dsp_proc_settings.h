@@ -28,6 +28,8 @@
 #include "dsp_misc.h"
 #include "eq.h"
 #include "pga.h"
+#include "bbe.h"
+#include "tts.h"
 #ifdef HAVE_PITCHCONTROL
 #include "tdspeed.h"
 #endif

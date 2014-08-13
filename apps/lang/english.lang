@@ -13237,3 +13237,54 @@
     swcodec: "Q"
   </voice>
 </phrase>
+<phrase>
+  id: LANG_BBE
+  desc: in sound settings
+  user: core
+  <source>
+    *: none
+    swcodec: "BBE"
+  </source>
+  <dest>
+    *: none
+    swcodec: "BBE"
+  </dest>
+  <voice>
+    *: none
+    swcodec: "BBE"
+  </voice>
+</phrase>
+<phrase>
+  id: LANG_BBE_PRECUT
+  desc: in sound settings
+  user: core
+  <source>
+    *: none
+    swcodec: "PRECUT"
+  </source>
+  <dest>
+    *: none
+    swcodec: "PRECUT"
+  </dest>
+  <voice>
+    *: none
+    swcodec: "PRECUT"
+  </voice>
+</phrase>
+<phrase>
+  id: LANG_TTS
+  desc: in sound settings
+  user: core
+  <source>
+    *: none
+    swcodec: "TTS"
+  </source>
+  <dest>
+    *: none
+    swcodec: "TTS"
+  </dest>
+  <voice>
+    *: none
+    swcodec: "TTS"
+  </voice>
+</phrase>

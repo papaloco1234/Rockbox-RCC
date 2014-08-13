@@ -1667,7 +1667,20 @@ const struct settings_list settings[] = {
     /* dithering */
     OFFON_SETTING(F_SOUNDSETTING, dithering_enabled, LANG_DITHERING, false,
                   "dithering enabled", dsp_dither_enable),
-
+    /* tts */
+    CHOICE_SETTING(F_SOUNDSETTING|F_NO_WRAP, tts_enabled,
+                       LANG_TTS, 0,"tts enabled",
+                       "off,weak,moderate,strong", dsp_tts_enable, 4,
+                       ID2P(LANG_OFF), ID2P(LANG_WEAK),ID2P(LANG_MODERATE),ID2P(LANG_STRONG)),
+    /* BBE */
+    INT_SETTING_NOWRAP(F_SOUNDSETTING, bbe,
+                       LANG_BBE, 0,
+                       "bbe", UNIT_PERCENT, 0, 100,
+                       25, NULL, NULL, dsp_bbe_enable),
+    INT_SETTING_NOWRAP(F_SOUNDSETTING, bbe_precut,
+                       LANG_BBE_PRECUT, -16,
+                       "bbe precut", UNIT_DB, -45, 0,
+                       1, db_format, NULL, dsp_bbe_precut),
 #ifdef HAVE_PITCHCONTROL
     /* timestretch */
     OFFON_SETTING(F_SOUNDSETTING, timestretch_enabled, LANG_TIMESTRETCH, false,

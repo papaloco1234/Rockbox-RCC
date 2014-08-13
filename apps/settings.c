@@ -1034,12 +1034,14 @@ void settings_apply(bool read_disk)
     }
 
     dsp_dither_enable(global_settings.dithering_enabled);
+    dsp_tts_enable(global_settings.tts_enabled);
 #ifdef HAVE_PITCHCONTROL
     dsp_timestretch_enable(global_settings.timestretch_enabled);
 #endif
     dsp_set_compressor(&global_settings.compressor_settings);
 #endif
-
+    dsp_bbe_precut(global_settings.bbe_precut);
+    dsp_bbe_enable(global_settings.bbe);
 #ifdef HAVE_SPDIF_POWER
     spdif_power_enable(global_settings.spdif_enable);
 #endif
