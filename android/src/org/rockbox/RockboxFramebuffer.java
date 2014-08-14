@@ -102,7 +102,7 @@ public class RockboxFramebuffer extends SurfaceView
         c = holder.lockCanvas(dirty);
         if (c == null)
             return;
-
+        c.translate(paddingWidth/2 , paddingHeight/2);
         btm.copyPixelsFromBuffer(framebuffer);
         synchronized (holder)
         { /* draw */
@@ -121,7 +121,7 @@ public class RockboxFramebuffer extends SurfaceView
         c = holder.lockCanvas(dirty);
         if (c == null)
             return;
-
+        c.translate(paddingWidth/2 , paddingHeight/2);
         /* can't copy a partial buffer, but it doesn't make a noticeable difference anyway */
         btm.copyPixelsFromBuffer(framebuffer);
         synchronized (holder)
@@ -136,6 +136,8 @@ public class RockboxFramebuffer extends SurfaceView
         int x = (int) me.getRawX();
         int y = (int) me.getRawY();
         /* convert */
+        if (paddingWidth  > 0) x -= paddingWidth/2;
+        if (paddingHeight  > 0) y -= paddingHeight/2;
         x =  (paddingWidth  > 0) ? (int)( x / scaleHeightFactor):(int)( x / scaleWidthFactor);
         y =  (paddingHeight > 0) ? (int)( y / scaleWidthFactor) :(int)( y / scaleHeightFactor);
 
