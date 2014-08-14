@@ -47,7 +47,7 @@ public class RockboxFramebuffer extends SurfaceView
     private int paddingHeight=0,paddingWidth=0;    /* the size of black bar to keep scale aspect ratio*/
     private int fixedWidth, fixedHeight;           /* srcWidth+paddingWidth, srcHeight+paddingHeight */
     private float scaleWidthFactor,scaleHeightFactor;
-
+    private float paddingHeightHalf=0,paddingWidthHalf=0;
     /* first stage init; needs to run from a thread that has a Looper
      * setup stuff that needs a Context */
     public RockboxFramebuffer(Context c)
@@ -82,7 +82,8 @@ public class RockboxFramebuffer extends SurfaceView
 
         fixedWidth = srcWidth + paddingWidth;
         fixedHeight = srcHeight + paddingHeight;
-
+        paddingWidthHalf = paddingWidth/2;
+        paddingHeightHalf = paddingHeight/2;
         /* setFixedSize to use hardware scaler */
         getHolder().setFixedSize(fixedWidth,fixedHeight);
         getHolder().setFormat(new PixelFormat().RGB_565);
@@ -106,7 +107,7 @@ public class RockboxFramebuffer extends SurfaceView
         btm.copyPixelsFromBuffer(framebuffer);
         synchronized (holder)
         { /* draw */
-            c.drawBitmap(btm, 0.0f, 0.0f, null);
+            c.drawBitmap(btm, paddingWidthHalf, paddingHeightHalf, null);
         }
         holder.unlockCanvasAndPost(c);
     }
@@ -118,15 +119,16 @@ public class RockboxFramebuffer extends SurfaceView
         holder.setFixedSize(fixedWidth,fixedHeight);
         if(dirty.isEmpty()) /*  (left >= right or top >= bottom) */
             dirty.sort();
+        dirty.set(dirty.left, dirty.top, 
+                  dirty.right + (int)paddingWidthHalf, dirty.bottom + (int)paddingHeightHalf); 
         c = holder.lockCanvas(dirty);
         if (c == null)
             return;
-
         /* can't copy a partial buffer, but it doesn't make a noticeable difference anyway */
         btm.copyPixelsFromBuffer(framebuffer);
         synchronized (holder)
         {   /* draw */
-            c.drawBitmap(btm, dirty, dirty, null);
+            c.drawBitmap(btm, paddingWidthHalf, paddingHeightHalf, null);        
         }
         holder.unlockCanvasAndPost(c);
     }
@@ -136,6 +138,8 @@ public class RockboxFramebuffer extends SurfaceView
         int x = (int) me.getRawX();
         int y = (int) me.getRawY();
         /* convert */
+        x -= (paddingWidth  > 0) ? paddingWidthHalf: 0;
+        y -= (paddingHeight > 0) ? paddingHeightHalf: 0;
         x =  (paddingWidth  > 0) ? (int)( x / scaleHeightFactor):(int)( x / scaleWidthFactor);
         y =  (paddingHeight > 0) ? (int)( y / scaleWidthFactor) :(int)( y / scaleHeightFactor);
 
