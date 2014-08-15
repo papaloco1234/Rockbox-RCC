@@ -3365,7 +3365,7 @@ fi
     sharedir="/data/data/org.rockbox/app_rockbox/rockbox"
     bindir="/data/data/org.rockbox/lib"
     libdir="/data/data/org.rockbox/app_rockbox"
-    memory=8
+    memory=32
     uname=`uname`
     androidcc armeabi
     tool="cp "
