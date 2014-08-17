@@ -25,7 +25,45 @@
 #if defined(DX50) || defined(DX90)
 #include "system.h"
 #include "pcm_sw_volume.h"
-#endif
+#else
+#ifdef HAVE_SW_VOLUME_CONTROL
+#include "system.h"
+#include "pcm_sw_volume.h"
+#include "sound.h"
+
+static int sound_value_to_cb(int setting, int value)
+{
+    int shift = 1 - sound_numdecimals(setting);
+    if (shift < 0) do { value /= 10; } while (++shift);
+    if (shift > 0) do { value *= 10; } while (--shift);
+    return value;
+}
+
+void audiohw_set_volume(int balance, int volume)
+{
+    const int minvol = sound_value_to_cb(SOUND_VOLUME, sound_min(SOUND_VOLUME));
+    const int maxvol = sound_value_to_cb(SOUND_VOLUME, sound_max(SOUND_VOLUME));
+    extern void pcm_set_mixer_volume(int);
+    int l = maxvol, r = maxvol;
+    pcm_set_mixer_volume(volume);
+    if (balance > 0)
+    {
+        l -= (l - minvol) * balance / 100;
+    }
+    else if (balance < 0)
+    {
+        r += (r - minvol) * balance / 100;
+    }
+    pcm_set_master_volume(l,r);
+}
+#else
+void audiohw_set_volume(int volume)
+{
+    extern void pcm_set_mixer_volume(int);
+    pcm_set_mixer_volume(volume);
+}
+#endif /* HAVE_SW_VOLUME_CONTROL */
+#endif /* if defined(DX50) || defined(DX90) */
 
 #if defined(DX50) || defined(DX90)
 void audiohw_set_volume(int vol_l, int vol_r)
@@ -42,12 +80,6 @@ void audiohw_set_volume(int vol_l, int vol_r)
     extern void pcm_set_mixer_volume(int);
     pcm_set_mixer_volume(hw_volume);
 
-}
-#else
-void audiohw_set_volume(int volume)
-{
-    extern void pcm_set_mixer_volume(int);
-    pcm_set_mixer_volume(volume);
 }
 #endif
 
