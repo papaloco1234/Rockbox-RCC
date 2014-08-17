@@ -35,6 +35,14 @@ import android.view.SurfaceView;
 import android.view.ViewConfiguration;
 import android.graphics.PixelFormat;
 
+import android.os.Environment;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+
 public class RockboxFramebuffer extends SurfaceView
                                  implements SurfaceHolder.Callback
 {
@@ -74,12 +82,14 @@ public class RockboxFramebuffer extends SurfaceView
         scaleHeightFactor = ((float)desHeight) / srcHeight;
 
         /* padding to keep screen aspect ratio*/
-        if (scaleHeightFactor > scaleWidthFactor)
-            paddingHeight = (int)Math.ceil(srcWidth * desHeight / desWidth) - srcHeight;
+        if (keepAspectRatio() == true)
+        {
+            if (scaleHeightFactor > scaleWidthFactor)
+                paddingHeight = (int)Math.ceil(srcWidth * desHeight / desWidth) - srcHeight;
 
-        if ( scaleWidthFactor > scaleHeightFactor)
-            paddingWidth = (int)Math.ceil(srcHeight * desWidth / desHeight) - srcWidth;
-
+            if ( scaleWidthFactor > scaleHeightFactor)
+                paddingWidth = (int)Math.ceil(srcHeight * desWidth / desHeight) - srcWidth;
+        }
         fixedWidth = srcWidth + paddingWidth;
         fixedHeight = srcHeight + paddingHeight;
         paddingWidthHalf = paddingWidth/2;
@@ -189,5 +199,43 @@ public class RockboxFramebuffer extends SurfaceView
     public void surfaceChanged(SurfaceHolder holder, int format, int width, int height)
     {
 
+    }
+
+    public boolean keepAspectRatio()
+    {
+        FileOutputStream fos;  
+        String path = Environment.getExternalStorageDirectory().toString() +"/rockbox/zoom.cfg"; 
+        File txtFile =new File(path);
+        try{
+        if (!txtFile.exists())
+        {
+            txtFile.createNewFile();
+            fos = new FileOutputStream(txtFile);
+            fos.write(("keep aspect ratio : on" +"\n").toString().getBytes());
+            fos.close();
+            return true; 
+        }
+        else    /* file exist, check if keep aspect ratio is on*/
+        {
+            FileInputStream fis = new FileInputStream(new File(Environment.getExternalStorageDirectory(), "rockbox/zoom.cfg"));
+            DataInputStream in = new DataInputStream(fis);
+            BufferedReader br =
+                new BufferedReader(new InputStreamReader(in));
+            String strLine;
+            boolean val=false;
+            while ((strLine = br.readLine()) != null) {
+                if (strLine.startsWith("keep aspect ratio"))
+                {
+                    if  (strLine.toLowerCase().contains("on") )
+                        val = true;  
+                }
+            }
+            fis.close();
+            return val; 
+        }
+        }catch (Exception e) {
+            e.printStackTrace();
+            return false; 
+        }
     }
 }
