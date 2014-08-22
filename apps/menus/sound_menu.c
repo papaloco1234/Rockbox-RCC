@@ -204,6 +204,28 @@ static int timestretch_callback(int action,const struct menu_item_ex *this_item)
                      &global_settings.midside_hrtf, lowlatency_callback);
     MAKE_MENU(hrtf_menu,ID2P(LANG_MIDSIDE_HRTF), NULL, Icon_NOICON,
               &midside_hrtf,&midside_crosstalk,&midside_acoustic_path); 
+    MENUITEM_SETTING(afr_enabled,
+                     &global_settings.afr_enabled, lowlatency_callback);
+    MENUITEM_SETTING(pbe,
+                     &global_settings.pbe, lowlatency_callback);
+    MENUITEM_SETTING(pbe_precut,
+                     &global_settings.pbe_precut, lowlatency_callback);
+    MAKE_MENU(pbe_menu,ID2P(LANG_PBE), NULL, Icon_NOICON,
+              &pbe,&pbe_precut);
+    MENUITEM_SETTING(surround_enabled,
+                     &global_settings.surround_enabled, lowlatency_callback);
+    MENUITEM_SETTING(surround_balance,
+                     &global_settings.surround_balance, lowlatency_callback);
+    MENUITEM_SETTING(surround_fx1,
+                     &global_settings.surround_fx1, lowlatency_callback);
+    MENUITEM_SETTING(surround_fx2,
+                     &global_settings.surround_fx2, lowlatency_callback);
+    MENUITEM_SETTING(surround_method2,
+                     &global_settings.surround_method2, lowlatency_callback);
+    MENUITEM_SETTING(surround_mix,
+                     &global_settings.surround_mix, lowlatency_callback);
+    MAKE_MENU(surround_menu,ID2P(LANG_SURROUND), NULL, Icon_NOICON,
+              &surround_enabled,&surround_balance,&surround_fx1,&surround_fx2,&surround_method2,&surround_mix);
 
     MAKE_MENU(midside_menu,ID2P(LANG_MIDSIDE), NULL, Icon_NOICON,
               &midside_enabled,&midside_mid_mix_level,&midside_side_mix_level,&midside_delay,&hrtf_menu); 
@@ -282,8 +304,9 @@ MAKE_MENU(sound_settings, ID2P(LANG_SOUND_SETTINGS), NULL, Icon_Audio,
           ,&roll_off
 #endif
 #if CONFIG_CODEC == SWCODEC
-          ,&crossfeed_menu, &space80_menu, &equalizer_menu, &dithering_enabled 
+          ,&crossfeed_menu, &space80_menu, &equalizer_menu, &dithering_enabled
           ,&aatube_enabled, &rdose, &midside_menu
+          ,&surround_menu, &pbe_menu, &afr_enabled
 #ifdef HAVE_PITCHCONTROL
           ,&timestretch_enabled
 #endif

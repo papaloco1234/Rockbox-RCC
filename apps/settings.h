@@ -355,7 +355,6 @@ struct user_settings
     int  keyclick;          /* keyclick volume */
     int  keyclick_repeats;  /* keyclick on repeats */
     bool dithering_enabled;
-    int surround_enabled;
     int aatube_enabled;
 #ifdef HAVE_PITCHCONTROL
     bool timestretch_enabled;
@@ -857,6 +856,17 @@ struct user_settings
     int midside_crosstalk;
     int midside_hrtf; 
 
+    int surround_enabled;
+    int surround_balance;
+    int surround_fx1;
+    int surround_fx2;
+    bool surround_method2;
+    int surround_mix;
+
+    int pbe;
+    int pbe_precut;
+
+    int afr_enabled;
 };
 
 /** global variables **/

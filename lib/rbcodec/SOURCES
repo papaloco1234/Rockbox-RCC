@@ -12,6 +12,9 @@ dsp/rdose.c
 dsp/midside.c
 dsp/dsp_core.c
 dsp/aatube.c
+dsp/pbe.c
+dsp/afr.c
+dsp/surround.c
 dsp/dsp_filter.c
 dsp/dsp_misc.c
 dsp/dsp_sample_input.c

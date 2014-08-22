@@ -36,7 +36,7 @@
  */
 DSP_PROC_DB_START
     DSP_PROC_DB_ITEM(MISC_HANDLER)  /* misc stuff (null stage) */
-    DSP_PROC_DB_ITEM(PGA)           /* pre-gain amp */ 
+    DSP_PROC_DB_ITEM(PGA)           /* pre-gain amp */
 #ifdef HAVE_PITCHCONTROL
     DSP_PROC_DB_ITEM(TIMESTRETCH)   /* time-stretching */
 #endif
@@ -49,6 +49,9 @@ DSP_PROC_DB_START
     DSP_PROC_DB_ITEM(RDOSE)
     DSP_PROC_DB_ITEM(AATUBE)
     DSP_PROC_DB_ITEM(SPACE80)       /* space80 */ 
+    DSP_PROC_DB_ITEM(PBE)           /* perceptual bass enhancement */
+    DSP_PROC_DB_ITEM(AFR)           /* auditory fatigue reduction */
+    DSP_PROC_DB_ITEM(SURROUND)      /* haas surround */
     DSP_PROC_DB_ITEM(CHANNEL_MODE)  /* channel modes */
     DSP_PROC_DB_ITEM(MIDSIDE)       /* mid/side processing */
     DSP_PROC_DB_ITEM(COMPRESSOR)    /* dynamic-range compressor */
