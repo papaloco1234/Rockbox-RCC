@@ -2352,8 +2352,8 @@ const struct settings_list settings[] = {
                        "bbe", UNIT_PERCENT, 0, 100,
                        25, NULL, NULL, dsp_bbe_enable),
     INT_SETTING_NOWRAP(F_SOUNDSETTING, bbe_precut,
-                       LANG_BBE_PRECUT, -16,
-                       "bbe precut", UNIT_DB, -25, 0,
+                       LANG_BBE_PRECUT, -25,
+                       "bbe precut", UNIT_DB, -45, 0,
                        1, db_format, NULL, dsp_bbe_precut),
 #ifdef HAVE_PITCHCONTROL
     /* timestretch */

@@ -9,13 +9,12 @@
 
 static bool tts_enabled = false;
 static int strength;
-unsigned int fout;
-static int id;
+
 
 /* Data for each DSP */
-static struct dsp_filter tts_filters[4][DSP_COUNT] IBSS_ATTR;
+static struct dsp_filter tts_filters[4][DSP_COUNT-1] IBSS_ATTR;
 
-static void dsp_tts_flush(void)
+static void dsp_tts_flush(int id)
 {
     if (!tts_enabled)
         return;
@@ -23,7 +22,7 @@ static void dsp_tts_flush(void)
         filter_flush(&tts_filters[i][id]);
 }
 
-static void strength_update(int var)
+static void strength_update(int var, int id, unsigned int fout)
 {
     int hs=0,ls=0,drop3k=0;
     if (var == 1){hs=-29;ls= 0;drop3k=-13;}  
@@ -50,13 +49,15 @@ static void strength_update(int var)
 void dsp_tts_enable(int var)
 {
     struct dsp_config *dsp = dsp_get_config(CODEC_IDX_AUDIO);
+    unsigned int fout = dsp_get_output_frequency(dsp);
+    int id = dsp_get_id(dsp);
 
     strength = var;
     tts_enabled=(var > 0)?  true:false;
     
     dsp_proc_enable(dsp, DSP_PROC_TTS, false);
-    dsp_tts_flush();
-    strength_update(strength);
+    dsp_tts_flush(id);
+    strength_update(strength,id,fout);
 
     
     dsp_proc_enable(dsp, DSP_PROC_TTS, tts_enabled);
@@ -81,19 +82,19 @@ static intptr_t tts_configure(struct dsp_proc_entry *this,
                                      unsigned int setting,
                                      intptr_t value)
 {
-    fout = dsp_get_output_frequency(dsp);
-    id = dsp_get_id(dsp);
+    unsigned int fout = dsp_get_output_frequency(dsp);
+    int id = dsp_get_id(dsp);
     switch (setting)
     {
     case DSP_PROC_INIT:
         if (value != 0)
             break; /* Already enabled */
-        strength_update(0);
+        strength_update(0,id,fout);
         this->process = tts_reduce_process;
         dsp_proc_activate(dsp, DSP_PROC_TTS, true);
         break;
     case DSP_FLUSH:
-        dsp_tts_flush();
+        dsp_tts_flush(id);
         break;
     case DSP_SET_OUT_FREQUENCY:
         if (!tts_enabled)

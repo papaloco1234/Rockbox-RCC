@@ -18,11 +18,10 @@ static int32_t b0[2][b0_dly],b2[2][b2_dly],b3[2][b3_dly];
 
 static int32_t temp_buffer[2][3072 * 2];
 
-static unsigned int fout;
-static int id;
+
 
 /* Data for each DSP */
-static struct dsp_filter bbe_filters[DSP_COUNT] IBSS_ATTR;
+static struct dsp_filter bbe_filters[DSP_COUNT-1] IBSS_ATTR;
 
 static void dsp_bbe_flush(void)
 {
@@ -37,7 +36,7 @@ static void dsp_bbe_flush(void)
     memset(b3[1],0,b3_dly * sizeof(int32_t));  
 }
 
-static void bbe_update_filter(unsigned int fout)
+static void bbe_update_filter(unsigned int fout, int id)
 {
     tcoef1 = fp_div(160, fout, 31);
     tcoef2 = fp_div(500, fout, 31);
@@ -59,6 +58,9 @@ static void bbe_update_filter(unsigned int fout)
 
 void dsp_bbe_precut(int var)
 {
+    struct dsp_config *dsp = dsp_get_config(CODEC_IDX_AUDIO);
+    unsigned int fout = dsp_get_output_frequency(dsp);
+    int id = dsp_get_id(dsp);
     dsp_precut = var;
     filter_flush(&bbe_filters[id]);
 
@@ -180,15 +182,15 @@ static intptr_t bbe_configure(struct dsp_proc_entry *this,
                                      unsigned int setting,
                                      intptr_t value)
 {
-    fout = dsp_get_output_frequency(dsp);
-    id = dsp_get_id(dsp);
+    unsigned int fout = dsp_get_output_frequency(dsp);
+    int id = dsp_get_id(dsp);
     switch (setting)
     {
     case DSP_PROC_INIT:
         if (value != 0)
             break; /* Already enabled */
         this->process = bbe_process;
-        bbe_update_filter(fout);
+        bbe_update_filter(fout,id);
         dsp_proc_activate(dsp, DSP_PROC_BBE, true);
         break;
     case DSP_FLUSH:
