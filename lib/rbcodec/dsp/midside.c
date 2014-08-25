@@ -9,9 +9,12 @@
 static int32_t mid  IBSS_ATTR;
 static int32_t side IBSS_ATTR;
 static int32_t delayed_side IBSS_ATTR;
+static int crosstalk = 20;      /* 20 cm*/ 
+static int acoustic_path = 150; /* 1.5 meter*/
 static bool midside_enabled = false;
 static int mid_ratio = 100, side_ratio = 100;
 static bool delay = false;
+static bool hrtf = false;
 unsigned int fout;
 
 static void dsp_midside_flush(void)
@@ -46,8 +49,25 @@ void dsp_midside_side_level(int var)
 
 void dsp_midside_delay(int var)
 {
-    delay =(var > 0)? true:false;
+    delay = (var > 0)? true:false;
 }
+
+void dsp_midside_acoustic_path(int var)
+{
+    acoustic_path = var;
+}
+
+void dsp_midside_crosstalk(int var)
+{
+    crosstalk = var;
+}
+
+void dsp_midside_hrtf(int var)
+{
+    hrtf = (var>0)? true:false;
+    side = 0;
+}
+
 
 static void mid_side_process(struct dsp_proc_entry *this,
                                struct dsp_buffer **buf_p)
@@ -56,14 +76,31 @@ static void mid_side_process(struct dsp_proc_entry *this,
     struct dsp_buffer *buf = *buf_p;
     int count = buf->remcount;
 
+    float fsa = 1 + (crosstalk+acoustic_path)/acoustic_path;
+    float fma = 1 - (crosstalk+acoustic_path)/acoustic_path;
+    bool hrtf_enabled = hrtf;
+
+    int32_t hcoef = fp_div(7000, fout, 31);
+    int32_t tcoef = fp_div(1280, fout, 31);
+
     for (i = 0; i < count; i++)
     {     
          mid  = buf->p32[0][i]/2 + buf->p32[1][i]/2;
          delayed_side = side;
          side = (buf->p32[0][i] - buf->p32[1][i])/2; 
+         if (hrtf_enabled)
+         {
+             mid += mid * fma;
+             /*fake high frequency signal transfer decay*/
+             mid = (mid- FRACMUL(mid, tcoef)) / 100 * 96 
+                    + (FRACMUL(mid, tcoef) -FRACMUL(mid, hcoef))/150 * (MAX_ASCOUSTIC_PATH-acoustic_path) / 100 * 96
+                    + FRACMUL(mid, hcoef)/150 * (MAX_ASCOUSTIC_PATH-acoustic_path);
+             side += -side * fsa;
+             delayed_side+=-delayed_side * fsa;
+             delay = true;  /*force delay as part of phase shift*/
+         }
          if (!delay)
              delayed_side = side;
-         
          buf->p32[0][i] =  mid/100 * mid_ratio + (side + (delayed_side - side))/100 * side_ratio;
          buf->p32[1][i] =  mid/100 * mid_ratio - (side + (delayed_side - side))/100 * side_ratio;
            
