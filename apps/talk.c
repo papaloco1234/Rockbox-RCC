@@ -177,7 +177,7 @@ static int index_handle, talk_handle;
 static int move_callback(int handle, void *current, void *new)
 {
     (void)handle; (void)current; (void)new;
-    if (handle == talk_handle && !buflib_context_relocate(&clip_ctx, new))
+    if (handle == talk_handle)
         return BUFLIB_CB_CANNOT_MOVE;
     return BUFLIB_CB_OK;
 }
