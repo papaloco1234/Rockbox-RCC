@@ -32,6 +32,12 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import java.io.File;
+import java.io.FileInputStream;
+import android.os.Environment;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+
 public class RockboxActivity extends Activity 
 {
     /** Called when the activity is first created. */
@@ -98,6 +104,68 @@ public class RockboxActivity extends Activity
             }
         });
         startService(intent);
+
+        if (createTinyCover() == true)
+        {  
+        final tinyCoverMaker tcm = new tinyCoverMaker();
+        final CharSequence[] items = {" 64x64 "," 96x96 ","128x128","192x192"};
+
+                new AlertDialog.Builder(this)
+                         .setTitle("Select icon size")
+                         .setSingleChoiceItems(items, -1, new DialogInterface.OnClickListener() {
+                              public void onClick(DialogInterface dialog, int item) {
+                              int iconSize,result;
+                              switch(item)
+                              {
+                                  case 0:
+                                      tcm.setIconSize(64);  
+                                  break;
+                                  case 1:
+                                      tcm.setIconSize(96);
+                                  break;
+                                  case 2:
+                                      tcm.setIconSize(128);
+                                  break;
+                                  case 3:
+                                      tcm.setIconSize(192);
+                                  break;
+                              }
+                              Thread thr1 = new Thread(tcm);
+                              thr1.start();
+                              try { 
+                                  thr1.join();
+                              } catch (InterruptedException e) {}
+                              popMessage(tcm.getResult());  
+                              dialog.dismiss();    
+                              }
+                          }) 
+                         .show();
+       }  
+    }
+    
+    private void popMessage(int result)
+    {
+          final String[] ResultString = {"task completed.","no default Music folder.","cannot access default Music folder.",
+                                              "missing sbs file","error, directory name should not contain round breaket."}; 
+          new AlertDialog.Builder(this)
+                                .setTitle("tinyCoverMaker")
+            	                .setMessage(ResultString[result])
+            	                .setPositiveButton(R.string.OK, null)
+                                .show();
+         if (result == 0)
+         {
+             File f = new File(Environment.getExternalStorageDirectory(), "rockbox/tinyCover");
+             try{ 
+                 f.delete();
+             }catch(Exception e){ }
+         }
+           
+    }
+
+    private boolean createTinyCover()
+    {
+        File f = new File(Environment.getExternalStorageDirectory(), "rockbox/tinyCover");
+        return f.exists();  
     }
 
     private void setServiceActivity(boolean set)
