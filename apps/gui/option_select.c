@@ -618,5 +618,19 @@ void update_setting_value_from_touch(int setting_id, int selection)
     {
         *(bool*)setting->setting = new_val ? true : false;
     }
+    settings_save();
+    /* callback */
+    if ( function )
+    {
+        if (needs_wrapper)
+        {
+            boolfunction = (void (*)(bool))function;
+            bool_funcwrapper(new_val);
+        }
+        else
+        {
+            function(new_val);
+        }
+    }
 }
 #endif
