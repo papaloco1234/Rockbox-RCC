@@ -494,11 +494,6 @@ static void compressor_switch(int val)
     dsp_compressor_switch(global_settings.compressor_switch);   
 }
 
-static void surround_set_factor(int val)
-{
-    (void)val;
-    dsp_surround_set_cutoff(global_settings.surround_fx1, global_settings.surround_fx2);
-}
 static const char* db_format(char* buffer, size_t buffer_size, int value,
                       const char* unit)
 {
@@ -2287,42 +2282,11 @@ const struct settings_list settings[] = {
 
     /* dithering */
     OFFON_SETTING(F_SOUNDSETTING, dithering_enabled, LANG_DITHERING, false,
-                  "dithering enabled", dsp_dither_enable),
-    /* surround */
-    TABLE_SETTING(F_SOUNDSETTING, surround_enabled,
-                  LANG_SURROUND, 0, "surround enabled", "off",
-                  UNIT_MS, formatter_unit_0_is_off, getlang_unit_0_is_off,
-                  dsp_surround_enable, 4,
-                  0,5,8,10), 
-
-    INT_SETTING_NOWRAP(F_SOUNDSETTING, surround_balance,
-                       LANG_BALANCE, 35,
-                       "surround balance", UNIT_PERCENT, 0, 99,
-                       1, NULL, NULL, dsp_surround_set_balance),
-
-    INT_SETTING_NOWRAP(F_SOUNDSETTING, surround_fx1,
-                       LANG_SURROUND_FX1, 3200,
-                       "surround_fx1", UNIT_HERTZ, 600, 8000,
-                       200, NULL, NULL, surround_set_factor),
-    INT_SETTING_NOWRAP(F_SOUNDSETTING, surround_fx2,
-                       LANG_SURROUND_FX2, 320,
-                       "surround_fx2", UNIT_HERTZ, 40, 400,
-                       40, NULL, NULL, surround_set_factor),
-    OFFON_SETTING(F_SOUNDSETTING, surround_method2, LANG_SURROUND_METHOD2, false,
-                  "surround method2", dsp_surround_alter_method),
-    INT_SETTING_NOWRAP(F_SOUNDSETTING, surround_mix,
-                       LANG_SPACE80_MIX, 100,
-                       "surround mix", UNIT_PERCENT, 0, 100,
-                       5, NULL, NULL, dsp_surround_mix), 		
+                  "dithering enabled", dsp_dither_enable),		
     /* aa-tube */
     CHOICE_SETTING(F_SOUNDSETTING|F_NO_WRAP, aatube_enabled,
                        LANG_ANTIALIAS_WARM, 0,"aatube enabled",
                        "off,weak,moderate,strong", dsp_aatube_enable, 4,
-                       ID2P(LANG_OFF), ID2P(LANG_WEAK),ID2P(LANG_MODERATE),ID2P(LANG_STRONG)),
-    /* tts */
-    CHOICE_SETTING(F_SOUNDSETTING|F_NO_WRAP, tts_enabled,
-                       LANG_TTS, 0,"tts enabled",
-                       "off,weak,moderate,strong", dsp_tts_enable, 4,
                        ID2P(LANG_OFF), ID2P(LANG_WEAK),ID2P(LANG_MODERATE),ID2P(LANG_STRONG)),
     /* mid-side */
     CHOICE_SETTING(F_SOUNDSETTING|F_NO_WRAP, midside_enabled,
@@ -2358,15 +2322,6 @@ const struct settings_list settings[] = {
                    LANG_RDOSE, 0, "rdose enabled",
                    "off,weak,moderate,strong", dsp_rdose_enable, 4,
                    ID2P(LANG_OFF), ID2P(LANG_WEAK),ID2P(LANG_MODERATE),ID2P(LANG_STRONG)),
-    /* BBE */
-    INT_SETTING_NOWRAP(F_SOUNDSETTING, bbe,
-                       LANG_BBE, 0,
-                       "bbe", UNIT_PERCENT, 0, 100,
-                       25, NULL, NULL, dsp_bbe_enable),
-    INT_SETTING_NOWRAP(F_SOUNDSETTING, bbe_precut,
-                       LANG_BBE_PRECUT, -25,
-                       "bbe precut", UNIT_DB, -45, 0,
-                       1, db_format, NULL, dsp_bbe_precut),
 #ifdef HAVE_PITCHCONTROL
     /* timestretch */
     OFFON_SETTING(F_SOUNDSETTING, timestretch_enabled, LANG_TIMESTRETCH, false,
