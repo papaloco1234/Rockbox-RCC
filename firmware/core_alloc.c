@@ -32,7 +32,11 @@ extern unsigned char *audiobufend;
 static int test_alloc;
 void core_allocator_init(void)
 {
+#if (CONFIG_PLATFORM & PLATFORM_ANDROID) /* PLATFORM_ANDROID */
+    unsigned char *start = audiobuffer;
+#else
     unsigned char *start = ALIGN_UP(audiobuffer, sizeof(intptr_t));
+#endif
 
 #if defined(IPOD_VIDEO) && !defined(BOOTLOADER) && !defined(SIMULATOR)
     audiobufend=(unsigned char *)audiobufend_lds;
