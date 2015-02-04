@@ -2283,12 +2283,7 @@ const struct settings_list settings[] = {
 
     /* dithering */
     OFFON_SETTING(F_SOUNDSETTING, dithering_enabled, LANG_DITHERING, false,
-                  "dithering enabled", dsp_dither_enable),		
-    /* aa-tube */
-    CHOICE_SETTING(F_SOUNDSETTING|F_NO_WRAP, aatube_enabled,
-                       LANG_ANTIALIAS_WARM, 0,"aatube enabled",
-                       "off,weak,moderate,strong", dsp_aatube_enable, 4,
-                       ID2P(LANG_OFF), ID2P(LANG_WEAK),ID2P(LANG_MODERATE),ID2P(LANG_STRONG)),
+                  "dithering enabled", dsp_dither_enable),
     /* rDose */
     CHOICE_SETTING(F_SOUNDSETTING|F_NO_WRAP, rdose,
                    LANG_RDOSE, 0, "rdose enabled",

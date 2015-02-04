@@ -181,8 +181,6 @@ static int timestretch_callback(int action,const struct menu_item_ex *this_item)
 
     MENUITEM_SETTING(dithering_enabled,
                      &global_settings.dithering_enabled, lowlatency_callback);
-    MENUITEM_SETTING(aatube_enabled,
-                     &global_settings.aatube_enabled, lowlatency_callback);
     MENUITEM_SETTING(rdose,
                      &global_settings.rdose, lowlatency_callback);
     
@@ -280,7 +278,7 @@ MAKE_MENU(sound_settings, ID2P(LANG_SOUND_SETTINGS), NULL, Icon_Audio,
 #endif
 #if CONFIG_CODEC == SWCODEC
           ,&crossfeed_menu, &space80_menu, &equalizer_menu, &dithering_enabled
-          ,&aatube_enabled, &rdose
+          , &rdose
           ,&surround_menu, &pbe_menu, &afr_enabled
 #ifdef HAVE_PITCHCONTROL
           ,&timestretch_enabled

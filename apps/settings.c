@@ -1049,7 +1049,6 @@ void settings_apply(bool read_disk)
     }
 
     dsp_dither_enable(global_settings.dithering_enabled);
-    dsp_aatube_enable(global_settings.aatube_enabled);
     dsp_surround_set_balance(global_settings.surround_balance);
     dsp_surround_set_cutoff(global_settings.surround_fx1, global_settings.surround_fx2);
     dsp_surround_mix(global_settings.surround_mix);
