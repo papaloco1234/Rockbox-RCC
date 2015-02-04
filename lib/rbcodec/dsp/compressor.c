@@ -185,7 +185,7 @@ static bool compressor_update(struct dsp_config *dsp,
                  auto_gain ? "Auto" : "Off");
          }
 
-        if (settings->ratio != cur_set.ratio)
+        if (settings->ratio != curr_set.ratio)
         {
             if (ratio)
                 { logf("   Compressor Ratio: %d:1", ratio); }
@@ -193,16 +193,16 @@ static bool compressor_update(struct dsp_config *dsp,
                 { logf("   Compressor Ratio: Limit"); }
         }
 
-        if (settings->knee != cur_set.knee)
+        if (settings->knee != curr_set.knee)
         {
             logf("   Compressor Knee: %s", soft_knee?"Soft":"Hard");
         }
 
-        if (settings->release_time != cur_set.release_time)
+        if (settings->release_time != curr_set.release_time)
         {
             logf("   Compressor Release: %d", release);
         }
-        if (settings->attack_time != cur_set.attack_time)
+        if (settings->attack_time != curr_set.attack_time)
         {
             logf("   Compressor Attack: %d", attack);
         }
@@ -357,7 +357,7 @@ static bool compressor_update(struct dsp_config *dsp,
     for (int i = 1; i <= 65; i++)
     {
         DEBUGF("%02d: %.6f  ", i, (float)comp_curve[i] / UNITY);
-        if (i % 4 == 0) DEBUGF("\n");
+        if (i % 4 == 0) { DEBUGF("\n"); }
     }
     DEBUGF("\n");
 
@@ -419,33 +419,13 @@ static inline int32_t get_compression_gain(struct sample_format *format,
 /** SET COMPRESSOR
  *  Enable or disable the compressor based upon the settings
  */
-static bool force_off=false;
-void dsp_compressor_switch(int val)
-{
-    force_off=(val>0)?false:true;
-    struct dsp_config *dsp = dsp_get_config(CODEC_IDX_AUDIO);
-    if (force_off)
-    {
-        dsp_proc_enable(dsp, DSP_PROC_COMPRESSOR, false);
-        dsp_proc_activate(dsp, DSP_PROC_COMPRESSOR, false);
-    }
-}
 void dsp_set_compressor(const struct compressor_settings *settings)
 {
     /* enable/disable the compressor depending upon settings */
     struct dsp_config *dsp = dsp_get_config(CODEC_IDX_AUDIO);
-    
-    if (!force_off)
-    {
-        bool enable = compressor_update(dsp, settings);
-        dsp_proc_enable(dsp, DSP_PROC_COMPRESSOR, enable);
-        dsp_proc_activate(dsp, DSP_PROC_COMPRESSOR, true);
-    }
-    else
-    {
-        dsp_proc_enable(dsp, DSP_PROC_COMPRESSOR, false);
-        dsp_proc_activate(dsp, DSP_PROC_COMPRESSOR, false);
-    }
+    bool enable = compressor_update(dsp, settings);
+    dsp_proc_enable(dsp, DSP_PROC_COMPRESSOR, enable);
+    dsp_proc_activate(dsp, DSP_PROC_COMPRESSOR, true);
 }
 
 /** COMPRESSOR PROCESS
@@ -622,10 +602,6 @@ static intptr_t compressor_configure(struct dsp_proc_entry *this,
 
     case DSP_SET_OUT_FREQUENCY:
         compressor_update(dsp, &curr_set);
-        if (force_off)
-            this->process =NULL;
-        else if (!force_off && this->process ==NULL)
-            this->process = compressor_process; 
         break;
     }
 

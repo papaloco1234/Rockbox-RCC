@@ -844,8 +844,6 @@ struct user_settings
 #endif
     int volume_limit; /* maximum volume limit */
 
-    int compressor_switch;
-
     int rdose;
 
     int midside_enabled;

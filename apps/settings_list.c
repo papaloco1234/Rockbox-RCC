@@ -494,11 +494,6 @@ static void compressor_set(int val)
     dsp_set_compressor(&global_settings.compressor_settings);
 }
 
-static void compressor_switch(int val)
-{
-    (void)val;   
-    dsp_compressor_switch(global_settings.compressor_switch);   
-}
 
 static const char* db_format(char* buffer, size_t buffer_size, int value,
                       const char* unit)
@@ -2373,10 +2368,6 @@ const struct settings_list settings[] = {
 #endif
 
     /* compressor */
-    CHOICE_SETTING(F_SOUNDSETTING|F_NO_WRAP, compressor_switch,
-                   LANG_COMPRESSOR, 0, "compressor switch",
-                   "off,on", compressor_switch, 2,
-                   ID2P(LANG_OFF), ID2P(LANG_ON)), 
     INT_SETTING_NOWRAP(F_SOUNDSETTING, compressor_settings.threshold,
                        LANG_COMPRESSOR_THRESHOLD, 0,
                        "compressor threshold", UNIT_DB, 0, -24,
