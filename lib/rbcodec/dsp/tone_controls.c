@@ -31,8 +31,8 @@
  * the behavior of hardware tone controls */
 
 /* Cutoffs in HZ - not adjustable for now */
-static unsigned int tone_bass_cutoff = 200;
-static unsigned int tone_treble_cutoff = 3500;
+static const unsigned int tone_bass_cutoff = 200;
+static const unsigned int tone_treble_cutoff = 3500;
 
 /* Current bass and treble gain values */
 static int tone_bass = 0;
@@ -41,7 +41,6 @@ static int tone_treble = 0;
 /* Current prescaler setting */
 static int tone_prescale = 0;
 
-static int tone_gain = 0;
 /* Data for each DSP */
 static struct dsp_filter tone_filters[DSP_COUNT] IBSS_ATTR;
 
@@ -66,7 +65,7 @@ void tone_set_prescale(int prescale)
     {
         update_filter(i, dsp_get_output_frequency(dsp));
     
-        bool enable = bass != 0 || treble != 0 || tone_gain != 0;
+        bool enable = bass != 0 || treble != 0;
         dsp_proc_enable(dsp, DSP_PROC_TONE_CONTROLS, enable);
 
         if (enable && !dsp_proc_active(dsp, DSP_PROC_TONE_CONTROLS))
@@ -80,14 +79,6 @@ void tone_set_prescale(int prescale)
 /* Prescaler is always set after setting bass/treble, so we wait with
  * calculating coefs until such time. */
 
-
-/* Change additional overall gain in percentage*/
-/* gain value is the percentage of tone_prescale*/
-void tone_set_gain(int gain)
-{
-    tone_gain = gain;
-}
-
 /* Change the bass setting */
 void tone_set_bass(int bass)
 {
@@ -98,18 +89,6 @@ void tone_set_bass(int bass)
 void tone_set_treble(int treble)
 {
     tone_treble = treble;
-}
-
-/*Change the bass cutoff(turnover)*/
-void cutoff_set_bass(int bass_cutoff)
-{
-    tone_bass_cutoff = (bass_cutoff>0)?bass_cutoff:-bass_cutoff;
-}
-
-/*Change the treble cutoff(turnover)*/
-void cutoff_set_treble(int treble_cutoff)
-{
-    tone_treble_cutoff = (treble_cutoff>0)?treble_cutoff:-treble_cutoff;
 }
 
 

@@ -90,10 +90,6 @@
 
 #define NO_LOW_BATTERY_SHUTDOWN
 
-#define AUDIOHW_HAVE_BASS_CUTOFF
-#define AUDIOHW_HAVE_TREBLE_CUTOFF
-#define AUDIOHW_HAVE_TONE_GAIN
-
 /* Define this to the CPU frequency */
 /*
 #define CPU_FREQ 48000000

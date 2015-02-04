@@ -50,20 +50,6 @@ void audiohw_set_treble(int value)
     tone_set_treble(value*10);
 }
 
-void audiohw_set_bass_cutoff(int value)
-{
-    cutoff_set_bass(value);
-}
-
-void audiohw_set_treble_cutoff(int value)
-{
-    cutoff_set_treble(value);
-}
-
-void audiohw_set_tone_gain(int value)
-{
-    tone_set_gain(value);
-}
 #endif /* HAVE_SW_TONE_CONTROLS */
 
 #ifndef AUDIOHW_HAVE_PRESCALER

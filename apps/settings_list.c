@@ -823,9 +823,6 @@ const struct settings_list settings[] = {
 #ifdef AUDIOHW_HAVE_TREBLE
     SOUND_SETTING(F_NO_WRAP,treble, LANG_TREBLE, "treble", SOUND_TREBLE),
 #endif
-#ifdef AUDIOHW_HAVE_TONE_GAIN
-    SOUND_SETTING(F_NO_WRAP,tone_gain, LANG_TONE_GAIN, "tone gain", SOUND_TONE_GAIN),
-#endif
 /* Hardware EQ tone controls */
 #ifdef AUDIOHW_HAVE_EQ
 /* Band gain is generic */
