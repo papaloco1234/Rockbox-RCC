@@ -29,7 +29,6 @@
 #include "dsp_misc.h"
 #include "eq.h"
 #include "pga.h"
-#include "rdose.h"
 #include "surround.h"
 #include "afr.h"
 #include "pbe.h"
