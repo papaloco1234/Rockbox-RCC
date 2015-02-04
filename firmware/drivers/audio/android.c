@@ -53,7 +53,6 @@ void audiohw_set_volume(int balance, int volume)
     pcm_set_master_volume(l,r);
 }
 #else
-
 void audiohw_set_volume(int volume)
 {
     extern void pcm_set_mixer_volume(int);

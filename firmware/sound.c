@@ -186,7 +186,7 @@ static void set_prescaled_volume(void)
     if (volume <= minvol)
         prescale = 0;  /* Make sure the audio gets muted */
 
-#if !(AUDIOHW_HAVE_MONO_VOLUME) && !(CONFIG_PLATFORM & PLATFORM_ANDROID)
+#ifndef AUDIOHW_HAVE_MONO_VOLUME
     /* At the moment, such targets have lousy volume resolution and so minute
        boost won't work how we'd like */
     volume += prescale;

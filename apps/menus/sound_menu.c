@@ -110,9 +110,7 @@ MENUITEM_SETTING(treble_cutoff, &global_settings.treble_cutoff, NULL);
 #ifdef AUDIOHW_HAVE_TONE_GAIN
 MENUITEM_SETTING(tone_gain, &global_settings.tone_gain, NULL);
 #endif /* AUDIOHW_HAVE_TONE_GAIN */
-
 MENUITEM_SETTING(balance, &global_settings.balance, NULL);
-
 MENUITEM_SETTING(channel_config, &global_settings.channel_config,
 #if CONFIG_CODEC == SWCODEC
     lowlatency_callback
