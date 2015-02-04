@@ -128,8 +128,6 @@ public class RockboxActivity extends Activity
         menu.clear();
         menu.add(0, 0, 0, R.string.rockbox_simulatebutton);
         menu.add(0, 1, 0, R.string.rockbox_preference);
-        menu.add(0, 4, 0, R.string.rockbox_save_eq);
-        menu.add(0, 5, 0, R.string.rockbox_tinycovermaker);
         menu.add(0, 2, 0, R.string.rockbox_about);
         menu.add(0, 3, 0, R.string.rockbox_exit);        
         return true;
@@ -141,57 +139,6 @@ public class RockboxActivity extends Activity
         final tinyCoverMaker tcm = new tinyCoverMaker(); 
         switch (item.getItemId())
         {
-            case 5:
-              
-                final CharSequence[] items = {" 64x64 "," 96x96 ","128x128"};
-
-                new AlertDialog.Builder(this)
-                         .setTitle(R.string.rockbox_select_icon_size)
-                         .setSingleChoiceItems(items, -1, new DialogInterface.OnClickListener() {
-                              public void onClick(DialogInterface dialog, int item) {
-                              int iconSize,result;
-                              switch(item)
-                              {
-                                  case 0:
-                                      tcm.setIconSize(64);  
-                                  break;
-                                  case 1:
-                                      tcm.setIconSize(96);
-                                  break;
-                                  case 2:
-                                      tcm.setIconSize(128);
-                                  break;
-                              }
-                              Thread thr1 = new Thread(tcm);
-                              thr1.start();
-                              try { 
-                                  thr1.join();
-                              } catch (InterruptedException e) {}
-                              popMessage(tcm.getResult());  
-                              dialog.dismiss();    
-                              }
-                          }) 
-                         .show();  
-                break; 
-            case 4:
-                try {
-                RockboxFramebuffer.buttonHandler(85, true); //press
-                Thread.sleep(100);
-                RockboxFramebuffer.buttonHandler(85, false); //release
-                Thread.sleep(300);
-                new AlertDialog.Builder(this)
-                                .setTitle(R.string.rockbox_save_eq)
-            	                .setMessage(R.string.rockbox_save_eq_ok)
-            	                .setPositiveButton(R.string.OK, null)
-            	                .show(); 
-                tcm.saveEQ(); 
-                
-                RockboxFramebuffer.buttonHandler(85, true); //press
-                Thread.sleep(100);
-                RockboxFramebuffer.buttonHandler(85, false); //release
-
-                } catch (InterruptedException e) {}
-                break;            
             case 3:
 		        RockboxNativeInterface.powerOff();
 		        new Thread("Power-Off"){
@@ -227,21 +174,6 @@ public class RockboxActivity extends Activity
          }
         return true;
      }
-
-    private void popMessage(int result)
-    {
-          final String[] ResultString = {  getResources().getString(R.string.rockbox_tinycovermaker_result_1),
-                                           getResources().getString(R.string.rockbox_tinycovermaker_result_2),
-                                           getResources().getString(R.string.rockbox_tinycovermaker_result_3),
-                                           getResources().getString(R.string.rockbox_tinycovermaker_result_4),
-                                           getResources().getString(R.string.rockbox_tinycovermaker_result_5)
-                                        }; 
-          new AlertDialog.Builder(this)
-                                .setTitle(R.string.rockbox_tinycovermaker)
-            	                .setMessage(ResultString[result])
-            	                .setPositiveButton(R.string.OK, null)
-                                .show();
-    }
 
     private void setServiceActivity(boolean set)
     {
