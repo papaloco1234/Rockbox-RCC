@@ -1651,10 +1651,9 @@ const struct settings_list settings[] = {
 
     /* crossfeed */
     CHOICE_SETTING(F_SOUNDSETTING, crossfeed, LANG_CROSSFEED, 0,"crossfeed",
-                   "off,meier,custom,lnx(1280Hz),lnx(640Hz),lnx(320Hz),lnx(160Hz),lnx(80Hz),Prgr3(interleaved),Prgr3(inplace)", dsp_set_crossfeed_type, 10,
+                   "off,meier,custom", dsp_set_crossfeed_type, 3,
                    ID2P(LANG_OFF), ID2P(LANG_CROSSFEED_MEIER),
-                   ID2P(LANG_CROSSFEED_CUSTOM),ID2P(LANG_CROSSFEED_LNX),ID2P(LANG_CROSSFEED_LNX2),ID2P(LANG_CROSSFEED_LNX3),
-                      ID2P(LANG_CROSSFEED_LNX4),ID2P(LANG_CROSSFEED_LNX5),ID2P(LANG_CROSSFEED_LNX6),ID2P(LANG_CROSSFEED_LNX7)),
+                   ID2P(LANG_CROSSFEED_CUSTOM)),
     INT_SETTING_NOWRAP(F_SOUNDSETTING, crossfeed_direct_gain,
                        LANG_CROSSFEED_DIRECT_GAIN, -15,
                        "crossfeed direct gain", UNIT_DB, -60, 0, 5,
