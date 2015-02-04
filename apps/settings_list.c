@@ -2284,11 +2284,6 @@ const struct settings_list settings[] = {
     /* dithering */
     OFFON_SETTING(F_SOUNDSETTING, dithering_enabled, LANG_DITHERING, false,
                   "dithering enabled", dsp_dither_enable),
-    /* rDose */
-    CHOICE_SETTING(F_SOUNDSETTING|F_NO_WRAP, rdose,
-                   LANG_RDOSE, 0, "rdose enabled",
-                   "off,weak,moderate,strong", dsp_rdose_enable, 4,
-                   ID2P(LANG_OFF), ID2P(LANG_WEAK),ID2P(LANG_MODERATE),ID2P(LANG_STRONG)),
     /* surround */
     TABLE_SETTING(F_SOUNDSETTING, surround_enabled,
                   LANG_SURROUND, 0, "surround enabled", "off",

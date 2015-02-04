@@ -843,8 +843,6 @@ struct user_settings
 #endif
     int volume_limit; /* maximum volume limit */
 
-    int rdose;
-
     int surround_enabled;
     int surround_balance;
     int surround_fx1;

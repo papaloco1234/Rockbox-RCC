@@ -46,7 +46,6 @@ DSP_PROC_DB_START
 #ifdef HAVE_SW_TONE_CONTROLS
     DSP_PROC_DB_ITEM(TONE_CONTROLS) /* bass and treble */
 #endif
-    DSP_PROC_DB_ITEM(RDOSE)
     DSP_PROC_DB_ITEM(SPACE80)       /* space80 */ 
     DSP_PROC_DB_ITEM(PBE)           /* perceptual bass enhancement */
     DSP_PROC_DB_ITEM(AFR)           /* auditory fatigue reduction */

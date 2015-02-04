@@ -1061,7 +1061,6 @@ void settings_apply(bool read_disk)
 #endif
     dsp_set_compressor(&global_settings.compressor_settings);
 #endif
-    dsp_rdose_enable(global_settings.rdose);
 #ifdef HAVE_SPDIF_POWER
     spdif_power_enable(global_settings.spdif_enable);
 #endif
