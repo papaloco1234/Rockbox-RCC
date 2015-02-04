@@ -846,14 +846,6 @@ struct user_settings
 
     int rdose;
 
-    int midside_enabled;
-    int mid_mix_level;
-    int side_mix_level;
-    int midside_delay;
-    int midside_acoustic_path;
-    int midside_crosstalk;
-    int midside_hrtf; 
-
     int surround_enabled;
     int surround_balance;
     int surround_fx1;

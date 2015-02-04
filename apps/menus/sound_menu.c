@@ -185,23 +185,7 @@ static int timestretch_callback(int action,const struct menu_item_ex *this_item)
                      &global_settings.aatube_enabled, lowlatency_callback);
     MENUITEM_SETTING(rdose,
                      &global_settings.rdose, lowlatency_callback);
-    MENUITEM_SETTING(midside_enabled,
-                     &global_settings.midside_enabled, lowlatency_callback);
-    MENUITEM_SETTING(midside_mid_mix_level,
-                     &global_settings.mid_mix_level, lowlatency_callback);
-    MENUITEM_SETTING(midside_side_mix_level,
-                     &global_settings.side_mix_level, lowlatency_callback);
-    MENUITEM_SETTING(midside_delay,
-                     &global_settings.midside_delay, lowlatency_callback);
-
-    MENUITEM_SETTING(midside_acoustic_path,
-                     &global_settings.midside_acoustic_path, lowlatency_callback);
-    MENUITEM_SETTING(midside_crosstalk,
-                     &global_settings.midside_crosstalk, lowlatency_callback);
-    MENUITEM_SETTING(midside_hrtf,
-                     &global_settings.midside_hrtf, lowlatency_callback);
-    MAKE_MENU(hrtf_menu,ID2P(LANG_MIDSIDE_HRTF), NULL, Icon_NOICON,
-              &midside_hrtf,&midside_crosstalk,&midside_acoustic_path); 
+    
     MENUITEM_SETTING(afr_enabled,
                      &global_settings.afr_enabled, lowlatency_callback);
     MENUITEM_SETTING(pbe,
@@ -223,10 +207,7 @@ static int timestretch_callback(int action,const struct menu_item_ex *this_item)
     MENUITEM_SETTING(surround_mix,
                      &global_settings.surround_mix, lowlatency_callback);
     MAKE_MENU(surround_menu,ID2P(LANG_SURROUND), NULL, Icon_NOICON,
-              &surround_enabled,&surround_balance,&surround_fx1,&surround_fx2,&surround_method2,&surround_mix);
-
-    MAKE_MENU(midside_menu,ID2P(LANG_MIDSIDE), NULL, Icon_NOICON,
-              &midside_enabled,&midside_mid_mix_level,&midside_side_mix_level,&midside_delay,&hrtf_menu); 
+              &surround_enabled,&surround_balance,&surround_fx1,&surround_fx2,&surround_method2,&surround_mix); 
     MENUITEM_SETTING(compressor_threshold,
                      &global_settings.compressor_settings.threshold,
                      lowlatency_callback);
@@ -299,7 +280,7 @@ MAKE_MENU(sound_settings, ID2P(LANG_SOUND_SETTINGS), NULL, Icon_Audio,
 #endif
 #if CONFIG_CODEC == SWCODEC
           ,&crossfeed_menu, &space80_menu, &equalizer_menu, &dithering_enabled
-          ,&aatube_enabled, &rdose, &midside_menu
+          ,&aatube_enabled, &rdose
           ,&surround_menu, &pbe_menu, &afr_enabled
 #ifdef HAVE_PITCHCONTROL
           ,&timestretch_enabled

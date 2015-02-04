@@ -31,7 +31,6 @@
 #include "eq.h"
 #include "pga.h"
 #include "rdose.h"
-#include "midside.h"
 #include "surround.h"
 #include "afr.h"
 #include "pbe.h"
