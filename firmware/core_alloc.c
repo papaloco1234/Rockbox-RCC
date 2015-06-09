@@ -28,7 +28,8 @@ extern unsigned char *audiobufend;
 static int test_alloc;
 void core_allocator_init(void)
 {
-    unsigned char *start = ALIGN_UP(audiobuffer, sizeof(intptr_t));
+    //unsigned char *start = ALIGN_UP(audiobuffer, sizeof(intptr_t));
+    unsigned char *start = audiobuffer;
 
 #if defined(IPOD_VIDEO) && !defined(BOOTLOADER) && !defined(SIMULATOR)
     audiobufend=(unsigned char *)audiobufend_lds;
