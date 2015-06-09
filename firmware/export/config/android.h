@@ -53,6 +53,9 @@
 #define HAVE_TOUCHSCREEN
 #define HAVE_BUTTON_DATA
 
+/* Touchscreen Debounce Intervals */
+#define TOUCHSCREEN_DBS 4
+
 /* define this if you have RTC RAM available for settings */
 //#define HAVE_RTC_RAM
 
